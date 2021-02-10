@@ -63,7 +63,7 @@ Database transaction commit batch size.
 Connector class name
 
 ```
-"connector.class": "com.carefirst.nexus.connect.jdbc.CustomJDBCSinkConnector",
+"connector.class": "com.sixthday.kafka.connect.jdbc.CustomJDBCSinkConnector",
 ```
 
 Database configurations
@@ -101,7 +101,7 @@ Kafka producer configurations
 ```
 "producer.bootstrap.servers": "localhost:9092",
 "producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer",
-"producer.value.serializer": "com.carefirst.nexus.connect.jdbc.serialization.JsonSerialization",
+"producer.value.serializer": "com.sixthday.kafka.connect.jdbc.serialization.JsonSerialization",
 ```
 
 Database retry backoff time

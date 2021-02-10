@@ -3,6 +3,7 @@ package com.sixthday.kafka.connect.jdbc.converter;
 import com.sixthday.kafka.connect.jdbc.database.DBColumnDef;
 import com.sixthday.kafka.connect.jdbc.exception.ValidationException;
 
+@FunctionalInterface
 public interface ValueConverter<T> {
     BooleanValueConverter BOOL = new BooleanValueConverter();
     StringValueConverter STRING = new StringValueConverter();
@@ -25,6 +26,11 @@ public interface ValueConverter<T> {
         } else if (value == null) {
             return null;
         }
-        return validateAndConvert(value, dbColumnDef);
+        T t = validateAndConvert(value, dbColumnDef);
+        if (t == null && !dbColumnDef.isAutoIncrement() && !dbColumnDef.isNullable()) {
+            throw new ValidationException("The column '" + dbColumnDef.getColumnName() + "' is mandatory. The converter unable to " +
+                    "convert into '" + dbColumnDef.getTypeName() + "' value '" + value + "'");
+        }
+        return t;
     }
 }

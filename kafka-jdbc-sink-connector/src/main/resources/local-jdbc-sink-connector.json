@@ -2,7 +2,7 @@
   "name": "jdbc-sink-connector",
   "config": {
     "batch.size": 3,
-    "connector.class": "com.carefirst.nexus.connect.jdbc.CustomJDBCSinkConnector",
+    "connector.class": "com.sixthday.kafka.connect.jdbc.CustomJDBCSinkConnector",
     "database.catalog": "mydb",
     "database.host": "127.0.0.1",
     "database.password": "pgadmin",
@@ -23,7 +23,7 @@
     "max.retries": 5,
     "producer.bootstrap.servers": "localhost:9092",
     "producer.key.serializer": "org.apache.kafka.common.serialization.StringSerializer",
-    "producer.value.serializer": "com.carefirst.nexus.connect.jdbc.serialization.JsonSerialization",
+    "producer.value.serializer": "com.sixthday.kafka.connect.jdbc.serialization.JsonSerialization",
     "retry.backoff.ms": 10000,
     "tables": "subgroup",
     "tables.subgroup.columns.mapping": "subgroup_json=$.subgroup_json_val",

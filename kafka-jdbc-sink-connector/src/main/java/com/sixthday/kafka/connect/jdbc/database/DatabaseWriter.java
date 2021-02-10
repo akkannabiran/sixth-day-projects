@@ -9,6 +9,7 @@ import org.apache.kafka.connect.sink.SinkRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -35,7 +36,6 @@ public class DatabaseWriter {
     private void writeBatch(List<SinkRecord> sinkRecordsSlice) {
         LOGGER.info("Initializing batch processing!");
         List<BufferedRecord> bufferedRecords = new LinkedList<>();
-        jsonTablesDef.getValidSinkRecord().set(0);
         sinkRecordsSlice.forEach(sinkRecord -> {
             BufferedRecord bufferedRecord = BufferedRecord.builder().sinkRecord(sinkRecord).build();
             bufferedRecords.add(bufferedRecord);
@@ -43,29 +43,41 @@ public class DatabaseWriter {
         });
         try {
             jsonTablesDef.executeBatch();
+            databaseDialect.getConnection().commit();
             jsonTablesDef.close();
         } catch (Exception e) {
+            try {
+                databaseDialect.getConnection().rollback();
+            } catch (SQLException e1) {
+                LOGGER.error("Rollback failed {}", e1.getMessage());
+            }
             jsonTablesDef.close();
             fallBackWrite(bufferedRecords);
             return;
+        } finally {
+            bufferedRecords.parallelStream().filter(BufferedRecord::isErrorProne).forEach(bufferedRecord ->
+                    errorRecordHandler.handleErrorSinkRecord(bufferedRecord.getSinkRecord(), bufferedRecord.getException()));
+            LOGGER.info("Batch processing has been completed successfully!");
         }
-        bufferedRecords.parallelStream().filter(BufferedRecord::isErrorProne).forEach(bufferedRecord ->
-                errorRecordHandler.handleErrorSinkRecord(bufferedRecord.getSinkRecord(), bufferedRecord.getException()));
-        LOGGER.info("Batch processing has been completed successfully!");
     }
 
     private void fallBackWrite(List<BufferedRecord> bufferedRecords) {
-        LOGGER.info("Batch processing has been failed due to invalid record(s). Trying individual message processing!");
+        LOGGER.error("Batch processing has been failed due to invalid record(s). Trying individual message processing!");
         bufferedRecords.forEach(bufferedRecord -> {
-            if (bufferedRecord.isErrorProne()) {
-                errorRecordHandler.handleErrorSinkRecord(bufferedRecord.getSinkRecord(), bufferedRecord.getException());
-            } else {
+            if (!bufferedRecord.isErrorProne()) {
                 try {
-                    jsonTablesDef.getValidSinkRecord().set(0);
                     jsonTablesDef.process(bufferedRecord, databaseDialect);
                     jsonTablesDef.executeBatch();
+                    databaseDialect.getConnection().commit();
                 } catch (Exception e) {
-                    errorRecordHandler.handleErrorSinkRecord(bufferedRecord.getSinkRecord(), e);
+                    bufferedRecord.setErrorProne(true);
+                    bufferedRecord.setException(e);
+                    try {
+                        databaseDialect.getConnection().rollback();
+                    } catch (SQLException e1) {
+                        LOGGER.error("Rollback failed {}", e1.getMessage());
+                    }
+                    jsonTablesDef.close();
                 }
             }
         });

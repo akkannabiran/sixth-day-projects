@@ -17,13 +17,11 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class JsonTablesDef {
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomJDBCSinkTask.class);
 
     @Getter
-    private final AtomicInteger validSinkRecord = new AtomicInteger();
     private final List<JsonTableDef> jsonTableDefs = new LinkedList<>();
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final TableWriter tableWriter = new TableWriter();
@@ -59,7 +57,6 @@ public class JsonTablesDef {
         for (JsonTableDef jsonTableDef : jsonTableDefs) {
             tableWriter.addBatch(jsonTableDef);
         }
-        validSinkRecord.incrementAndGet();
         clearParameters();
     }
 
@@ -75,7 +72,7 @@ public class JsonTablesDef {
 
     public void executeBatch() throws SQLException {
         for (JsonTableDef jsonTableDef : jsonTableDefs) {
-            tableWriter.executeBatch(jsonTableDef, validSinkRecord);
+            tableWriter.executeBatch(jsonTableDef);
         }
         clearParameters();
     }

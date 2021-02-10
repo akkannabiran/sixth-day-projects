@@ -74,6 +74,7 @@ public class PostgreSqlDatabaseDialect implements DatabaseDialect {
         for (int i = 1; i <= maxRetries; i++) {
             try {
                 connection = DriverManager.getConnection(url);
+                connection.setAutoCommit(false);
                 LOGGER.info("Database connection established!");
                 break;
             } catch (SQLException e) {

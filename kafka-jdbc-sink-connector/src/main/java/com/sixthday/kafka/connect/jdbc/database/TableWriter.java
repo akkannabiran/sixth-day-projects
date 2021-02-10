@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class TableWriter {
     private final Logger LOGGER = LoggerFactory.getLogger(TableWriter.class);
@@ -94,16 +93,18 @@ public class TableWriter {
     }
 
     public void addBatch(JsonTableDef value) throws SQLException {
-        value.getPreparedStatementBinder().addBatch();
+        if (value.getPreparedStatementBinder() != null)
+            value.getPreparedStatementBinder().addBatch();
     }
 
     public void clearParameters(JsonTableDef value) throws SQLException {
-        value.getPreparedStatementBinder().clearParameters();
+        if (value.getPreparedStatementBinder() != null)
+            value.getPreparedStatementBinder().clearParameters();
     }
 
-    public void executeBatch(JsonTableDef value, AtomicInteger validSinkRecord) throws SQLException {
-        int[] affectedRecords = value.getPreparedStatementBinder().executeBatch();
-        LOGGER.info("Table '{}' has been committed with {} record(s) and {} row(s) got affected.",
-                value.getTableName(), validSinkRecord.get(), affectedRecords.length);
+    public void executeBatch(JsonTableDef value) throws SQLException {
+        if (value.getPreparedStatementBinder() != null) {
+            value.getPreparedStatementBinder().executeBatch();
+        }
     }
 }

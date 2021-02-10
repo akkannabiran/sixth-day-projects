@@ -3,7 +3,7 @@
   "config": {
     "batch.size": 1,
     "bootstrap.servers": "${cffile:/opt/kafka/confluent/secret/filepulse.properties:bootstrap.servers}",
-    "connector.class": "com.carefirst.nexus.connect.jdbc.CustomJDBCSinkConnector",
+    "connector.class": "com.sixthday.kafka.connect.jdbc.CustomJDBCSinkConnector",
     "consumer.bootstrap.servers": "${cffile:/opt/kafka/confluent/secret/filepulse.properties:bootstrap.servers}",
     "consumer.sasl.jaas.config": "${cffile:/opt/kafka/confluent/secret/filepulse.properties:sasl.jaas.config}",
     "consumer.sasl.mechanism": "${cffile:/opt/kafka/confluent/secret/filepulse.properties:sasl.mechanism}",
@@ -33,7 +33,7 @@
     "producer.sasl.mechanism": "${cffile:/opt/kafka/confluent/secret/filepulse.properties:sasl.mechanism}",
     "producer.security.protocol": "${cffile:/opt/kafka/confluent/secret/filepulse.properties:security.protocol}",
     "producer.ssl.endpoint.identification.algorithm": "${cffile:/opt/kafka/confluent/secret/filepulse.properties:identification.algorithm}",
-    "producer.value.serializer": "com.carefirst.nexus.connect.jdbc.serialization.JsonSerialization",
+    "producer.value.serializer": "com.sixthday.kafka.connect.jdbc.serialization.JsonSerialization",
     "retry.backoff.ms": 1000,
     "tables": "subgroup",
     "tables.subgroup.columns.mapping": "subgroup_json=$.subgroup_json_val",

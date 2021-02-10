@@ -3,17 +3,19 @@ package com.sixthday.kafka.connect.jdbc.builder;
 import com.sixthday.kafka.connect.jdbc.exception.InvalidConfigurationException;
 import com.sixthday.kafka.connect.jdbc.json.JsonTableDef;
 import com.sixthday.kafka.connect.jdbc.util.SinkUtil;
-import com.sixthday.kafka.connect.jdbc.config.CustomJDBCSinkConfig;
 
 import java.util.Map;
 import java.util.StringJoiner;
+
+import static com.sixthday.kafka.connect.jdbc.config.CustomJDBCSinkConfig.MODE_UPDATE_KEYS;
+import static com.sixthday.kafka.connect.jdbc.config.CustomJDBCSinkConfig.TABLES_PREFIX;
 
 public class UpdateQueryBuilder extends QueryBuilder {
 
     @Override
     void validate(JsonTableDef jsonTableDef) {
         if ("".equals(jsonTableDef.getUpdateByKeys())) {
-            throw new InvalidConfigurationException("Use '" + CustomJDBCSinkConfig.TABLES_PREFIX + "<table_name>" + CustomJDBCSinkConfig.MODE_UPDATE_KEYS
+            throw new InvalidConfigurationException("Use '" + TABLES_PREFIX + "<table_name>" + MODE_UPDATE_KEYS
                     + "' to configure the unique primary/composite key or index for DML mode upsert");
         }
     }

@@ -1,0 +1,11 @@
+application:
+  kafka:
+    monitoring-service-account-id: 148760
+    monitoring-cluster-api-key: ${nexus-kafka-monitoring.kafkacluster.148760.api-key}
+    monitoring-cluster-api-secret: ${nexus-kafka-monitoring.kafkacluster.148760.api-secret}
+    producer:
+      properties:
+        bootstrap.servers: pkc-4x6mx.us-east-1.aws.confluent.cloud:9092
+    stream:
+      properties:
+        bootstrap.servers: pkc-4x6mx.us-east-1.aws.confluent.cloud:9092

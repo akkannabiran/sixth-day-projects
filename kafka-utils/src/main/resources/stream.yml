@@ -1,0 +1,34 @@
+application:
+  kafka:
+    stream:
+      properties:
+        auto.offset.reset: latest
+        confluent.monitoring.interceptor.bootstrap.servers: ${application.kafka.stream.properties.bootstrap.servers}
+        confluent.monitoring.interceptor.sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${application.kafka.monitoring-cluster-api-key}" password="${application.kafka.monitoring-cluster-api-secret}";
+        confluent.monitoring.interceptor.sasl.mechanism: PLAIN
+        confluent.monitoring.interceptor.security.protocol: SASL_SSL
+        confluent.monitoring.interceptor.topic: _confluent-monitoring
+        consumer.interceptor.classes: com.carefirst.kafka.app.interceptors.GUIDConsumerInterceptorImpl, io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
+        default.deserialization.exception.handler: com.carefirst.kafka.stream.error.DeserializationErrorHandlerImpl
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.production.exception.handler: com.carefirst.kafka.stream.error.ProductionErrorHandlerImpl
+        default.value.serde: org.springframework.kafka.support.serializer.JsonSerde
+        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${application.kafka.cluster-api-key}" password="${application.kafka.cluster-api-secret}";
+        sasl.mechanism: PLAIN
+        security.protocol: SASL_SSL
+        spring.json.trusted.packages: com.carefirst.*
+        ssl.endpoint.identification.algorithm: https
+    producer:
+      properties:
+        confluent.monitoring.interceptor.bootstrap.servers: ${application.kafka.producer.properties.bootstrap.servers}
+        confluent.monitoring.interceptor.sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${application.kafka.monitoring-cluster-api-key}" password="${application.kafka.monitoring-cluster-api-secret}";
+        confluent.monitoring.interceptor.sasl.mechanism: PLAIN
+        confluent.monitoring.interceptor.security.protocol: SASL_SSL
+        confluent.monitoring.interceptor.topic: _confluent-monitoring
+        key.serializer: org.apache.kafka.common.serialization.StringSerializer
+        producer.interceptor.classes: com.carefirst.kafka.app.interceptors.GUIDProducerInterceptorImpl, io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${application.kafka.cluster-api-key}" password="${application.kafka.cluster-api-secret}";
+        sasl.mechanism: PLAIN
+        security.protocol: SASL_SSL
+        ssl.endpoint.identification.algorithm: https
+        value.serializer: org.springframework.kafka.support.serializer.JsonSerializer

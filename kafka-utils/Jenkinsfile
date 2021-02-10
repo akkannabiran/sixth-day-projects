@@ -1,0 +1,109 @@
+def sendMail(mailsubject,mailbody,mailids)
+{
+  emailext( mimeType: 'text/html',attachLog: true,subject: mailsubject,
+  			body: mailbody,compressLog: true,replyTo: mailids,to: mailids)
+}
+
+pipeline {
+    agent { node { label 'Java' } }
+    environment{
+    	REPO_BRANCH='develop'
+		REPO_BASE_URL="https://bitbkt.carefirst.com/scm/nex-fon/kafka-utils.git"
+      	ART_REPONAME='cf-java-local'
+    	ARTIFACT_TYPE='jar'
+        //APP_MAILGRP='sambasiva.reddy@carefirst.com,Shamkant.Deshpande@carefirst.com,Swaminathan.Balasubramanian@carefirst.com,Alagar.Ramanujam@carefirst.com'
+        APP_MAILGRP='sambasiva.reddy@carefirst.com,Swaminathan.Balasubramanian@carefirst.com,Arunkumar.Kannabiran@carefirst.com,karthikeyan.arunachalam@carefirst.com,Mohaideen.ShandhuMohammed@carefirst.com'
+      
+		REPO_NAME=readMavenPom().getArtifactId()
+		SONAR_KEY=readMavenPom().getArtifactId()
+      	ART_GROUPID=readMavenPom().getGroupId()
+    	ART_ARTIFACTID=readMavenPom().getArtifactId()
+      	ARTIFACT_NAME=readMavenPom().getArtifactId()
+		VERSION_NUM=readMavenPom().getVersion()
+		
+	}
+  
+
+    triggers { pollSCM('H/3 * * * *') }
+    stages {
+    	stage('BUILD') {
+    		steps {
+    		
+               checkout([$class: 'GitSCM', branches: [[name: "${REPO_BRANCH}"]], doGenerateSubmoduleConfigurations: false, 
+                            extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'PerBuildTag']], submoduleCfg: [], 
+                            userRemoteConfigs: [[credentialsId: 'JKN-BKT-001', url: "${REPO_BASE_URL}"]]])
+                   
+              sh 'mvn package -Dmaven.test.skip=true'
+           }
+    		post {  
+               failure { 
+             		sendMail("[Jenkins] ${currentBuild.fullDisplayName} [Maven Build Failure]","<p>Please check the logs for the Build Failure</p><p>BUILD_URL: ${BUILD_URL}</p>","${APP_MAILGRP}")
+					}
+       		 	}
+    	}
+        
+        stage('Unit Test Cases') {
+    		steps {
+              	  echo 'unit test case execution..'
+    			 // sh '${MAVEN}/mvn test'
+              	 // step( [ $class: 'JacocoPublisher' ] )
+    		}
+    		post {  
+               always {
+                    echo 'post of unittestcase stage'
+                 	//junit "target/surefire-reports/*.xml"
+                }
+            	failure { 
+             		sendMail("[Jenkins] ${currentBuild.fullDisplayName} [Maven Build Failure]","<p>Please check the logs for the Build Failure</p><p>BUILD_URL: ${BUILD_URL}</p>","${APP_MAILGRP}")
+		           }
+       		 	}
+    	}
+    		
+    		stage('CodeQuality-SonarQube') {
+	    		steps {
+	    		echo 'sonar'
+	    			//withSonarQubeEnv('sonarqube_scan') {
+	    			//sh 'mvn ${SONAR_MAVEN_PLUGIN}:sonar ' + 
+						  //'-f pom.xml ' +
+						  //'-Dsonar.projectName=${SONAR_KEY} ' +
+						  //'-Dsonar.projectKey=${SONAR_KEY} ' +
+						  //'-Dsonar.projectVersion=${BUILD_ID} ' +
+						  //'-Dsonar.language=java ' +
+						  //'-Dsonar.sources=src/main/java ' +
+						  //'-Dsonar.sourceEncoding=UTF-8 ' +
+						  //'-Dsonar.java.binaries=target/classes ' +
+						  //'-Dsonar.tests=src/test/java ' +
+						  //'-Dsonar.host.url=${SONARQUBE} ' +
+						  //'-Dsonar.junit.reportsPath=target/surefire-reports ' +
+						  //'-Dsonar.surefire.reportsPath=target/surefire-reports ' +
+						  //'-Dsonar.jacoco.reportPath=target/jacoco.exec ' +
+						  //'-Dsonar.binaries=target/classes ' +
+						  //'-Dsonar.java.coveragePlugin=jacoco ' +
+						  //'-Dsonar.dynamicAnalysis=reuseReports ' +
+						  //'-Dsonar.verbose=true ' +
+						  //'-Dsonar.scm.disabled=true ' +
+						  //'-Dsonar.sourceEncoding=UTF-8 ' +
+						  //'-Dsonar.exclusions=**/entity/*.java,**/generated/*.java '
+	    		//}
+	    		}
+    		}
+    		stage('Upload to Artifactory') {
+       steps {
+    			sh 'mvn deploy:deploy-file -DgroupId=${ART_GROUPID} -DartifactId=${ART_ARTIFACTID} -Dversion=${VERSION_NUM} -Dpackaging=jar -DrepositoryId=s-entartifactory -Durl=${ENT_ARTIFACTORY}/${ART_REPONAME} -Dfile=${WORKSPACE}/target/${ARTIFACT_NAME}.${ARTIFACT_TYPE} -DpomFile=${WORKSPACE}/pom.xml'
+    		
+				}
+              post {  
+                  success { 
+             		sendMail("[Jenkins] ${currentBuild.fullDisplayName} [Artifact uploaded successfully]","<p>Artifact uploaded successfully</p><p>BUILD_URL: ${BUILD_URL}</p>","${APP_MAILGRP}")
+		           }
+              }
+              
+            }
+      
+    		
+	    	
+	        
+      
+      
+      }
+}

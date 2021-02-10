@@ -1,0 +1,14 @@
+application:
+  kafka:
+    service-account-id:
+    cluster-api-key: UGUHO2G6XWE6ZLOK
+    cluster-api-secret: uzwhF9aSxmasZVlmiOw4LzWkxjQHvHReFFkD6UFVscvz9zOxuetuBi2gcVGDEERi
+    monitoring-service-account-id:
+    monitoring-cluster-api-key: UGUHO2G6XWE6ZLOK
+    monitoring-cluster-api-secret: uzwhF9aSxmasZVlmiOw4LzWkxjQHvHReFFkD6UFVscvz9zOxuetuBi2gcVGDEERi
+    consumer:
+      properties:
+        bootstrap.servers: pkc-4x6mx.us-east-1.aws.confluent.cloud:9092
+    producer:
+      properties:
+        bootstrap.servers: pkc-4x6mx.us-east-1.aws.confluent.cloud:9092

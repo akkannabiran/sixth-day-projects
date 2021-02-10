@@ -1,0 +1,85 @@
+application:
+  kafka:
+    service-account-id:
+    cluster-api-key:
+    cluster-api-secret:
+    monitoring-service-account-id:
+    monitoring-cluster-api-key:
+    monitoring-cluster-api-secret:
+    consumer:
+      properties:
+        bootstrap.servers:
+    producer:
+      properties:
+        bootstrap.servers:
+    listeners:
+      first:
+        consumer:
+          topic:
+          commit-retries:
+          sync-commit:
+          ack-mode:
+          schedule-start: #cron schedule
+          message-poll-status-delay: #in seconds
+          properties:
+            client.id:
+            group.id:
+            spring.json.value.default.type:
+        retry-producer:
+          topic:
+          properties:
+            client.id:
+        dl-producer:
+          topic:
+          properties:
+            client.id:
+      second:
+        consumer:
+          topic:
+          commit-retries:
+          sync-commit:
+          ack-mode:
+          schedule-start: #cron schedule
+          message-poll-status-delay: #in seconds
+          properties:
+            client.id:
+            group.id:
+            spring.json.value.default.type:
+        retry-producer:
+          topic:
+          properties:
+            client.id:
+        dl-producer:
+          topic:
+          properties:
+            client.id:
+      third:
+        consumer:
+          topic:
+          commit-retries:
+          sync-commit:
+          ack-mode:
+          schedule-start: #cron schedule
+          message-poll-status-delay: #in seconds
+          properties:
+            client.id:
+            group.id:
+            spring.json.value.default.type:
+        retry-producer:
+          topic:
+          properties:
+            client.id:
+      forth:
+        consumer:
+          topic:
+          commit-retries:
+          sync-commit:
+          ack-mode:
+          properties:
+            client.id:
+            group.id:
+            spring.json.value.default.type:
+        dl-producer:
+          topic:
+          properties:
+            client.id:

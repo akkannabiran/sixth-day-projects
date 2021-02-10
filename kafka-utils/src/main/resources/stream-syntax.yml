@@ -1,0 +1,27 @@
+application:
+  kafka:
+    service-account-id:
+    cluster-api-key:
+    cluster-api-secret:
+    monitoring-service-account-id:
+    monitoring-cluster-api-key:
+    monitoring-cluster-api-secret:
+    stream:
+      properties:
+        application.id:
+        sasl.jaas.config:
+        bootstrap.servers:
+        default.production.exception.handler: com.carefirst.kafka.stream.error.ProductionErrorHandlerImpl
+        default.deserialization.exception.handler: com.carefirst.kafka.stream.error.DeserializationErrorHandlerImpl
+    producer:
+      properties:
+        bootstrap.servers:
+      apps:
+        first-stream:
+          source-topic:
+          target-topic:
+          dl-topic:
+        second-stream:
+          source-topic:
+          target-topic:
+          dl-topic:

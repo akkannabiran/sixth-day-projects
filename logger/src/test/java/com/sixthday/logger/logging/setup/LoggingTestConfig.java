@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.nmo.logger"})
+@ComponentScan({"com.sixthday.logger"})
 public class LoggingTestConfig implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(LoggingTestConfig.class, args);

@@ -69,7 +69,7 @@ Command: npm install amqp-tool -g
 Command: amqp-tool
 3. Export messages from dev-int evironment to sixthday-category-dump(temp queue) 
 Refer Continuously export a queue into a file for command in below provided site.
-Command: amqp-tool --host dev-int-messaging-sixthday.nmgcloudapps.net -u admin -p dev -q sixthday-category-dump --export > category.json
+Command: amqp-tool --host dev-int-messaging-sixthday.sixthdaycloudapps.net -u admin -p dev -q sixthday-category-dump --export > category.json
 4. Start navigation service with dependencies
 Command: dt start_dependencies navigation-service
 above command stop the navigation service once it starts the dependencies.

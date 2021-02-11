@@ -32,7 +32,7 @@ repositories {
 allprojects {
     ext.baseVersion = "0.0." + (project.hasProperty('version') ? project.version : "1")
     ext.snapshotVersion = !project.hasProperty('version')
-    group = "com.nmo"
+    group = "com.sixthday"
     version = "$baseVersion" + (snapshotVersion ? "-SNAPSHOT" : "-RELEASE")
 }
 
@@ -58,9 +58,9 @@ dependencyManagement {
 }
 
 artifactory {
-    contextUrl = project.hasProperty('artifactoryUrl') ? project.artifactoryUrl : 'http://jfrog.mynmg.com'
+    contextUrl = project.hasProperty('artifactoryUrl') ? project.artifactoryUrl : 'http://jfrog.mysixthday.com'
     publish {
-        repoKey = 'libs-nmo-dt-local'
+        repoKey = 'libs-sixthday-dt-local'
         username = project.hasProperty('artifactoryUser') ? project.artifactoryUser: ''
         password = project.hasProperty('artifactoryPassword') ? project.artifactoryPassword : ''
 

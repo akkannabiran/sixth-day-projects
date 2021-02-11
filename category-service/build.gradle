@@ -250,7 +250,7 @@ run { systemProperties = System.properties }
 task dockerTestImage(type: TestDockerImage)
 //Fetch the PACT_BROKER_ARTIFACTORY_URL from Jenkins job params if available. Else proceed with default.
 final PACT_BROKER_PROTOCOL = "https"
-final PACT_BROKER_ARTIFACTORY_URL = 'uswest2-dev-global-pact.nmgcloudapps.com'
+final PACT_BROKER_ARTIFACTORY_URL = 'uswest2-dev-global-pact.sixthdaycloudapps.com'
 if(System.getenv('PACT_BROKER_ARTIFACTORY_URL') != null) {
 	PACT_BROKER_ARTIFACTORY_URL = System.getenv('PACT_BROKER_ARTIFACTORY_URL')
 }

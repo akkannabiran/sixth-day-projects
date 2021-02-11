@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Order(Ordered.LOWEST_PRECEDENCE - 50)
 public class LoggingAspect {
 
-    @Around("@within(com.nmo.logger.logging.Loggable) || @annotation(com.nmo.logger.logging.Loggable)")
+    @Around("@within(com.sixthday.logger.logging.Loggable) || @annotation(com.sixthday.logger.logging.Loggable)")
     public Object logMethodEntryExit(ProceedingJoinPoint pjp) throws Throwable {
         long start = System.currentTimeMillis();
         String className = pjp.getSignature().getDeclaringTypeName();

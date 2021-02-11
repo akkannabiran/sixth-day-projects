@@ -2,7 +2,7 @@
 Simple library that utilizes AOP to enable toggling of spring-boot components.
 
 ## Installation
-Toggler library is currently stored in [nmg jfrog artifactory](http://jfrog.mynmg.com) under `libs-nmo-dt-local` repository.
+Toggler library is currently stored in [sixthday jfrog artifactory](http://jfrog.mysixthday.com) under `libs-sixthday-dt-local` repository.
 Using the gradle artifactory plugin you can download it from artifactory and add it as a dependency to your application as shown below;
 
 1. Add gradle artifactory plugin to your `build.gradle` file
@@ -19,7 +19,7 @@ Using the gradle artifactory plugin you can download it from artifactory and add
     	contextUrl = project.hasProperty('artifactoryUrl') ? project.artifactoryUrl : ''
     	resolve {
     		repository {
-    			repoKey = 'libs-nmo-dt-local'
+    			repoKey = 'libs-sixthday-dt-local'
     			username = project.hasProperty('artifactoryUser') ? project.artifactoryUser : ''
     			password = project.hasProperty('artifactoryPassword') ? project.artifactoryPassword : ''
     			maven = true
@@ -31,7 +31,7 @@ Using the gradle artifactory plugin you can download it from artifactory and add
 2. Add toggler library to a list of dependencies in `build.gradle` file.
 ```
     dependencies {
-        compile('com.nmo:toggler:0.0.14-RELEASE')
+        compile('com.sixthday:toggler:0.0.14-RELEASE')
     }
 ```
 

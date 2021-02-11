@@ -1,2 +1,2 @@
 # Auto Configuration
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.nmo.logger.logging.LoggingAspect
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.sixthday.logger.logging.LoggingAspect

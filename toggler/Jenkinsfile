@@ -1,7 +1,7 @@
 def isBranchBuild = env.IS_BRANCH_BUILD?.toBoolean()
 node('build && procat') {
 
-    def prodArtifactoryUrl = 'http://jfrog.mynmg.com'
+    def prodArtifactoryUrl = 'http://jfrog.mysixthday.com'
 
     step([$class: 'StashNotifier'])
 

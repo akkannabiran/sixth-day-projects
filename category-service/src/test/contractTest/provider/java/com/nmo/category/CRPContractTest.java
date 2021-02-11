@@ -149,7 +149,7 @@ public class CRPContractTest {
 
         SeoDetails seoDetails = new SeoDetails(null,"/c/womens-clothing-tops-cat42960827",null,
                 "<meta name=\"description\" content=\"Take a look at women's shirts & blouses that make an array of fashion statements. Free shipping & free returns on women's designer tops at sixthday.com.\" />",
-                "Women's Designer Tops, Shirts & Blouses at Neiman Marcus", null, new RedirectDetails(302,"catRedirect"));
+                "Women's Designer Tops, Shirts & Blouses at Sixthday", null, new RedirectDetails(302,"catRedirect"));
 
         List<Category> categories = new ArrayList<>();
         categories.add(Category.builder()

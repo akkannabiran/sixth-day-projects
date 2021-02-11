@@ -333,7 +333,7 @@ public class CategoryDocumentTest {
                 .contextualProperties(contextualProperties)
                 .build();
         
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
 
         final Optional<ContextualProperty> contextualProperty = categoryDocument.getApplicableContextualProperty("parentCategoryId");
         String seoPageTitle = categoryDocument.getSeoPageTitle(contextualProperty.orElse(null), parentCategoryDocument, categoryServiceConfig);
@@ -392,11 +392,11 @@ public class CategoryDocumentTest {
                 .contextualProperties(contextualProperties)
                 .build();
         
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
 
         final ContextualProperty contextualProperty = categoryDocument.getApplicableContextualProperty("parentCategoryId").orElse(null);
         String seoPageTitle = categoryDocument.getSeoPageTitle(contextualProperty, parentCategoryDocument, categoryServiceConfig);
-        assertThat(seoPageTitle, is("some alternate seo name in Category Name at Neiman Marcus"));
+        assertThat(seoPageTitle, is("some alternate seo name in Category Name at Sixthday"));
         assertNotNull(contextualProperty);
         assertThat(contextualProperty.getDesktopAlternateName(), is("DesktopAlternateName"));
     }
@@ -439,11 +439,11 @@ public class CategoryDocumentTest {
                 .seoTags("some seo tag")
                 .build();
         
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
 
         final ContextualProperty contextualProperty = categoryDocument.getApplicableContextualProperty("parentCategoryId").orElse(null);
         String seoPageTitle = categoryDocument.getSeoPageTitle(contextualProperty, parentCategoryDocument, categoryServiceConfig);
-        assertThat(seoPageTitle, is("DesktopAlternateName in Category Name at Neiman Marcus"));
+        assertThat(seoPageTitle, is("DesktopAlternateName in Category Name at Sixthday"));
         assertNotNull(contextualProperty);
         assertThat(contextualProperty.getDesktopAlternateName(), is("DesktopAlternateName"));
     }
@@ -510,11 +510,11 @@ public class CategoryDocumentTest {
                 .contextualProperties(contextualProperties)
                 .build();
         
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
 
         final Optional<ContextualProperty> contextualProperty = categoryDocument.getApplicableContextualProperty("parentCategoryId");
         String seoPageTitle = categoryDocument.getSeoPageTitle(contextualProperty.orElse(null), parentCategoryDocument, categoryServiceConfig);
-        assertThat(seoPageTitle, is("Category Name in Category Name at Neiman Marcus"));
+        assertThat(seoPageTitle, is("Category Name in Category Name at Sixthday"));
     }
 
     @Test
@@ -565,11 +565,11 @@ public class CategoryDocumentTest {
                 .contextualProperties(contextualProperties)
                 .build();
         
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
 
         final Optional<ContextualProperty> contextualProperty = categoryDocument.getApplicableContextualProperty("parentCategoryId");
         String seoPageTitle = categoryDocument.getSeoPageTitle(contextualProperty.orElse(null), parentCategoryDocument, categoryServiceConfig);
-        assertThat(seoPageTitle, is("Category Name in Category Name at Neiman Marcus"));
+        assertThat(seoPageTitle, is("Category Name in Category Name at Sixthday"));
     }
 
     @Test
@@ -815,7 +815,7 @@ public class CategoryDocumentTest {
     @Test
     public void testReturnsDefaultSeoTags_whenCatedocumentWithOnlySeoTags() {
         CategoryDocument categoryDocument = CategoryDocument.builder().seoTags("seoTags").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(null, null, categoryServiceConfig), is("seoTags"));
     }
 
@@ -824,8 +824,8 @@ public class CategoryDocumentTest {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTitleOverride("Plum").alternateSeoName("Peaches").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
         ContextualProperty contextualProperty = ContextualProperty.builder().desktopAlternateName("Banana").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
-        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Peaches in parentName at Neiman Marcus, where you will find free shipping on the latest in fashion from top designers.\"/>"));
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
+        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Peaches in parentName at Sixthday, where you will find free shipping on the latest in fashion from top designers.\"/>"));
     }
 
     @Test
@@ -833,7 +833,7 @@ public class CategoryDocumentTest {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTitleOverride("Plum").alternateSeoName("Peaches").seoTags("Default SEO Tags").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
         ContextualProperty contextualProperty = ContextualProperty.builder().desktopAlternateName("Banana").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("Default SEO Tags"));
     }
 
@@ -842,8 +842,8 @@ public class CategoryDocumentTest {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTitleOverride("Plum").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
         ContextualProperty contextualProperty = ContextualProperty.builder().desktopAlternateName("Banana").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
-        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Banana in parentName at Neiman Marcus, where you will find free shipping on the latest in fashion from top designers.\"/>"));
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
+        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Banana in parentName at Sixthday, where you will find free shipping on the latest in fashion from top designers.\"/>"));
     }
 
     @Test
@@ -851,7 +851,7 @@ public class CategoryDocumentTest {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTitleOverride("Plum").seoTags("Default SEO Tags").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
         ContextualProperty contextualProperty = ContextualProperty.builder().desktopAlternateName("Banana").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("Default SEO Tags"));
     }
 
@@ -860,8 +860,8 @@ public class CategoryDocumentTest {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
         ContextualProperty contextualProperty = ContextualProperty.builder().desktopAlternateName("Banana").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
-        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Banana in parentName at Neiman Marcus, where you will find free shipping on the latest in fashion from top designers.\"/>"));
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
+        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Banana in parentName at Sixthday, where you will find free shipping on the latest in fashion from top designers.\"/>"));
     }
 
     @Test
@@ -869,7 +869,7 @@ public class CategoryDocumentTest {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTags("Default SEO Tags").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
         ContextualProperty contextualProperty = ContextualProperty.builder().desktopAlternateName("Banana").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(parentCategoryDocument, contextualProperty, categoryServiceConfig), is("Default SEO Tags"));
     }
 
@@ -877,15 +877,15 @@ public class CategoryDocumentTest {
     public void testReturnsSeoTags_whenCatNameAndParentCatNamePresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
-        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop name in parentName at Neiman Marcus, where you will find free shipping on the latest in fashion from top designers.\"/>"));
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
+        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop name in parentName at Sixthday, where you will find free shipping on the latest in fashion from top designers.\"/>"));
     }
 
     @Test
     public void testReturnsDefaultSeoTags_whenCatNameAndParentCatNamePresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTags("Default SEO Tags").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("Default SEO Tags"));
     }
 
@@ -893,15 +893,15 @@ public class CategoryDocumentTest {
     public void testReturnsSeoTags_whenCatNameTitleNameOverrideAndParentCatNamePresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTitleOverride("Plum").alternateSeoName("Peaches").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
-        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Peaches in parentName at Neiman Marcus, where you will find free shipping on the latest in fashion from top designers.\"/>"));
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
+        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Peaches in parentName at Sixthday, where you will find free shipping on the latest in fashion from top designers.\"/>"));
     }
 
     @Test
     public void testReturnsDefaultSeoTags_whenCatNameTitleNameOverrideAndParentCatNamePresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTitleOverride("Plum").alternateSeoName("Peaches").seoTags("Default SEO Tags").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("Default SEO Tags"));
     }
 
@@ -909,15 +909,15 @@ public class CategoryDocumentTest {
     public void testReturnsSeoTags_whenCatNameAndNameOverrideAndParentCatNamePresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").alternateSeoName("Peaches").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
-        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Peaches in parentName at Neiman Marcus, where you will find free shipping on the latest in fashion from top designers.\"/>"));
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
+        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop Peaches in parentName at Sixthday, where you will find free shipping on the latest in fashion from top designers.\"/>"));
     }
 
     @Test
     public void testReturnsDefaultSeoTags_whenCatNameAndNameOverrideAndParentCatNamePresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").alternateSeoName("Peaches").seoTags("Default SEO Tags").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("Default SEO Tags"));
     }
 
@@ -925,22 +925,22 @@ public class CategoryDocumentTest {
     public void testReturnsSeoTags_whenCatNameAndTitleOverrideAndParentCatNamePresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTitleOverride("Plum").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
-        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop name in parentName at Neiman Marcus, where you will find free shipping on the latest in fashion from top designers.\"/>"));
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
+        assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("<meta name=\"description\" content=\"Shop name in parentName at Sixthday, where you will find free shipping on the latest in fashion from top designers.\"/>"));
     }
 
     @Test
     public void testReturnsDefaultSeoTags_whenCatNameAndTitleOverrideAndParentCatNamePresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().name("name").seoTitleOverride("Plum").seoTags("Default SEO Tags").build();
         CategoryDocument parentCategoryDocument = CategoryDocument.builder().name("parentName").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(parentCategoryDocument, null, categoryServiceConfig), is("Default SEO Tags"));
     }
 
     @Test(expected = NullPointerException.class)
     public void testReturnsSeoTags_whenSeoTagsAndParentCategoryNameAndAlternateSeoNameAreNotPresent() {
         CategoryDocument categoryDocument = CategoryDocument.builder().id("id").build();
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
         assertThat(categoryDocument.getSeoTags(null, null, null), is("seoTags"));
     }
     

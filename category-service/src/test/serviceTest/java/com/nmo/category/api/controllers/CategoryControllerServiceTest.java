@@ -172,7 +172,7 @@ public class CategoryControllerServiceTest {
 
         when(categoryServiceConfig.getCategoryTemplates()).thenReturn(Arrays.asList(categoryTemplateX, categoryTemplateP));
         when(categoryRepository.getCategoryDocuments(anySetOf(String.class))).thenReturn(categoryDocuments);
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
 
         given()
                 .contentType(APPLICATION_JSON)
@@ -211,7 +211,7 @@ public class CategoryControllerServiceTest {
                 .body("[1].boutique", is(false))
                 .body("[1].seoContentTitle", is("some seo content title"))
                 .body("[1].seoContentDescription", is("some seo content description"))
-                .body("[1].seoPageTitle", is("some alternate seo name in parent category at Neiman Marcus"))
+                .body("[1].seoPageTitle", is("some alternate seo name in parent category at Sixthday"))
                 .body("[1].canonicalUrl", is("/some_canonical_url/"))
                 .body("[1].driveToSubcategoryId", is(""))
                 .body("[1].children", is(childrenOfCatId2))
@@ -594,7 +594,7 @@ public class CategoryControllerServiceTest {
 
         when(categoryServiceConfig.getCategoryTemplates()).thenReturn(Arrays.asList(categoryTemplateX, categoryTemplateP2, categoryTemplateP4));
         when(categoryRepository.getCategoryDocuments(anySetOf(String.class))).thenReturn(categoryDocuments);
-        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Neiman Marcus");
+        when(categoryServiceConfig.getSeoContentTitle()).thenReturn("at Sixthday");
 
         given()
                 .contentType(APPLICATION_JSON)
@@ -632,7 +632,7 @@ public class CategoryControllerServiceTest {
                 .body("[1].seoContentTitle", is("some seo content title"))
                 .body("[1].seoContentDescription", is("some seo content description"))
                 .body("[1].canonicalUrl", is("/some_canonical_url/"))
-                .body("[1].seoPageTitle", is("some alternate seo name in parent category at Neiman Marcus"))
+                .body("[1].seoPageTitle", is("some alternate seo name in parent category at Sixthday"))
                 .body("[1].children", is(childrenOfCatId2))
                 .body("[1].boutique", is(true))
                 .body("[1].mobileHideEntrySubcats", is(false))
@@ -649,7 +649,7 @@ public class CategoryControllerServiceTest {
                 .body("[2].seoContentTitle", is("some seo content title"))
                 .body("[2].seoContentDescription", is("some seo content description"))
                 .body("[2].canonicalUrl", is("/some_canonical_url/"))
-                .body("[2].seoPageTitle", is("DesktopAlternateName in parent category at Neiman Marcus"))
+                .body("[2].seoPageTitle", is("DesktopAlternateName in parent category at Sixthday"))
                 .body("[2].boutique", is(true))
                 .body("[2].driveToSubcategoryId", is(driveToSubcategoryId))
                 .body("[2].mobileHideEntrySubcats", is(false))

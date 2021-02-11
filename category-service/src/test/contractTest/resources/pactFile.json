@@ -1,0 +1,59 @@
+{
+  "provider": {
+    "name": "category-service"
+  },
+  "consumer": {
+    "name": "ctp-svc"
+  },
+  "interactions": [
+    {
+      "description": "POST REQUEST",
+      "request": {
+        "method": "POST",
+        "path": "/category/{countryCode}/categories",
+        "body": {
+          "cat000138": "cat400731",
+          "cat400731": "cat400731",
+          "cat400731NotFound": "cat400731",
+          "cat38960746": "cat400731"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "id": "cat000138",
+            "name": "Camisoles & Slips",
+            "templateType": "P"
+          },
+          {
+            "id": "cat400731",
+            "name": "Staging",
+            "templateType": "X"
+          },
+          {
+            "id": "cat38960746",
+            "name": "BY CONCERN",
+            "templateType": "SC"
+          }
+        ]
+      },
+      "providerStates": [
+        {
+          "name": "ValidCategoryId"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pact-specification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "3.5.0"
+    }
+  }
+}

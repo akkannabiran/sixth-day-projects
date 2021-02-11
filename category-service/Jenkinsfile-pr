@@ -1,0 +1,92 @@
+node('build && ctp') {
+    step([$class: 'StashNotifier'])
+
+    try {
+        timestamps {
+            stage('Checkout Git Repository') {
+                checkout scm
+            }
+            stage('Clean and build') {
+                sh './gradlew clean build -x test'
+            }
+            parallel([
+                unitTestAndCodeQuality: {
+                    stage('Unit test and Code-quality check (SonarQube)') {
+                        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'SONAR_HOST_AND_TOKEN',
+                                          usernameVariable: 'SONAR_HOST_URL', passwordVariable: 'SONAR_AUTH_TOKEN']]) {
+                            sh "./gradlew sonarqube \\" +
+                                    "-Dsonar.projectName=category-service-pr \\" +
+                                    "-Dsonar.projectKey=category-service-pr \\" +
+                                    "-Dsonar.host.url=$SONAR_HOST_URL \\" +
+                                    "-Dsonar.login=$SONAR_AUTH_TOKEN"
+                        }
+                    }
+                },
+                serviceTests: {
+                    stage('Service tests') {
+                        sh './gradlew serviceTest'
+                    }
+                }, providerContractTest: {
+                     stage('Run and Verify provider contract Tests') {
+                         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'PACTBROKER_CREDENTIALS',
+                                                 usernameVariable: 'PACTBROKER_USER', passwordVariable: 'PACTBROKER_PASSWORD']]) {
+                            sh './gradlew providerContractTest -PpactBrokerUserName=${PACTBROKER_USER} -PpactBrokerPassword=${PACTBROKER_PASSWORD}'
+                     }
+                    }
+                }, securityAudit: {
+                    stage('OWASP Security audit') {
+                        sh './gradlew dependencyCheckAnalyze'
+                    }
+                }
+            ])
+
+            // Separated this stage because if we run it right after Run SonarQube stage, it's picking the old report.
+            stage('Validate SonarQube QualityGate') {
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'SONAR_HOST_AND_TOKEN',
+                                          usernameVariable: 'SONAR_HOST_URL', passwordVariable: 'SONAR_AUTH_TOKEN']]) {
+                    sh "./read_sonar_qube_status.sh $SONAR_HOST_URL category-service-pr"
+                }
+            }
+            currentBuild.result = 'SUCCESS'
+        }
+    } catch (error) {
+        echo error.message
+        error.printStackTrace()
+        currentBuild.result = 'FAILED'
+    } finally {
+    	publishHTML([
+    		allowMissing: false,
+    		alwaysLinkToLastBuild: true,
+    		keepAll: true,
+    		reportDir: 'build/reports/tests/test', 
+    		reportFiles: 'index.html', 
+    		reportName: 'Unit test report'
+    	])
+    	publishHTML([
+    		allowMissing: false,
+    		alwaysLinkToLastBuild: true,
+    		keepAll: false,
+    		reportDir: 'build/reports/tests/serviceTest', 
+    		reportFiles: 'index.html', 
+    		reportName: 'Service test report'
+    	])
+    	publishHTML([
+    		allowMissing: false,
+    		alwaysLinkToLastBuild: true,
+    		keepAll: false,
+    		reportDir: 'build/reports/tests/providerContractTest',
+    		reportFiles: 'index.html',
+    		reportName: 'Provider contract test report'
+    	])
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: false,
+            reportDir: 'build/reports',
+            reportFiles: 'dependency-check-report.html',
+            reportName: 'Dependency check report'
+        ])
+    }
+
+    step([$class: 'StashNotifier'])
+}

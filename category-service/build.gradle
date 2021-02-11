@@ -1,0 +1,301 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.13.RELEASE'
+        springCloudVersion = 'Dalston.RELEASE'
+        ELASTICSEARCH_VERSION = '6.6.1'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url "http://jcenter.bintray.com"
+        }
+
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2")
+        classpath("org.owasp:dependency-check-gradle:3.1.2")
+        classpath("org.jfrog.buildinfo:build-info-extractor-gradle:4.7.2")
+    }
+}
+
+plugins {
+    id "org.sonarqube" version "2.6.2"
+    id "com.gorylenko.gradle-git-properties" version "1.4.16"
+    id "au.com.dius.pact" version "3.5.10"
+    id "nebula.dependency-lock" version "5.0.5"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "category-service"
+        property "sonar.projectKey", "category-service"
+        property "sonar.buildbreaker.skip", "false"
+        property "sonar.exclusions", "**/CategoryServiceApplication.java, **/ElasticSearchConfig.java, **/CategoryServiceConfig.java, **/VaultConfig.java"
+    }
+}
+
+task sonarFailure {
+    doLast {
+        throw new GradleException('SonarQube verification failed')
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://artifacts.elastic.co/maven"
+    }
+}
+
+allprojects {
+    ext.baseVersion = "0.0.1"
+    ext.snapshotVersion = true
+    group = "com.sixthday"
+    version = "$baseVersion" + (snapshotVersion ? "-SNAPSHOT" : "")
+}
+
+ext.ecr_repo_name = "category-service"
+
+apply from: 'gradle/deploy.gradle'
+apply plugin: "com.jfrog.artifactory"
+apply plugin: "org.sonarqube"
+apply plugin: 'application'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'jacoco'
+apply plugin: 'java'
+apply plugin: 'org.owasp.dependencycheck'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'nebula.dependency-lock'
+
+mainClassName = 'com.sixthday.category.CategoryServiceApplication'
+
+jar {
+    group = 'com.sixthday.category'
+    baseName = 'category-service'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+sourceSets {
+    test {
+        java.srcDirs = ['src/test/unitTest/java']
+    }
+    serviceTest {
+        java.srcDirs = ['src/test/serviceTest/java']
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
+    integrationTest {
+        java.srcDirs = ['src/test/integrationTest/java']
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
+    providerContractTest {
+        java.srcDirs = ['src/test/contractTest/provider/java']
+        resources.srcDirs = ['src/test/contractTest/resources']
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
+}
+
+configurations {
+    serviceTestCompile.extendsFrom testCompile
+    serviceTestRuntime.extendsFrom testRuntime
+    integrationTestCompile.extendsFrom testCompile
+    integrationTestRuntime.extendsFrom testRuntime
+
+    providerContractTestCompile.extendsFrom testCompile
+    providerContractTestCompile.extendsFrom testRuntime
+
+    all*.exclude module: 'spring-boot-starter-logging'
+}
+
+test {
+    systemProperty "Log4jContextSelector", "org.apache.logging.log4j.core.selector.BasicContextSelector"
+
+    jacoco {
+        append = false
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        classDumpDir = file("$buildDir/jacoco/classpathdumps")
+    }
+}
+
+task serviceTest(type: Test, description: 'Runs the service tests.', group: 'Verification') {
+    testClassesDir = sourceSets.serviceTest.output.classesDir
+    classpath = sourceSets.serviceTest.runtimeClasspath
+}
+
+task integrationTest(type: Test, description: 'Runs the integration tests.', group: 'Verification') {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+dependencies {
+    compile 'org.projectlombok:lombok'
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-configuration-processor')
+
+    //vault dependencies
+    compile("org.springframework.cloud:spring-cloud-starter-vault-config")
+
+    //consul dependencies
+    compile('org.springframework.cloud:spring-cloud-starter-consul-config')
+
+    // elasticsearch dependencies
+    compile("org.elasticsearch:elasticsearch:${ELASTICSEARCH_VERSION}")
+    compile("org.elasticsearch.client:elasticsearch-rest-high-level-client:${ELASTICSEARCH_VERSION}")
+
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+
+    //slf4j
+    compile('org.slf4j:slf4j-api:1.7.25')
+    compile('org.apache.logging.log4j:log4j-slf4j-impl:2.8.2')
+    compile('org.apache.logging.log4j:log4j-core:2.8.2')
+    compile('org.apache.logging.log4j:log4j-api:2.8.2')
+    compile('org.apache.logging.log4j:log4j-jcl:2.8.2')
+    compile('com.lmax:disruptor:3.3.6')
+    compile('com.savoirtech.logging:slf4j-json-logger:2.0.2')
+
+    //toggles
+    compile('com.sixthday:toggler:0.0.17-RELEASE')
+
+    //logger
+    compile('com.sixthday:logger:0.0.16-RELEASE')
+
+    //pact
+    testCompile('au.com.dius:pact-jvm-provider-junit_2.12:3.5.10')
+    testCompile('au.com.dius:pact-jvm-provider-spring_2.12:3.5.10')
+    testCompile('au.com.dius:pact-jvm-consumer-junit_2.12:3.5.10')
+    testCompile('au.com.dius:pact-jvm-provider-gradle_2.12:3.5.10')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('pl.pragmatists:JUnitParams:1.1.1')
+
+    //restassured
+    testCompile('com.jayway.restassured:rest-assured:2.9.+')
+    testCompile('com.jayway.jsonpath:json-path-assert:2.2.+')
+    testCompile('org.powermock:powermock-module-junit4:1.6.4')
+    testCompile('org.powermock:powermock-api-mockito:1.7.4')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencyLock {
+    includeTransitives = true
+}
+
+integrationTest {
+    systemProperties = System.properties
+}
+
+bootRun {
+    jvmArgs = ["-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=18200"]
+}
+
+def includeBuildInfo = findProperty('buildInfo') ?: false
+
+springBoot {
+    buildInfo {
+        if (includeBuildInfo) {
+            additionalProperties = [
+                    time: buildTime()
+            ]
+        }
+    }
+}
+
+gitProperties {
+    dateFormat = "yyyy-MM-dd  HH:mm:ss z"
+    dateFormatTimeZone = 'CST'
+}
+
+def buildTime() {
+    final dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z")
+    def localSystemTime = dateFormat.format(new java.util.Date())
+    def jenkinsBuildTime = System.getenv('BUILD_TIMESTAMP')
+    Date date = dateFormat.parse(jenkinsBuildTime ? jenkinsBuildTime : localSystemTime);
+    dateFormat.timeZone = TimeZone.getTimeZone('America/Chicago')
+    dateFormat.format(date)
+}
+
+def jobName = findProperty('build.job.name') ?: 'local'
+def jobNumber = findProperty('build.job.number') ?: 'local'
+
+processResources {
+    inputs.property('jobName', jobName)
+    inputs.property('jobNumber', jobNumber)
+
+    filter ReplaceTokens, tokens: [
+            'jenkins.job.name'    : jobName,
+            'jenkins.build.number': jobNumber
+    ]
+}
+
+run { systemProperties = System.properties }
+
+task dockerTestImage(type: TestDockerImage)
+//Fetch the PACT_BROKER_ARTIFACTORY_URL from Jenkins job params if available. Else proceed with default.
+final PACT_BROKER_PROTOCOL = "https"
+final PACT_BROKER_ARTIFACTORY_URL = 'uswest2-dev-global-pact.nmgcloudapps.com'
+if(System.getenv('PACT_BROKER_ARTIFACTORY_URL') != null) {
+	PACT_BROKER_ARTIFACTORY_URL = System.getenv('PACT_BROKER_ARTIFACTORY_URL')
+}
+logger.quiet("PACT_BROKER_ARTIFACTORY_URL set to ${PACT_BROKER_ARTIFACTORY_URL}")
+
+task providerContractTest(type: Test, description: 'Runs the provider contract tests.') {
+    final defaultHttpsPort = "443"
+    systemProperty 'pactbroker.hostname', PACT_BROKER_ARTIFACTORY_URL
+    systemProperty 'pactbroker.protocol', PACT_BROKER_PROTOCOL
+    systemProperty 'pactbroker.port', defaultHttpsPort
+    testClassesDir = sourceSets.providerContractTest.output.classesDir
+    classpath = sourceSets.providerContractTest.runtimeClasspath
+}
+
+pact {
+    publish {
+        pactDirectory = "${buildDir}/pacts/"
+        pactBrokerUrl = "$PACT_BROKER_PROTOCOL://$PACT_BROKER_ARTIFACTORY_URL"
+    }
+}
+
+artifactory {
+    contextUrl = project.hasProperty('artifactoryUrl') ? project.artifactoryUrl : 'http://jfrog.mynmg.com'
+    resolve {
+        repository {
+            repoKey = 'libs-sixthday-dt-local'
+            username = project.hasProperty('artifactoryUser') ? project.artifactoryUser : 'micserv'
+            password = project.hasProperty('artifactoryPassword') ? project.artifactoryPassword : 'AP2FMsTK4gXCQx4TYzpmMAY6yGk'
+            maven = true
+        }
+    }
+}
+
+task sonarCheck(type: Exec) {
+    commandLine './run_sonar_build_local.sh'
+}
+
+dependencyCheck {
+    cve {
+        url20Modified = 'https://nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-modified.xml.gz'
+        url20Base = 'https://nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-%d.xml.gz'
+    }
+    analyzers {
+        centralEnabled = false
+    }
+    suppressionFile = './owasp-suppressions.xml'
+    failBuildOnCVSS = 7
+}

@@ -1,0 +1,117 @@
+import groovy.json.JsonSlurper
+
+def jobName = findProperty('build.job.name') ?: 'local'
+def jobNumber = findProperty('build.job.number') ?: 'local'
+
+project.metaClass.execWithOutput { Closure block ->
+    def execOutputStream = new ByteArrayOutputStream()
+    def success = false
+    try {
+        exec {
+            block.delegate = delegate
+            block()
+            standardOutput = execOutputStream
+        }
+        success = true
+    } finally {
+        if (!success) {
+            logger.error(execOutputStream.toString())
+        }
+    }
+    return execOutputStream.toString().trim()
+}
+
+project.metaClass.execWithJsonOutput { Closure block ->
+    def output = execWithOutput(block)
+    return new JsonSlurper().parseText(output)
+}
+
+//def ecr_repo_hostname = "168860074409.dkr.ecr.us-west-2.amazonaws.com"
+
+def ecr_repo_hostname = ''
+if (findProperty('ecr_repo_host.name') !=null)
+{
+  ecr_repo_hostname = findProperty('ecr_repo_host.name')
+}
+else
+{
+	ecr_repo_hostname = '168860074409.dkr.ecr.us-west-2.amazonaws.com'
+}
+def aws_repo_url = "${ecr_repo_hostname}/${ecr_repo_name}"
+def image_name = findProperty('image.name')
+def app_image_name = "${aws_repo_url}:${image_name}"
+def deploy_image_name = "${app_image_name}-deploy"
+
+task dockerBuildImage {
+    dependsOn 'assemble'
+    doLast {
+        def buildArgs = ["build", "-q", "."]
+        if (image_name) {
+            buildArgs.addAll("-t", app_image_name)
+        }
+        ext.imageID = project.execWithOutput {
+            executable = "docker"
+            args = buildArgs
+        }.replace('sha256:', '')
+        println "Docker image ${ext.imageID}"
+    }
+}
+
+ext.waitForService = { baseUrl, buildNumber, envName, totalWaitTimeSeconds ->
+    URL infoUrl = "${baseUrl}/info".toURL()
+    logger.quiet "Waiting for ${infoUrl}"
+    retryForTotalTime(totalWaitTimeSeconds) {
+        checkService(infoUrl, buildNumber, envName)
+    }
+}
+
+def retryForTotalTime(totalWaitSeconds, retryDelay = 5, action) {
+    def startTime = System.currentTimeSeconds()
+    def maxEndTime = startTime + totalWaitSeconds
+    def failure
+    while (System.currentTimeSeconds() < maxEndTime) {
+        Thread.sleep(retryDelay * 1000)
+        try {
+            return action()
+        } catch (Throwable t) {
+            logger.warn t.message
+            failure = t
+        }
+    }
+    throw failure
+}
+
+void checkService(URL infoUrl, buildNumber, env) {
+    logger.info "Getting info from ${infoUrl}"
+    def infoText = infoUrl.text
+    logger.debug "Received ${infoText}"
+    def info = new JsonSlurper().parseText(infoText)
+    def envBuildNumber = info.jenkins.build_number
+    def envEnvironment = info.environment
+
+    if (buildNumber && buildNumber != envBuildNumber) {
+        throw new RuntimeException("Build number ${envBuildNumber} does not match expected build number of ${buildNumber}")
+    }
+    if (env && env != envEnvironment) {
+        throw new RuntimeException("Environment ${envEnvironment} does not match expected environment of ${env}")
+    }
+    logger.quiet "Verified ${buildNumber ? "build \"${buildNumber}\" with " : ''}profile \"${env}\" at ${infoUrl}"
+}
+
+task dockerTestLocalImage(type: TestDockerImage) {
+    dependsOn dockerBuildImage
+
+    gradle.taskGraph.afterTask { Task task, TaskState state ->
+        if (task == dockerBuildImage && !state.failure) {
+            if (!imageName) {
+                imageName = dockerBuildImage.ext.imageID
+            }
+            if (!buildNumber) {
+                buildNumber = jobNumber
+            }
+            if (!env) {
+                env = "dev"
+            }
+        }
+    }
+}

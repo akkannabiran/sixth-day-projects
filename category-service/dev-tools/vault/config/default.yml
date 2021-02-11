@@ -1,0 +1,6 @@
+{
+  "category-service.elasticsearch.username": "elastic",
+  "category-service.elasticsearch.password": "changeme",
+  "category-service.elasticsearch6.username": "elastic",
+  "category-service.elasticsearch6.password": "changeme"
+}

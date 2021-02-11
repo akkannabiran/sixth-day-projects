@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" immediateFlush="true">
+            <PatternLayout pattern='%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %X %msg%n%throwable'/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework" level="ERROR"/>
+        <Logger name="org.hibernate" level="ERROR"/>
+        <Logger name="com.datastax" level="ERROR"/>
+        <Logger name="io.netty" level="ERROR"/>
+        <Logger name="com.sixthday" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
+

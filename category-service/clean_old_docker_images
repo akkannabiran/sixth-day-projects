@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+LOG_FILE_NAME=$1
+if [ -z ${LOG_FILE_NAME} ]; then LOG_FILE_NAME=/dev/null; fi
+
+# Delete all containers that are not running
+docker rm $(docker ps -q -f status=exited) || true
+
+# Delete dangling volumes
+docker volume rm $(docker volume ls -qf dangling=true) || true
+
+# Force delete images older than 1 hour
+docker images | awk 'match($5, "(days|weeks|months)") || ($4>1 && $5=="hours") {print $3}' | xargs docker rmi --force &> "${LOG_FILE_NAME}" || true

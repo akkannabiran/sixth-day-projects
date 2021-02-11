@@ -1,0 +1,18 @@
+FROM openjdk:8u191-jre-alpine3.8
+
+RUN apk add --no-cache curl groff less libstdc++ python3
+RUN pip3 install awscli virtualenv
+
+WORKDIR /infra
+
+COPY ./gradlew ./gradlew
+COPY ./gradle ./gradle
+COPY ./buildSrc ./buildSrc
+
+RUN ./gradlew --no-daemon tasks
+
+COPY ./build.gradle ./build.gradle
+
+RUN ./gradlew --no-daemon tasks
+
+ENTRYPOINT ["./gradlew"]

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="NavigationServiceLogger" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <MarkerPatternSelector defaultPattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %X %msg%n%throwable">
+                    <PatternMatch key="NoMDCLogMarker"
+                                  pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %msg%n%throwable"/>
+                    <PatternMatch key="ContentSyncLogMarker"
+                                  pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %notEmpty{MessageId=&quot;%X{CS.messageId}&quot;, MessageType=&quot;%X{CS.messageType}&quot;, ContextId=&quot;%X{CS.contextId}&quot;, OriginTimestamp=&quot;%X{CS.originTimestamp}&quot;, NMOSRC=&quot;%X{CS.NMOSRC}&quot;, NMODEST=&quot;%X{CS.NMODEST}&quot;, NMORESOURCE=&quot;%X{CS.NMORESOURCE}&quot;,} %msg%n%throwable"/>
+                </MarkerPatternSelector>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.sixthday" level="INFO"/>
+        <Logger name="org.springframework.cloud.bootstrap.config" level="INFO"/>
+        <Root level="WARN">
+            <AppenderRef ref="NavigationServiceLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>

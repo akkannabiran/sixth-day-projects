@@ -1,0 +1,13 @@
+navigation:
+  elastic-search-config:
+    host: elasticsearch
+    port: 9300
+    host6: elasticsearch
+    port6: 9200
+  rabbitmq-config:
+    host: rabbitmq
+    port: 5672
+    publisher:
+      category-event:
+        host: rabbitmq
+        port: 5672

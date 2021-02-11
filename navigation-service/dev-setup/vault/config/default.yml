@@ -1,0 +1,8 @@
+{
+  "navigation.vault-config.elasticsearch-username": "elastic",
+  "navigation.vault-config.elasticsearch-password": "changememe",
+  "navigation.vault-config.elasticsearch6-username": "elastic",
+  "navigation.vault-config.elasticsearch6-password": "changememe",
+  "navigation.vault-config.rabbitmq-username": "guest",
+  "navigation.vault-config.rabbitmq-password": "guest"
+}

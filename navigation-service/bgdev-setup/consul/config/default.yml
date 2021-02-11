@@ -1,0 +1,155 @@
+spring:
+  cache:
+    type: CAFFEINE
+    cache-names: siloNavTreesV1, siloNavTreesV2,
+    caffeine:
+      spec: maximumSize=400,expireAfterWrite=5m
+
+navigation:
+  storage:
+    s3:
+      bucketName: navigation-bucket
+      clientRegion: us-west-2
+  integration:
+    country-codes: AD, AE, AG, AI, AL, AM, AO, AT, AU, AW, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BM, BN, BO, BQ, BR, BS, BT, BW, BY, BZ, CA, CC, CD, CF, CG, CH, CI, CK, CL, CM, CN, CO, CR, CV, CW, CX, CY, CZ, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, ER, ES, ET, FI, FJ, FK, FM, FO, FR, GA, GB, GD, GE, GF, GG, GH, GI, GL, GM, GN, GP, GQ, GR, GT, GW, GY, HK, HN, HR, HT, HU, ID, IE, IL, IM, IN, IS, IT, JE, JM, JO, JP, KE, KG, KH, KI, KM, KN, KR, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, MA, MC, MD, ME, MG, MH, MK, ML, MM, MN, MO, MQ, MR, MS, MT, MU, MV, MW, MX, MY, MZ, NA, NC, NE, NG, NI, NL, NO, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, PM, PT, PW, PY, QA, RE, RO, RS, RU, RW, SA, SB, SC, SE, SG, SI, SK, SL, SM, SN, SO, SR, ST, SV, SX, SZ, TC, TD, TG, TH, TJ, TL, TN, TO, TR, TT, TV, TW, TZ, UA, UG, US, UY, UZ, VA, VC, VG, VN, VU, WF, WS, YE, YT, ZA, ZM, ZW
+  elastic-search-config:
+    cluster-name: elasticsearch
+    host: localhost
+    port: 9300
+    host6: localhost
+    port6: 9200
+    index-name: category_index
+    document-type: category
+    document-type6: _doc
+    left-nav-index:
+      name: leftnav_index
+      document-type: leftnav
+      document-type6: _doc
+    enable-transport-sniff: false
+  rabbitmq-config:
+    queue-name: sixthday-category
+    host: localhost
+    port: 5672
+    connection-timeout: 30000
+    concurrent-consumers: 10
+    prefetch-count: 10
+    publisher:
+      category-event:
+        enabled: true
+        queue-name: navigation-service.category
+        host: localhost
+        port: 5672
+        connection-timeout: 30000
+  category-config:
+    id-config:
+      live: cat000000
+      seo-footer: ftr000000
+      designer: cat000730
+      marketing: cat8900735
+      stage: cat400731
+    header-asset-url: /category/{categoryId}/r_head_long.html
+    filter-options:
+      - filter-key: Designer
+        display-text: Designer
+      - filter-key: level2
+        display-text: Category
+      - filter-key: level3
+        display-text: Type
+      - filter-key: Size
+        display-text: Size
+      - filter-key: Color
+        display-text: Color
+      - filter-key: priceBandDefault
+        display-text: Price
+    reduced-child-count-silos: cat000553
+    category-templates:
+      - type: "X0: Redirect Long Desc"
+        key: X0
+      - type: P3
+        key: P3
+
+
+management:
+  security:
+    enabled: false
+  health:
+    rabbit:
+      enabled: true
+
+featuretoggles:
+  toggles:
+    NAVIGATION_IN_S3: true
+
+hystrix:
+  metrics:
+    enabled: false
+  command:
+    category-elastic-search:
+      execution:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 100
+          thread:
+            timeoutInMilliseconds: 5000
+          strategy: THREAD
+      circuitBreaker:
+        requestVolumeThreshold: 5
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 2000
+      fallback:
+        enabled: true
+    leftnav-elastic-search:
+      execution:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 100
+          thread:
+            timeoutInMilliseconds: 5000
+          strategy: THREAD
+      circuitBreaker:
+        requestVolumeThreshold: 5
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 2000
+      fallback:
+        enabled: true
+    leftnav-elastic-cache:
+      execution:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 100
+          thread:
+            timeoutInMilliseconds: 5000
+          strategy: THREAD
+      circuitBreaker:
+        requestVolumeThreshold: 5
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 2000
+      fallback:
+        enabled: true
+    category-elastic-cache:
+      execution:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 100
+          thread:
+            timeoutInMilliseconds: 5000
+          strategy: THREAD
+      circuitBreaker:
+        requestVolumeThreshold: 5
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 2000
+      fallback:
+        enabled: true
+  threadpool:
+    category-elastic-search:
+      coreSize: 100
+      keepAliveTimeMinutes: 1
+    category-elastic-cache:
+      coreSize: 100
+      keepAliveTimeMinutes: 1
+    leftnav-elastic-search:
+      coreSize: 100
+      keepAliveTimeMinutes: 1
+    leftnav-elastic-cahe:
+      coreSize: 100
+      keepAliveTimeMinutes: 1

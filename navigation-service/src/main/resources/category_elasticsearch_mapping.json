@@ -1,0 +1,226 @@
+{
+  "category": {
+    "dynamic": false,
+    "properties": {
+      "id": {
+        "type": "text"
+      },
+      "displayName": {
+        "type": "text"
+      },
+      "children": {
+        "type": "text"
+      },
+      "name": {
+        "type": "text"
+      },
+      "templateType": {
+        "type": "text"
+      },
+      "longDescription": {
+        "type": "text"
+      },
+      "firstSellableProductImageUrl": {
+        "type": "text"
+      },
+      "leftNavImageAvailableOverride": {
+        "type": "text"
+      },
+      "leftNavImageAvailable": {
+        "type": "boolean"
+      },
+      "mobileHideEntrySubcats": {
+        "type": "boolean"
+      },
+      "alternateSeoName": {
+        "type": "text"
+      },
+      "seoTitleOverride": {
+        "type": "text"
+      },
+      "canonicalUrl": {
+        "type": "text"
+      },
+      "seoContentTitle": {
+        "type": "text"
+      },
+      "seoContentDescription": {
+        "type": "text"
+      },
+      "seoTags": {
+        "type": "text"
+      },
+      "boutique": {
+        "type": "boolean"
+      },
+      "boutiqueChild": {
+        "type": "boolean"
+      },
+      "imageAvailable": {
+        "type": "boolean"
+      },
+      "htmlAvailable": {
+        "type": "boolean"
+      },
+      "expandCategory": {
+        "type": "boolean"
+      },
+      "dontShowChildren": {
+        "type": "boolean"
+      },
+      "personalized": {
+        "type": "boolean"
+      },
+      "hidden": {
+        "type": "boolean"
+      },
+      "noResults": {
+        "type": "boolean"
+      },
+      "displayAsGroups": {
+        "type": "boolean"
+      },
+      "driveToGroupPDP": {
+        "type": "boolean"
+      },
+      "excludeFromPCS": {
+        "type": "boolean"
+      },
+      "thumbImageShot": {
+        "type": "text"
+      },
+      "searchCriteria": {
+        "properties": {
+          "include": {
+            "properties": {
+              "hierarchy": {
+                "type": "object"
+              },
+              "attributes": {
+                "type": "object"
+              }
+            }
+          },
+          "exclude": {
+            "properties": {
+              "hierarchy": {
+                "type": "object"
+              },
+              "attributes": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "productRefinements": {
+        "properties": {
+          "adornOnly": {
+            "type": "boolean"
+          },
+          "adornAndSaleOnly": {
+            "type": "boolean"
+          },
+          "regOnly": {
+            "type": "boolean"
+          },
+          "saleOnly": {
+            "type": "boolean"
+          },
+          "allProducts": {
+            "type": "boolean"
+          },
+          "priceRange": {
+            "properties": {
+              "option": {
+                "type": "text"
+              },
+              "min": {
+                "type": "double"
+              },
+              "max": {
+                "type": "double"
+              }
+            }
+          }
+        }
+      },
+      "showAllProducts": {
+        "type": "boolean"
+      },
+      "cmosCatalogCodes": {
+        "type": "text"
+      },
+      "newArrivalLimit": {
+        "type": "integer"
+      },
+      "defaultPath": {
+        "type": "text"
+      },
+      "preferredProductIds": {
+        "type": "text"
+      },
+      "parents": {
+        "type": "object"
+      },
+      "contextualProperties": {
+        "properties": {
+          "parentId": {
+            "type": "text"
+          },
+          "desktopAlternateName": {
+            "type": "text"
+          },
+          "childCategoryOrder": {
+            "type": "text"
+          },
+          "driveToSubcategoryId": {
+            "type": "text"
+          },
+          "alternateImagePath": {
+            "type": "text"
+          },
+          "description": {
+            "type": "text"
+          },
+          "boutiqueTextAdornments": {
+            "type": "text"
+          },
+          "redText": {
+            "type": "boolean"
+          },
+          "boutiqueTextAdornmentsOverride": {
+            "type": "boolean"
+          },
+          "childCategoryOrder": {
+            "type": "text"
+          }
+        }
+      },
+      "imageOverridecategoryId": {
+        "type": "text"
+      },
+      "hideMobileImage": {
+        "type": "boolean"
+      },
+      "applicableFilters": {
+        "type": "object"
+      },
+      "includeAllItems": {
+        "type": "boolean"
+      },
+      "excludedCountries": {
+        "type": "text"
+      },
+      "redirectType": {
+        "type": "text"
+      },
+      "redirectTo": {
+        "type": "text"
+      },
+      "isDeleted": {
+        "type": "boolean"
+      }
+    }
+  }
+}

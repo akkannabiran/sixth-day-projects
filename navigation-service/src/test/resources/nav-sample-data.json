@@ -1,0 +1,4698 @@
+{
+  "status": "SUCCESS",
+  "silos": [
+    {
+      "id": "cat000730",
+      "siloDisplayName": "Designers",
+      "url": "/c/designers-cat000730",
+      "attributes": {
+        "promoPath": "/category/cat45050736/r_main_drawer_promo.html"
+      },
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "By A-Z",
+              "level1CategoryDisplayName": "By A-Z",
+              "url": "",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "A",
+                      "level2CategoryDisplayName": "A",
+                      "url": "/c/designers-cat000730?dIndex=A&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "B",
+                      "level2CategoryDisplayName": "B",
+                      "url": "/c/designers-cat000730?dIndex=B&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "C",
+                      "level2CategoryDisplayName": "C",
+                      "url": "/c/designers-cat000730?dIndex=C&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "D",
+                      "level2CategoryDisplayName": "D",
+                      "url": "/c/designers-cat000730?dIndex=D&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "E",
+                      "level2CategoryDisplayName": "E",
+                      "url": "/c/designers-cat000730?dIndex=E&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "F",
+                      "level2CategoryDisplayName": "F",
+                      "url": "/c/designers-cat000730?dIndex=F&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "G",
+                      "level2CategoryDisplayName": "G",
+                      "url": "/c/designers-cat000730?dIndex=G&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "H",
+                      "level2CategoryDisplayName": "H",
+                      "url": "/c/designers-cat000730?dIndex=H&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "I",
+                      "level2CategoryDisplayName": "I",
+                      "url": "/c/designers-cat000730?dIndex=I&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "J",
+                      "level2CategoryDisplayName": "J",
+                      "url": "/c/designers-cat000730?dIndex=J&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "K",
+                      "level2CategoryDisplayName": "K",
+                      "url": "/c/designers-cat000730?dIndex=K&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "L",
+                      "level2CategoryDisplayName": "L",
+                      "url": "/c/designers-cat000730?dIndex=L&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "M",
+                      "level2CategoryDisplayName": "M",
+                      "url": "/c/designers-cat000730?dIndex=M&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "N",
+                      "level2CategoryDisplayName": "N",
+                      "url": "/c/designers-cat000730?dIndex=N&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "O",
+                      "level2CategoryDisplayName": "O",
+                      "url": "/c/designers-cat000730?dIndex=O&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "P",
+                      "level2CategoryDisplayName": "P",
+                      "url": "/c/designers-cat000730?dIndex=P&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "Q",
+                      "level2CategoryDisplayName": "Q",
+                      "url": "",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "R",
+                      "level2CategoryDisplayName": "R",
+                      "url": "/c/designers-cat000730?dIndex=R&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "S",
+                      "level2CategoryDisplayName": "S",
+                      "url": "/c/designers-cat000730?dIndex=S&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T",
+                      "level2CategoryDisplayName": "T",
+                      "url": "/c/designers-cat000730?dIndex=T&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "U",
+                      "level2CategoryDisplayName": "U",
+                      "url": "/c/designers-cat000730?dIndex=U&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "V",
+                      "level2CategoryDisplayName": "V",
+                      "url": "/c/designers-cat000730?dIndex=V&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "W",
+                      "level2CategoryDisplayName": "W",
+                      "url": "/c/designers-cat000730?dIndex=W&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "X",
+                      "level2CategoryDisplayName": "X",
+                      "url": "/c/designers-cat000730?dIndex=X&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "Y",
+                      "level2CategoryDisplayName": "Y",
+                      "url": "/c/designers-cat000730?dIndex=Y&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "Z",
+                      "level2CategoryDisplayName": "Z",
+                      "url": "/c/designers-cat000730?dIndex=Z&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "#",
+                      "level2CategoryDisplayName": "#",
+                      "url": "/c/designers-cat000730?dIndex=NUMBER&drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "View All",
+                      "level2CategoryDisplayName": "View All",
+                      "url": "/c/designers-cat000730",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "designerByCategory",
+              "level1CategoryDisplayName": "DESIGNERS BY CATEGORY",
+              "url": "",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat59300750",
+                      "level2CategoryDisplayName": "CUSP - 123",
+                      "url": "/c/cusp-cusp-123-cat59300750?drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat14090736",
+                      "level2CategoryDisplayName": "Home",
+                      "url": "/c/home-food-home-cat14090736?drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000009",
+                      "level2CategoryDisplayName": "All Designers",
+                      "url": "/c/womens-clothing-all-designers-cat000009?drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000149",
+                      "level2CategoryDisplayName": "Shoe",
+                      "url": "/c/shoes-shoe-cat000149?drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat42130739",
+                      "level2CategoryDisplayName": "Handbags",
+                      "url": "/c/cat13030735-handbags-cat42130739?drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat42120742",
+                      "level2CategoryDisplayName": "Jewelry & Accessories",
+                      "url": "/c/jewelry-jewelry-accessories-cat42120742?drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat4830738",
+                      "level2CategoryDisplayName": "Beauty",
+                      "url": "/c/beauty-beauty-cat4830738?drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000478",
+                      "level2CategoryDisplayName": "The Man's Store",
+                      "url": "/c/the-mans-store-the-mans-store-cat000478?drawer=Designer",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat7680740",
+                      "level2CategoryDisplayName": "NM Kids",
+                      "url": "/c/kids-nm-kids-cat7680740?drawer=Designer",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "featuredd",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270748",
+                      "level2CategoryDisplayName": "Redirect Category with Old URLs",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-multiple-level-drive-to-category-do-not-redirect-to-this-category-T1CAT45270757?menupath=featuredd_T1CAT45270748_T1CAT45270752_T1CAT45270757&navAction=menu",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270735",
+                      "level2CategoryDisplayName": "Test Category with Subcat Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-multiple-drive-tos-not-for-drive-to-T1CAT45270744?menupath=featuredd_T1CAT45270735_T1CAT45270742_T1CAT45270744&navAction=menu",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT43930782",
+                      "level2CategoryDisplayName": "Sale",
+                      "url": "/c/featured-designers-sale-T1CAT43930782",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60940773",
+                      "level2CategoryDisplayName": "8 Greens",
+                      "url": "/c/designers-8-greens-cat60940773",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10020738",
+                      "level2CategoryDisplayName": "Akris",
+                      "url": "/c/designers-akris-cat10020738",
+                      "attributes": {
+                        "redTextFlag": true
+                      }
+                    },
+                    {
+                      "id": "cat52900745",
+                      "level2CategoryDisplayName": "Beats by Dr. Dre",
+                      "url": "/c/designers-beats-by-dr-dre-cat52900745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT41820743",
+                      "level2CategoryDisplayName": "Chanel Category with Designer Attribute",
+                      "url": "/c/test-silo-testing-alt-cat-name-chanel-category-with-designer-attribute-T1CAT41820743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000492",
+                      "level2CategoryDisplayName": "Charvet",
+                      "url": "/c/designers-charvet-cat000492",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat54340751",
+                      "level2CategoryDisplayName": "Chilewich",
+                      "url": "/c/designers-chilewich-cat54340751",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10090734",
+                      "level2CategoryDisplayName": "Chloe",
+                      "url": "/c/designers-chloe-cat10090734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240842",
+                      "level2CategoryDisplayName": "Christian Louboutin",
+                      "url": "/c/designers-christian-louboutin-shoes-cat39620738?menupath=featuredd_cat43240842_cat39620738&navAction=menu",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat32530732",
+                      "level2CategoryDisplayName": "Clarins",
+                      "url": "/c/designers-clarins-cat32530732",
+                      "attributes": {}
+                    }
+                  ]
+                },
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat20260733",
+                      "level2CategoryDisplayName": "Clarisonic",
+                      "url": "/c/designers-clarisonic-cat20260733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60940894",
+                      "level2CategoryDisplayName": "Coach New York",
+                      "url": "/c/designers-coach-new-york-cat60940894",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000449",
+                      "level2CategoryDisplayName": "CREED",
+                      "url": "/c/designers-creed-cat000449",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60270780",
+                      "level2CategoryDisplayName": "Cynthia Rowley for Hooker Furniture",
+                      "url": "/c/designers-cynthia-rowley-for-hooker-furniture-cat60270780",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat540734",
+                      "level2CategoryDisplayName": "David Yurman",
+                      "url": "/c/designers-david-yurman-mens-cuff-links-stud-sets-cat10440733?menupath=featuredd_cat540734_cat700731_cat10440733&navAction=menu",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60940955",
+                      "level2CategoryDisplayName": "De Carlini",
+                      "url": "/c/designers-de-carlini-cat60940955",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat48020747",
+                      "level2CategoryDisplayName": "Deakin & Francis",
+                      "url": "/c/designers-deakin-francis-cat48020747",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat59920749",
+                      "level2CategoryDisplayName": "Dear Rose",
+                      "url": "/c/designers-dear-rose-cat59920749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat56750746",
+                      "level2CategoryDisplayName": "Elisabeth Weinstock",
+                      "url": "/c/designers-elisabeth-weinstock-cat56750746",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000495",
+                      "level2CategoryDisplayName": "Ermenegildo Zegna",
+                      "url": "/c/designers-ermenegildo-zegna-cat000495",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat17760737",
+                      "level2CategoryDisplayName": "eskandar",
+                      "url": "/c/designers-eskandar-cat17760737",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat1720731",
+                      "level2CategoryDisplayName": "Estee Lauder",
+                      "url": "/c/designers-estee-lauder-cat1720731",
+                      "attributes": {}
+                    }
+                  ]
+                },
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat5560731",
+                      "level2CategoryDisplayName": "Etro",
+                      "url": "/c/designers-etro-cat5560731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat12890741",
+                      "level2CategoryDisplayName": "Fendi",
+                      "url": "/c/designers-fendi-cat12890741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240864",
+                      "level2CategoryDisplayName": "Ferragamo",
+                      "url": "/c/designers-ferragamo-cat43240864",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat25400731",
+                      "level2CategoryDisplayName": "Fleur't",
+                      "url": "/c/designers-fleurt-cat25400731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43700850",
+                      "level2CategoryDisplayName": "For Love & Lemons",
+                      "url": "/c/designers-for-love-lemons-cat43700850",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat51060742",
+                      "level2CategoryDisplayName": "FOREO",
+                      "url": "/c/designers-foreo-cat51060742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat47970749",
+                      "level2CategoryDisplayName": "Lafayette 148 New York",
+                      "url": "/c/designers-lafayette-148-new-york-cat47970749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat8380731",
+                      "level2CategoryDisplayName": "Lancome",
+                      "url": "/c/designers-lancome-cat8380731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46430759",
+                      "level2CategoryDisplayName": "Laurence Dacade",
+                      "url": "/c/designers-laurence-dacade-cat46430759",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat12450742",
+                      "level2CategoryDisplayName": "Lela Rose",
+                      "url": "/c/designers-lela-rose-cat12450742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat68420745",
+                      "level2CategoryDisplayName": "Louis Vuitton",
+                      "url": "/c/designers-louis-vuitton-cat68420745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat5010735",
+                      "level2CategoryDisplayName": "Marc Jacobs",
+                      "url": "/c/designers-marc-jacobs-cat5010735",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat000001",
+      "siloDisplayName": "Women's Clothing",
+      "url": "/c/womens-clothing-cat000001",
+      "attributes": {},
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "T1CAT45270735",
+              "level1CategoryDisplayName": "Test Category with Subcat Drive To",
+              "url": "/c/womens-clothing-test-category-with-subcat-drive-to-simple-drive-to-T1CAT45270737",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270737",
+                      "level2CategoryDisplayName": "Simple Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-simple-drive-to-T1CAT45270737",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270739",
+                      "level2CategoryDisplayName": "GC Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-gc-drive-to-T1CAT45270739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270742",
+                      "level2CategoryDisplayName": "Multiple Drive Tos",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-multiple-drive-tos-secondary-drive-to-T1CAT45270743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270745",
+                      "level2CategoryDisplayName": "alttttttt",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-alttttttt-T1CAT45270745",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T1CAT45270748",
+              "level1CategoryDisplayName": "Redirect Category with Old URLs",
+              "url": "/c/womens-clothing-redirect-category-with-old-urls-simple-drive-to-T1CAT45270749",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270753",
+                      "level2CategoryDisplayName": "Redirect to Grandchild Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-redirect-to-grandchild-category-T1CAT45270753",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270752",
+                      "level2CategoryDisplayName": "Multiple Level Drive To Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-multiple-level-drive-to-category-redirect-to-this-category-T1CAT45270756",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270750",
+                      "level2CategoryDisplayName": "X0 Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-x0-category-T1CAT45270750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270749",
+                      "level2CategoryDisplayName": "Simple Drive To",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-simple-drive-to-T1CAT45270749",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat000009",
+              "level1CategoryDisplayName": "All Designers",
+              "url": "/c/womens-clothing-all-designers-cat000009",
+              "attributes": {
+                "redTextFlag": true
+              },
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat44670744",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "/c/womens-clothing-featured-designers-cat44670744",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat10020738",
+                      "level2CategoryDisplayName": "Akris",
+                      "url": "/c/designers-akris-cat10020738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40360738",
+                      "level2CategoryDisplayName": "Alice + Olivia",
+                      "url": "/c/designers-alice-olivia-cat40360738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat25560734",
+                      "level2CategoryDisplayName": "BC By Brunello",
+                      "url": "/c/designers-brunello-cucinelli-womens-apparel-cat39550741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat7190734",
+                      "level2CategoryDisplayName": "Diane von Furstenberg",
+                      "url": "/c/designers-diane-von-furstenberg-apparel-cat37230738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000045",
+                      "level2CategoryDisplayName": "Eileen Fisher",
+                      "url": "/c/test-silo-rommel-holder-eileen-fisher-cat000045",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat14080756",
+                      "level2CategoryDisplayName": "Elie + Tahari 1",
+                      "url": "/c/designers-elie-tahari-1-cat14080756",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat47970749",
+                      "level2CategoryDisplayName": "Lafayette 148 New York",
+                      "url": "/c/designers-lafayette-148-new-york-cat47970749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat12450742",
+                      "level2CategoryDisplayName": "Lela Rose",
+                      "url": "/c/designers-lela-rose-cat12450742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat7310735",
+                      "level2CategoryDisplayName": "Oscar de la Renta",
+                      "url": "/c/designers-oscar-de-la-renta-apparel-cat41580760",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43890732",
+                      "level2CategoryDisplayName": "TOM FORD",
+                      "url": "/c/designers-tom-ford-katie-sunglasses-optical-frames-cat42280744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat3950733",
+                      "level2CategoryDisplayName": "Vince",
+                      "url": "/c/designers-vince-womens-apparel-cat22640732",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat17740742",
+              "level1CategoryDisplayName": "Designer Collections",
+              "url": "/c/womens-clothing-designer-collections-cat17740742",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat000727",
+                      "level2CategoryDisplayName": "Premier Designer",
+                      "url": "/c/womens-clothing-designer-collections-premier-designer-cat000727",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat59690764",
+                      "level2CategoryDisplayName": "CUSP/Contemporary",
+                      "url": "/c/womens-clothing-designer-collections-cusp-contemporary-cat59690764",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat13770760",
+                      "level2CategoryDisplayName": "Modern Mix",
+                      "url": "/c/womens-clothing-designer-collections-modern-mix-cat13770760",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10170731",
+                      "level2CategoryDisplayName": "Relaxed",
+                      "url": "/c/womens-clothing-designer-collections-relaxed-cat10170731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat17740747",
+              "level1CategoryDisplayName": "Categories",
+              "url": "/c/womens-clothing-categories-cat17740747",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat58290731",
+                      "level2CategoryDisplayName": "All Apparel",
+                      "url": "/c/womens-clothing-all-apparel-cat58290731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43810733",
+                      "level2CategoryDisplayName": "Dresses ",
+                      "url": "/c/womens-clothing-dresses-cat43810733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat48730734",
+                      "level2CategoryDisplayName": "Evening",
+                      "url": "/c/womens-clothing-evening-wear-cat48730734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat42960827",
+                      "level2CategoryDisplayName": "Tops",
+                      "url": "/c/womens-clothing-tops-cat42960827",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat56820776",
+                      "level2CategoryDisplayName": "Activewear",
+                      "url": "/c/womens-clothing-activewear-cat56820776",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44640775",
+                      "level2CategoryDisplayName": "Swimwear & Coverups",
+                      "url": "/c/womens-clothing-swimwear-coverups-cat44640775",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44700742",
+                      "level2CategoryDisplayName": "Coats",
+                      "url": "/c/womens-clothing-coats-cat44700742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat18560731",
+                      "level2CategoryDisplayName": "Jackets & Vests",
+                      "url": "/c/womens-clothing-jackets-vests-cat18560731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44980749",
+                      "level2CategoryDisplayName": "Cashmere",
+                      "url": "/c/womens-clothing-cashmere-cat44980749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat17740752",
+                      "level2CategoryDisplayName": "Pants & Shorts",
+                      "url": "/c/womens-clothing-pants-shorts-cat17740752",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat17740750",
+                      "level2CategoryDisplayName": "Skirts",
+                      "url": "/c/womens-clothing-skirts-cat17740750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat47050742",
+                      "level2CategoryDisplayName": "Jumpsuits & Rompers",
+                      "url": "/c/womens-clothing-jumpsuits-rompers-cat47050742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat13750752",
+                      "level2CategoryDisplayName": "Lingerie & Shapewear",
+                      "url": "/c/womens-clothing-lingerie-shapewear-cat13750752",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat45900739",
+                      "level2CategoryDisplayName": "Lounge & Sleepwear",
+                      "url": "/c/womens-clothing-lounge-sleepwear-cat45900739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT43040732",
+                      "level2CategoryDisplayName": "Tom Ford Sun Glasses",
+                      "url": "/c/womens-clothing-tom-ford-sun-glasses-T1CAT43040732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat59560732",
+                      "level2CategoryDisplayName": "Tech & Gadgets",
+                      "url": "/c/staging-sns-hien-tech-gadgets-cat59560732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT44710737",
+                      "level2CategoryDisplayName": "Facets Nav - Do not delete",
+                      "url": "/c/womens-clothing-facets-nav-do-not-delete-T1CAT44710737",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat47300764",
+              "level1CategoryDisplayName": "Trends",
+              "url": "/c/womens-clothing-trends-cat47300764",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat59980732",
+              "level1CategoryDisplayName": "Occasions",
+              "url": "/c/womens-clothing-occasions-cat59980732",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat3650732",
+              "level1CategoryDisplayName": "Special Sizes",
+              "url": "/c/womens-clothing-special-sizes-cat3650732",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat000116",
+                      "level2CategoryDisplayName": "Plus Size",
+                      "url": "/c/womens-clothing-special-sizes-plus-size-cat000116",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat14950738",
+                      "level2CategoryDisplayName": "Petite",
+                      "url": "/c/womens-clothing-special-sizes-petite-cat14950738",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat41020734",
+              "level1CategoryDisplayName": "NM Edits",
+              "url": "/c/womens-clothing-nm-edits-cat41020734",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat60840731",
+              "level1CategoryDisplayName": "New & Now",
+              "url": "/c/womens-clothing-new-now-cat60840731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat44540758",
+                      "level2CategoryDisplayName": "Best Sellers",
+                      "url": "/c/womens-clothing-new-now-best-sellers-cat44540758",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat56520748",
+                      "level2CategoryDisplayName": "Fall 2016",
+                      "url": "/c/cat13030735-new-now-fall-2016-premier-designer-cat56520749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43810733",
+                      "level2CategoryDisplayName": "Dresses ",
+                      "url": "/c/womens-clothing-dresses-cat43810733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60520760",
+                      "level2CategoryDisplayName": "The Adorned Shoe",
+                      "url": "/c/womens-clothing-new-now-the-adorned-shoe-cat60520760",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat54950761",
+              "level1CategoryDisplayName": "Sale",
+              "url": "/c/womens-clothing-sale-cat54950761",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat46630745",
+              "level1CategoryDisplayName": "New Arrivals",
+              "url": "/c/womens-clothing-new-arrivals-cat46630745",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat55120731",
+              "level1CategoryDisplayName": "Exclusives",
+              "url": "/c/womens-clothing-exclusives-cat55120731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat000141",
+      "siloDisplayName": "Shoes",
+      "url": "/c/shoes-cat000141",
+      "attributes": {
+        "promoPath": "/category/cat44710739/r_main_drawer_promo.html"
+      },
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "T1CAT45270735",
+              "level1CategoryDisplayName": "Test Category with Subcat Drive To",
+              "url": "/c/womens-clothing-test-category-with-subcat-drive-to-multiple-drive-tos-T1CAT45270742",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270745",
+                      "level2CategoryDisplayName": "alttttttt",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-alttttttt-T1CAT45270745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270742",
+                      "level2CategoryDisplayName": "Multiple Drive Tos",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-multiple-drive-tos-secondary-drive-to-T1CAT45270743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270739",
+                      "level2CategoryDisplayName": "GC Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-gc-drive-to-T1CAT45270739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270737",
+                      "level2CategoryDisplayName": "Simple Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-simple-drive-to-T1CAT45270737",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T1CAT45270748",
+              "level1CategoryDisplayName": "Redirect Category with Old URLs",
+              "url": "/c/womens-clothing-redirect-category-with-old-urls-multiple-level-drive-to-category-T1CAT45270752",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270753",
+                      "level2CategoryDisplayName": "Redirect to Grandchild Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-redirect-to-grandchild-category-T1CAT45270753",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270752",
+                      "level2CategoryDisplayName": "Multiple Level Drive To Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-multiple-level-drive-to-category-redirect-to-this-category-T1CAT45270756",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270750",
+                      "level2CategoryDisplayName": "X0 Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-x0-category-T1CAT45270750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270749",
+                      "level2CategoryDisplayName": "Simple Drive To",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-simple-drive-to-T1CAT45270749",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat000149",
+              "level1CategoryDisplayName": "All Designers",
+              "url": "/c/shoes-all-designers-cat000149",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat44690737",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "/c/shoes-featured-designers-cat44690737",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat47570743",
+                      "level2CategoryDisplayName": "Aquazzura",
+                      "url": "/c/designers-aquazzura-cat47570743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240842",
+                      "level2CategoryDisplayName": "Christian Louboutin",
+                      "url": "/c/designers-christian-louboutin-cat43240842",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat2880735",
+                      "level2CategoryDisplayName": "Gucci",
+                      "url": "/c/designers-gucci-cat2880735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240867",
+                      "level2CategoryDisplayName": "Jimmy Choo",
+                      "url": "/c/designers-jimmy-choo-shoes-cat35080738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000209",
+                      "level2CategoryDisplayName": "Manolo Blahnik",
+                      "url": "/c/designers-manolo-blahnik-shoes-cat53250985",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240884",
+                      "level2CategoryDisplayName": "Prada ",
+                      "url": "/c/designers-prada-shoes-cat14860748",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat54970765",
+                      "level2CategoryDisplayName": "Roger Vivier",
+                      "url": "/c/designers-roger-vivier-shoes-cat54630764",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000223",
+                      "level2CategoryDisplayName": "Stuart Weitzman",
+                      "url": "/c/designers-stuart-weitzman-womens-cat56840742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43890732",
+                      "level2CategoryDisplayName": "TOM FORD",
+                      "url": "/c/designers-tom-ford-katie-shoes-cat43890736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat17600760",
+                      "level2CategoryDisplayName": "Tory Burch",
+                      "url": "/c/designers-tory-burch-shoes-cat11670734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat6060749",
+                      "level2CategoryDisplayName": "Valentino",
+                      "url": "/c/designers-valentino-shoes-cat15450749",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat41200736",
+              "level1CategoryDisplayName": "Designer Collections",
+              "url": "/c/shoes-designer-collections-cat41200736",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat40460744",
+                      "level2CategoryDisplayName": "Premier Designer",
+                      "url": "/c/shoes-designer-collections-premier-designer-cat40460744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40510788",
+                      "level2CategoryDisplayName": "CUSP/Contemporary",
+                      "url": "/c/cusp-cusp-contemporary-cat40510788",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53230788",
+                      "level2CategoryDisplayName": "Classic Comfort",
+                      "url": "/c/shoes-designer-collections-classic-comfort-cat53230788",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat13030734",
+              "level1CategoryDisplayName": "Categories",
+              "url": "/c/shoes-categories-cat13030734",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat47190746",
+                      "level2CategoryDisplayName": "All Shoes",
+                      "url": "/c/shoes-all-shoes-cat47190746",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40840751",
+                      "level2CategoryDisplayName": "Flats & Loafers",
+                      "url": "/c/shoes-flats-loafers-cat40840751",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat36450731",
+                      "level2CategoryDisplayName": "Sneakers ",
+                      "url": "/c/shoes-sneakers-cat36450731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat13410734",
+                      "level2CategoryDisplayName": "Evening",
+                      "url": "/c/shoes-evening-cat13410734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat54030773",
+                      "level2CategoryDisplayName": "Espadrilles",
+                      "url": "/c/shoes-espadrilles-cat54030773",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat45140735",
+                      "level2CategoryDisplayName": "Booties",
+                      "url": "/c/shoes-trends-boots-booties-cat45140735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat48860751",
+                      "level2CategoryDisplayName": "Slippers",
+                      "url": "/c/shoes-slippers-cat48860751",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat15490733",
+                      "level2CategoryDisplayName": "Wedges ",
+                      "url": "/c/shoes-wedges-cat15490733",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat55290743",
+              "level1CategoryDisplayName": "Trends",
+              "url": "/c/shoes-trends-cat55290743",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat47210742",
+                      "level2CategoryDisplayName": "Over-the-Knee Boots",
+                      "url": "/c/shoes-trends-over-the-knee-boots-cat47210742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT44160754",
+                      "level2CategoryDisplayName": "test Category",
+                      "url": "/c/shoes-trends-test-category-T1CAT44160754",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat45140734",
+                      "level2CategoryDisplayName": "Boots ",
+                      "url": "/c/shoes-trends-boots-cat45140734",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60920812",
+              "level1CategoryDisplayName": "Shop by Heel Height",
+              "url": "/c/shoes-shop-by-heel-height-cat60920812",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat60920813",
+                      "level2CategoryDisplayName": "Flat",
+                      "url": "/c/shoes-shop-by-heel-height-flat-cat60920813",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60920817",
+                      "level2CategoryDisplayName": "Low",
+                      "url": "/c/shoes-shop-by-heel-height-low-cat60920817",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60920816",
+                      "level2CategoryDisplayName": "Medium",
+                      "url": "/c/shoes-shop-by-heel-height-medium-cat60920816",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60920815",
+                      "level2CategoryDisplayName": "High",
+                      "url": "/c/shoes-shop-by-heel-height-high-cat60920815",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60920814",
+                      "level2CategoryDisplayName": "Ultra High",
+                      "url": "/c/shoes-shop-by-heel-height-ultra-high-cat60920814",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat51770749",
+              "level1CategoryDisplayName": "Best Selling Shoes",
+              "url": "/c/shoes-best-selling-shoes-cat51770749",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat40990759",
+              "level1CategoryDisplayName": "NM Edits ",
+              "url": "/c/shoes-nm-edits-cat40990759",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat55120731",
+                      "level2CategoryDisplayName": "Exclusives",
+                      "url": "/c/womens-clothing-exclusives-cat55120731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240817",
+                      "level2CategoryDisplayName": "InSite",
+                      "url": "/c/the-mans-store-nm-edits-insite-cat43240817",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60830811",
+              "level1CategoryDisplayName": "New & Now",
+              "url": "/c/shoes-new-now-cat60830811",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat46660758",
+                      "level2CategoryDisplayName": "New Arrivals",
+                      "url": "/c/shoes-new-now-new-arrivals-cat46660758",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240774",
+                      "level2CategoryDisplayName": "Best Sellers",
+                      "url": "/c/shoes-new-now-best-sellers-cat43240774",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat56520748",
+                      "level2CategoryDisplayName": "Fall 2016",
+                      "url": "/c/cat13030735-new-now-fall-2016-shoes-cat56520750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat39980735",
+                      "level2CategoryDisplayName": "Pumps",
+                      "url": "/c/shoes-new-now-pumps-cat39980735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat48490746",
+                      "level2CategoryDisplayName": "Sandals",
+                      "url": "/c/shoes-new-now-sandals-cat48490746",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat54960736",
+              "level1CategoryDisplayName": "Sale",
+              "url": "/c/shoes-sale-cat54960736",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat54170731",
+              "level1CategoryDisplayName": "Kids' Shoes",
+              "url": "/c/shoes-kids-shoes-cat54170731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT39030731",
+              "level1CategoryDisplayName": "Holiday Gifts",
+              "url": "/c/shoes-holiday-gifts-T1CAT39030731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat13030735",
+      "siloDisplayName": "Handbags",
+      "url": "/c/cat13030735-cat13030735",
+      "attributes": {
+        "promoPath": "/category/cat44710740/r_main_drawer_promo.html"
+      },
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "T1CAT45270735",
+              "level1CategoryDisplayName": "Test Category with Subcat Drive To",
+              "url": "/c/womens-clothing-test-category-with-subcat-drive-to-gc-drive-to-drive-to-category-T1CAT45270740",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270745",
+                      "level2CategoryDisplayName": "alttttttt",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-alttttttt-T1CAT45270745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270742",
+                      "level2CategoryDisplayName": "Multiple Drive Tos",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-multiple-drive-tos-secondary-drive-to-T1CAT45270743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270739",
+                      "level2CategoryDisplayName": "GC Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-gc-drive-to-T1CAT45270739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270737",
+                      "level2CategoryDisplayName": "Simple Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-simple-drive-to-T1CAT45270737",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T1CAT45270748",
+              "level1CategoryDisplayName": "Redirect Category with Old URLs",
+              "url": "/c/womens-clothing-redirect-category-with-old-urls-redirect-to-grandchild-category-gc-category-for-redirect-T1CAT45270754",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270753",
+                      "level2CategoryDisplayName": "Redirect to Grandchild Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-redirect-to-grandchild-category-T1CAT45270753",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270752",
+                      "level2CategoryDisplayName": "Multiple Level Drive To Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-multiple-level-drive-to-category-redirect-to-this-category-T1CAT45270756",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270750",
+                      "level2CategoryDisplayName": "X0 Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-x0-category-T1CAT45270750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270749",
+                      "level2CategoryDisplayName": "Simple Drive To",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-simple-drive-to-T1CAT45270749",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat42130739",
+              "level1CategoryDisplayName": "All Designers",
+              "url": "/c/cat13030735-all-designers-cat42130739",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat44690739",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "/c/cat13030735-featured-designers-cat44690739",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat10090734",
+                      "level2CategoryDisplayName": "Chloe",
+                      "url": "/c/designers-chloe-handbags-cat39010908",
+                      "attributes": {
+                        "boutiqueTextAdornments": "handbags"
+                      }
+                    },
+                    {
+                      "id": "cat12890741",
+                      "level2CategoryDisplayName": "Fendi",
+                      "url": "/c/designers-fendi-handbags-cat14170738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46510741",
+                      "level2CategoryDisplayName": "Givenchy",
+                      "url": "/c/designers-givenchy-handbags-cat50640745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat2880735",
+                      "level2CategoryDisplayName": "Gucci",
+                      "url": "/c/designers-gucci-womens-handbags-cat47730732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat51340740",
+                      "level2CategoryDisplayName": "MCM",
+                      "url": "/c/designers-mcm-handbags-cat49540739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240884",
+                      "level2CategoryDisplayName": "Prada ",
+                      "url": "/c/designers-prada-handbags-cat14860749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat6340738",
+                      "level2CategoryDisplayName": "Saint Laurent",
+                      "url": "/c/designers-saint-laurent-handbags-cat7040731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43890732",
+                      "level2CategoryDisplayName": "TOM FORD",
+                      "url": "/c/designers-tom-ford-katie-handbags-cat43890738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat17600760",
+                      "level2CategoryDisplayName": "Tory Burch",
+                      "url": "/c/designers-tory-burch-handbags-cat47760771",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat6060749",
+                      "level2CategoryDisplayName": "Valentino",
+                      "url": "/c/designers-valentino-handbags-cat6410731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat41900741",
+              "level1CategoryDisplayName": "Designer Collections",
+              "url": "/c/cat13030735-designer-collections-cat41900741",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat40720741",
+                      "level2CategoryDisplayName": "Premier Designer",
+                      "url": "/c/cat13030735-designer-collections-premier-designer-cat40720741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40510790",
+                      "level2CategoryDisplayName": "CUSP/Contemporary",
+                      "url": "/c/cusp-cusp-contemporary-cat40510790",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat42110769",
+              "level1CategoryDisplayName": "Categories",
+              "url": "/c/cat13030735-categories-cat42110769",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat46860739",
+                      "level2CategoryDisplayName": "All Handbags ",
+                      "url": "/c/cat13030735-all-handbags-cat46860739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40860745",
+                      "level2CategoryDisplayName": "Totes ",
+                      "url": "/c/cat13030735-totes-cat40860745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat42600741",
+                      "level2CategoryDisplayName": "Crossbody Bags",
+                      "url": "/c/cat13030735-crossbody-bags-cat42600741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat13410735",
+                      "level2CategoryDisplayName": "clutch",
+                      "url": "/c/cat13030735-clutch-cat13410735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40860750",
+                      "level2CategoryDisplayName": "Shoulder Bags ",
+                      "url": "/c/cat13030735-shoulder-bags-cat40860750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat48810754",
+                      "level2CategoryDisplayName": "Backpacks ",
+                      "url": "/c/cat13030735-backpacks-cat48810754",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40880736",
+                      "level2CategoryDisplayName": "satchel",
+                      "url": "/c/cat13030735-satchel-cat40880736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55000752",
+                      "level2CategoryDisplayName": "Bucket Bags",
+                      "url": "/c/cat13030735-bucket-bags-cat55000752",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40860748",
+                      "level2CategoryDisplayName": "Hobos",
+                      "url": "/c/cat13030735-hobos-cat40860748",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat35400731",
+                      "level2CategoryDisplayName": "Evening",
+                      "url": "/c/cat13030735-evening-cat35400731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat52300735",
+                      "level2CategoryDisplayName": "Exotics",
+                      "url": "/c/cat13030735-exotics-cat52300735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat13030744",
+                      "level2CategoryDisplayName": "Wallets & Wristlets",
+                      "url": "/c/cat13030735-wallets-wristlets-cat13030744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53020742",
+                      "level2CategoryDisplayName": "Bag Accessories",
+                      "url": "/c/cat13030735-bag-accessories-cat53020742",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat55750749",
+              "level1CategoryDisplayName": "Trends",
+              "url": "/c/cat13030735-trends-cat55750749",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat55010747",
+              "level1CategoryDisplayName": "Shop by Size",
+              "url": "/c/cat13030735-shop-by-size-cat55010747",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat55010748",
+                      "level2CategoryDisplayName": "Micro",
+                      "url": "/c/cat13030735-shop-by-size-micro-cat55010748",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55010749",
+                      "level2CategoryDisplayName": "Small",
+                      "url": "/c/cat13030735-shop-by-size-small-cat55010749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55010750",
+                      "level2CategoryDisplayName": "Medium",
+                      "url": "/c/cat13030735-shop-by-size-medium-cat55010750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55010751",
+                      "level2CategoryDisplayName": "Large",
+                      "url": "/c/cat13030735-shop-by-size-large-cat55010751",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40880736",
+                      "level2CategoryDisplayName": "satch",
+                      "url": "/c/cat13030735-satch-cat40880736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55000752",
+                      "level2CategoryDisplayName": "bucket",
+                      "url": "/c/cat13030735-bucket-cat55000752",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat41900746",
+              "level1CategoryDisplayName": "NM Edits",
+              "url": "/c/cat13030735-nm-edits-cat41900746",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat55120731",
+                      "level2CategoryDisplayName": "Exclusives",
+                      "url": "/c/womens-clothing-exclusives-cat55120731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat45420758",
+                      "level2CategoryDisplayName": "Monogram Shop ",
+                      "url": "/c/cat13030735-nm-edits-monogram-shop-cat45420758",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240817",
+                      "level2CategoryDisplayName": "InSite",
+                      "url": "/c/the-mans-store-nm-edits-insite-cat43240817",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60840754",
+              "level1CategoryDisplayName": "New & Now",
+              "url": "/c/cat13030735-new-now-cat60840754",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat42680734",
+                      "level2CategoryDisplayName": "Best Sellers",
+                      "url": "/c/cat13030735-new-now-best-sellers-cat42680734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat56520748",
+                      "level2CategoryDisplayName": "Fall 2016",
+                      "url": "/c/cat13030735-new-now-fall-2016-cat56520748",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat4870731",
+      "siloDisplayName": "Jewelry",
+      "url": "/c/jewelry-cat4870731",
+      "attributes": {},
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "T1CAT45270735",
+              "level1CategoryDisplayName": "Test Category with Subcat Drive To",
+              "url": "/c/womens-clothing-test-category-with-subcat-drive-to-T1CAT45270735",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270745",
+                      "level2CategoryDisplayName": "alttttttt",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-alttttttt-T1CAT45270745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270742",
+                      "level2CategoryDisplayName": "Multiple Drive Tos",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-multiple-drive-tos-secondary-drive-to-T1CAT45270743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270739",
+                      "level2CategoryDisplayName": "GC Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-gc-drive-to-T1CAT45270739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270737",
+                      "level2CategoryDisplayName": "Simple Drive To",
+                      "url": "/c/womens-clothing-test-category-with-subcat-drive-to-simple-drive-to-T1CAT45270737",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T1CAT45270748",
+              "level1CategoryDisplayName": "Redirect Category with Old URLs",
+              "url": "/c/womens-clothing-redirect-category-with-old-urls-T1CAT45270748",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45270753",
+                      "level2CategoryDisplayName": "Redirect to Grandchild Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-redirect-to-grandchild-category-T1CAT45270753",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270752",
+                      "level2CategoryDisplayName": "Multiple Level Drive To Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-multiple-level-drive-to-category-redirect-to-this-category-T1CAT45270756",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270750",
+                      "level2CategoryDisplayName": "X0 Category",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-x0-category-T1CAT45270750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45270749",
+                      "level2CategoryDisplayName": "Simple Drive To",
+                      "url": "/c/womens-clothing-redirect-category-with-old-urls-simple-drive-to-T1CAT45270749",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat42120742",
+              "level1CategoryDisplayName": "All Designers",
+              "url": "/c/jewelry-all-designers-cat42120742",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat44690743",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "/c/jewelry-featured-designers-cat44690743",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat10230739",
+                      "level2CategoryDisplayName": "Alexander McQueen",
+                      "url": "/c/designers-alexander-mcqueen-jewelry-accessories-cat40890776",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000227",
+                      "level2CategoryDisplayName": "Burberry",
+                      "url": "/c/designers-burberry-womens-jewelry-accessories-cat56680733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat540734",
+                      "level2CategoryDisplayName": "David Yurman",
+                      "url": "/c/designers-david-yurman-cat540734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat47890734",
+                      "level2CategoryDisplayName": "Dior",
+                      "url": "/c/designers-dior-accessories-cat8380898",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat2880735",
+                      "level2CategoryDisplayName": "Gucci",
+                      "url": "/c/designers-gucci-womens-accessories-cat19810732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat4560731",
+                      "level2CategoryDisplayName": "Ippolita",
+                      "url": "/c/designers-ippolita-cat4560731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000161",
+                      "level2CategoryDisplayName": "John Hardy",
+                      "url": "/c/designers-john-hardy-cat000161",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat6370731",
+                      "level2CategoryDisplayName": "Lana",
+                      "url": "/c/designers-lana-cat6370731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10360735",
+                      "level2CategoryDisplayName": "Loro Piana",
+                      "url": "/c/designers-loro-piana-accessories-cat4520740",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000185",
+                      "level2CategoryDisplayName": "MICHELE",
+                      "url": "/c/designers-michele-cat000185",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240884",
+                      "level2CategoryDisplayName": "Prada ",
+                      "url": "/c/designers-prada-accessories-cat14570739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat4140732",
+                      "level2CategoryDisplayName": "Roberto Coin",
+                      "url": "/c/designers-roberto-coin-cat4140732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat13030747",
+                      "level2CategoryDisplayName": "Sydney Evan",
+                      "url": "/c/designers-sydney-evan-cat13030747",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43890732",
+                      "level2CategoryDisplayName": "TOM FORD",
+                      "url": "/c/designers-tom-ford-katie-sunglasses-optical-frames-cat42280744",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat42120746",
+              "level1CategoryDisplayName": "Jewelry fun",
+              "url": "/c/jewelry-jewelry-fun-cat42120746",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat50910737",
+                      "level2CategoryDisplayName": "All Jewelry",
+                      "url": "/c/jewelry-jewelry-fun-all-jewelry-cat50910737",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat4870734",
+                      "level2CategoryDisplayName": "Necklaces",
+                      "url": "/c/jewelry-jewelry-fun-necklaces-cat4870734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat59860745",
+                      "level2CategoryDisplayName": "Chokers",
+                      "url": "/c/jewelry-jewelry-fun-chokers-cat59860745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat4870732",
+                      "level2CategoryDisplayName": "Earrings",
+                      "url": "/c/jewelry-jewelry-fun-earrings-cat4870732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat4870733",
+                      "level2CategoryDisplayName": "Bracelets",
+                      "url": "/c/jewelry-jewelry-fun-bracelets-cat4870733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000264",
+                      "level2CategoryDisplayName": "Watches",
+                      "url": "/c/jewelry-jewelry-fun-watches-cat000264",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat2650734",
+                      "level2CategoryDisplayName": "Rings",
+                      "url": "/c/jewelry-jewelry-fun-rings-cat2650734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat12100747",
+                      "level2CategoryDisplayName": "Charms & Brooches",
+                      "url": "/c/jewelry-jewelry-fun-charms-brooches-cat12100747",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat14460734",
+              "level1CategoryDisplayName": "Alternate Precious Jewelry",
+              "url": "/c/jewelry-alternate-precious-jewelry-cat14460734",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat52730762",
+              "level1CategoryDisplayName": "Custom Shops",
+              "url": "/c/jewelry-custom-shops-cat52730762",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat2830735",
+              "level1CategoryDisplayName": "Accessories",
+              "url": "/c/jewelry-accessories-cat2830735",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat51730760",
+                      "level2CategoryDisplayName": "All Accessories",
+                      "url": "/c/jewelry-accessories-all-accessories-cat51730760",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat41270753",
+                      "level2CategoryDisplayName": "Scarves",
+                      "url": "/c/jewelry-accessories-scarves-cat41270753",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat49940731",
+                      "level2CategoryDisplayName": "Wraps & Stoles",
+                      "url": "/c/jewelry-accessories-wraps-stoles-cat49940731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat34000734",
+                      "level2CategoryDisplayName": "Capes, Ponchos & Vests",
+                      "url": "/c/jewelry-accessories-capes-ponchos-vests-cat34000734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat51770734",
+                      "level2CategoryDisplayName": "Hats",
+                      "url": "/c/jewelry-accessories-hats-cat51770734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat4300731",
+                      "level2CategoryDisplayName": "Belts",
+                      "url": "/c/jewelry-accessories-belts-cat4300731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat13030744",
+                      "level2CategoryDisplayName": "Wallets & Wristlets",
+                      "url": "/c/cat13030735-wallets-wristlets-cat13030744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat52180743",
+                      "level2CategoryDisplayName": "Umbrellas",
+                      "url": "/c/jewelry-accessories-umbrellas-cat52180743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat48660749",
+                      "level2CategoryDisplayName": "Tech & Small Accessories",
+                      "url": "/c/jewelry-accessories-tech-small-accessories-cat48660749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat52820738",
+                      "level2CategoryDisplayName": "Hair Accessories",
+                      "url": "/c/jewelry-accessories-hair-accessories-cat52820738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat9860744",
+                      "level2CategoryDisplayName": "Hosiery",
+                      "url": "/c/womens-clothing-lingerie-shapewear-hosiery-cat9860744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT40260738",
+                      "level2CategoryDisplayName": "Mobile Test",
+                      "url": "/c/jewelry-accessories-mobile-test-T1CAT40260738",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat45330747",
+              "level1CategoryDisplayName": "Sunglasses",
+              "url": "/c/jewelry-sunglasses-cat45330747",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat44250741",
+              "level1CategoryDisplayName": "Optical Frames",
+              "url": "/c/jewelry-optical-frames-cat44250741",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat42120748",
+              "level1CategoryDisplayName": "NM Edits",
+              "url": "/c/jewelry-nm-edits-cat42120748",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat43240817",
+                      "level2CategoryDisplayName": "InSite",
+                      "url": "/c/the-mans-store-nm-edits-insite-cat43240817",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55120731",
+                      "level2CategoryDisplayName": "Exclusives",
+                      "url": "/c/womens-clothing-exclusives-cat55120731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53330834",
+                      "level2CategoryDisplayName": "Sun By Face Shape",
+                      "url": "/c/jewelry-nm-edits-sun-by-face-shape-cat53330834",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60830812",
+              "level1CategoryDisplayName": "New & Now",
+              "url": "/c/jewelry-new-now-cat60830812",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat42910754",
+                      "level2CategoryDisplayName": "Best Sellers",
+                      "url": "/c/jewelry-new-now-best-sellers-cat42910754",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat54980736",
+              "level1CategoryDisplayName": "Sale",
+              "url": "/c/jewelry-sale-cat54980736",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat57180736",
+              "level1CategoryDisplayName": "Men's Accessories",
+              "url": "/c/jewelry-mens-accessories-cat57180736",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat000285",
+      "siloDisplayName": "Beauty",
+      "url": "/c/beauty-cat000285",
+      "attributes": {
+        "promoPath": "/category/cat44710743/r_main_drawer_promo.html"
+      },
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "cat4830738",
+              "level1CategoryDisplayName": "All Brands",
+              "url": "/c/beauty-all-brands-cat4830738",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat55180733",
+              "level1CategoryDisplayName": "All Beauty",
+              "url": "/c/beauty-all-beauty-cat55180733",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat55440759",
+              "level1CategoryDisplayName": "All Beauty",
+              "url": "/c/beauty-all-beauty-cat55440759",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat10470738",
+              "level1CategoryDisplayName": "Skin Care",
+              "url": "/c/beauty-skin-care-cat10470738",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat11410734",
+                      "level2CategoryDisplayName": "Eye Creams",
+                      "url": "/c/beauty-skin-care-eye-creams-cat11410734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10520737",
+                      "level2CategoryDisplayName": "Serums & Oils",
+                      "url": "/c/beauty-skin-care-serums-oils-cat10520737",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat11250747",
+                      "level2CategoryDisplayName": "Masks & Exfoliants",
+                      "url": "/c/beauty-skin-care-masks-exfoliants-cat11250747",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat11200753",
+                      "level2CategoryDisplayName": "Cleansers & Essence",
+                      "url": "/c/beauty-skin-care-cleansers-essence-cat11200753",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat54670731",
+                      "level2CategoryDisplayName": "Sun",
+                      "url": "/c/beauty-skin-care-sun-cat54670731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat23800735",
+              "level1CategoryDisplayName": "Tools & Accessories",
+              "url": "/c/beauty-tools-accessories-cat23800735",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat51180746",
+              "level1CategoryDisplayName": "Hair Care",
+              "url": "/c/beauty-hair-care-cat51180746",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat10470830",
+              "level1CategoryDisplayName": "Nail Care",
+              "url": "/c/beauty-nail-care-cat10470830",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat10470744",
+              "level1CategoryDisplayName": "Fragrances.",
+              "url": "/c/beauty-fragrances-cat10470744",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat10470746",
+                      "level2CategoryDisplayName": "5th Women's Fragrance",
+                      "url": "/c/beauty-fragrances-5th-womens-fragrance-cat10470746",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10470808",
+                      "level2CategoryDisplayName": "Candles & Home Scents",
+                      "url": "/c/staging-sns-hien-candles-home-scents-cat10470808",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT39820731",
+                      "level2CategoryDisplayName": "Dummy",
+                      "url": "/c/beauty-fragrances-dummy-T1CAT39820731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat10420742",
+              "level1CategoryDisplayName": "Make up",
+              "url": "/c/beauty-make-up-cat10420742",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat10470734",
+                      "level2CategoryDisplayName": "Lips",
+                      "url": "/c/beauty-make-up-lips-cat10470734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10470733",
+                      "level2CategoryDisplayName": "Eyes",
+                      "url": "/c/beauty-make-up-eyes-cat10470733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10470735",
+                      "level2CategoryDisplayName": "Brushes",
+                      "url": "/c/beauty-make-up-brushes-cat10470735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat11250748",
+                      "level2CategoryDisplayName": "Palettes & Sets",
+                      "url": "/c/beauty-make-up-palettes-sets-cat11250748",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat000466",
+              "level1CategoryDisplayName": "Men's Cologne",
+              "url": "/c/beauty-mens-cologne-cat000466",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat10470747",
+                      "level2CategoryDisplayName": "Men's Cologne",
+                      "url": "/c/beauty-mens-cologne-mens-cologne-cat10470747",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat11270743",
+                      "level2CategoryDisplayName": "Skin Care ",
+                      "url": "/c/beauty-mens-cologne-skin-care-cat11270743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat56650749",
+                      "level2CategoryDisplayName": "Shaving Essentials",
+                      "url": "/c/beauty-mens-cologne-shaving-essentials-cat56650749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat11270760",
+                      "level2CategoryDisplayName": "Hair & Body",
+                      "url": "/c/beauty-mens-cologne-hair-body-cat11270760",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat31700732",
+                      "level2CategoryDisplayName": "Tools",
+                      "url": "/c/beauty-mens-cologne-tools-cat31700732",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60910761",
+              "level1CategoryDisplayName": "Beauty Offers",
+              "url": "/c/beauty-beauty-offers-cat60910761",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat53320737",
+                      "level2CategoryDisplayName": "Gifts With Purchase",
+                      "url": "/c/beauty-beauty-offers-gifts-with-purchase-cat53320737",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58990768",
+                      "level2CategoryDisplayName": "Gifts & Value Sets",
+                      "url": "/c/beauty-beauty-offers-gifts-value-sets-cat58990768",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat47940742",
+                      "level2CategoryDisplayName": "Product Specialists",
+                      "url": "/c/beauty-beauty-offers-product-specialists-cat47940742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT43310731",
+                      "level2CategoryDisplayName": "new Category",
+                      "url": "/c/beauty-beauty-offers-new-category-T1CAT43310731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat41020740",
+              "level1CategoryDisplayName": "NM Edit",
+              "url": "/c/beauty-nm-edit-cat41020740",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat55120731",
+                      "level2CategoryDisplayName": "Exclusives",
+                      "url": "/c/womens-clothing-exclusives-cat55120731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat59610757",
+                      "level2CategoryDisplayName": "Beauty Awards 2016",
+                      "url": "/c/beauty-nm-edit-beauty-awards-2016-cat59610757",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60910732",
+                      "level2CategoryDisplayName": "Natural Beauty",
+                      "url": "/c/staging-sns-hien-natural-beauty-cat60910732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat42820747",
+                      "level2CategoryDisplayName": "Beauty Cue ",
+                      "url": "/c/beauty-nm-edit-beauty-cue-cat42820747",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT43310732",
+                      "level2CategoryDisplayName": "Arun's Cat",
+                      "url": "/c/beauty-nm-edit-aruns-cat-T1CAT43310732",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60840756",
+              "level1CategoryDisplayName": "New & Now",
+              "url": "/c/beauty-new-now-cat60840756",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat18030756",
+                      "level2CategoryDisplayName": "New Arrivals",
+                      "url": "/c/beauty-nm-edit-new-arrivals-cat18030756",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53840732",
+                      "level2CategoryDisplayName": "Best Sellers",
+                      "url": "/c/beauty-new-now-best-sellers-cat53840732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60590745",
+                      "level2CategoryDisplayName": "How-To Videos",
+                      "url": "/c/designers-la-mer-how-to-videos-cat60590745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT43310731",
+                      "level2CategoryDisplayName": "new Category",
+                      "url": "/c/beauty-beauty-offers-new-category-T1CAT43310731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat000470",
+      "siloDisplayName": "The Man's Store",
+      "url": "/c/the-mans-store-cat000470",
+      "attributes": {
+        "promoPath": "/category/cat44710744/r_main_drawer_promo.html"
+      },
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "cat000478",
+              "level1CategoryDisplayName": "All Designers",
+              "url": "/c/the-mans-store-all-designers-cat000478",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat45910746",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "/c/the-mans-store-featured-designers-cat45910746",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat25560734",
+                      "level2CategoryDisplayName": "Brunello Cucinelli",
+                      "url": "/c/designers-brunello-cucinelli-mens-cat47690775",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000227",
+                      "level2CategoryDisplayName": "Burberry",
+                      "url": "/c/designers-burberry-mens-cat57030762",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53201037",
+                      "level2CategoryDisplayName": "Buscemi",
+                      "url": "/c/designers-buscemi-mens-cat59400736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat50610733",
+                      "level2CategoryDisplayName": "Canada Goose",
+                      "url": "/c/designers-canada-goose-mens-cat51080734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000495",
+                      "level2CategoryDisplayName": "Ermenegildo Zegna",
+                      "url": "/c/designers-ermenegildo-zegna-cat000495",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat12890741",
+                      "level2CategoryDisplayName": "Fendi",
+                      "url": "/c/designers-fendi-mens-cat46930736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46510741",
+                      "level2CategoryDisplayName": "Givenchy",
+                      "url": "/c/designers-givenchy-mens-cat50560737",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat48860758",
+                      "level2CategoryDisplayName": "Giuseppe Zanotti",
+                      "url": "/c/designers-giuseppe-zanotti-mens-cat48710748",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat2880735",
+                      "level2CategoryDisplayName": "Gucci",
+                      "url": "/c/designers-gucci-mens-cat6170734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat39720778",
+                      "level2CategoryDisplayName": "Maison Margiela",
+                      "url": "/c/designers-maison-margiela-mens-cat15350757",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43460881",
+                      "level2CategoryDisplayName": "Moncler",
+                      "url": "/c/designers-moncler-mens-cat25730734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240884",
+                      "level2CategoryDisplayName": "Prada ",
+                      "url": "/c/designers-prada-mens-cat5890734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43330758",
+                      "level2CategoryDisplayName": "Salvatore Ferragamo",
+                      "url": "/c/designers-salvatore-ferragamo-mens-cat13550745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat8520743",
+                      "level2CategoryDisplayName": "Stefano Ricci",
+                      "url": "/c/designers-stefano-ricci-cat8520743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43890732",
+                      "level2CategoryDisplayName": "TOM FORD",
+                      "url": "/c/designers-tom-ford-mens-cat43890734",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat14120827",
+              "level1CategoryDisplayName": "Apparel",
+              "url": "/c/the-mans-store-apparel-cat14120827",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat13140748",
+                      "level2CategoryDisplayName": "Polos & T-Shirts",
+                      "url": "/c/the-mans-store-apparel-polos-t-shirts-cat13140748",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat11940745",
+                      "level2CategoryDisplayName": "Suits & Sportcoats",
+                      "url": "/c/the-mans-store-apparel-suits-sportcoats-cat11940745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat48720745",
+                      "level2CategoryDisplayName": "JEANS",
+                      "url": "/c/the-mans-store-apparel-jeans-cat48720745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat21130735",
+                      "level2CategoryDisplayName": "Dress Shirts ",
+                      "url": "/c/the-mans-store-apparel-dress-shirts-cat21130735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat21150732",
+                      "level2CategoryDisplayName": "Casual Button-Down Shirts",
+                      "url": "/c/the-mans-store-apparel-casual-button-down-shirts-cat21150732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat14810731",
+                      "level2CategoryDisplayName": "Coats & Jackets",
+                      "url": "/c/the-mans-store-apparel-coats-jackets-cat14810731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat21150734",
+                      "level2CategoryDisplayName": "Sweaters & Sweatshirts",
+                      "url": "/c/the-mans-store-apparel-sweaters-sweatshirts-cat21150734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58350752",
+                      "level2CategoryDisplayName": "Activewear",
+                      "url": "/c/the-mans-store-apparel-activewear-cat58350752",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat42600734",
+                      "level2CategoryDisplayName": "Pants",
+                      "url": "/c/the-mans-store-apparel-pants-cat42600734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat51230758",
+                      "level2CategoryDisplayName": "Shorts",
+                      "url": "/c/the-mans-store-apparel-shorts-cat51230758",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat20380735",
+                      "level2CategoryDisplayName": "Swim",
+                      "url": "/c/the-mans-store-apparel-swim-cat20380735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat16520734",
+                      "level2CategoryDisplayName": "Lounge & Sleepwear",
+                      "url": "/c/the-mans-store-apparel-lounge-sleepwear-cat16520734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat14030733",
+                      "level2CategoryDisplayName": "Underwear & Socks",
+                      "url": "/c/the-mans-store-apparel-underwear-socks-cat14030733",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat000466",
+              "level1CategoryDisplayName": "Cologne & Grooming",
+              "url": "/c/beauty-cologne-grooming-cat000466",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat21150736",
+              "level1CategoryDisplayName": "Accessories",
+              "url": "/c/the-mans-store-accessories-cat21150736",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat13230731",
+                      "level2CategoryDisplayName": "Belts",
+                      "url": "/c/the-mans-store-accessories-belts-cat13230731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat8670736",
+                      "level2CategoryDisplayName": "Bags & Wallets",
+                      "url": "/c/the-mans-store-accessories-bags-wallets-cat8670736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat540731",
+                      "level2CategoryDisplayName": "Watches",
+                      "url": "/c/the-mans-store-accessories-watches-cat540731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000533",
+                      "level2CategoryDisplayName": "Jewelry & Cuff Links",
+                      "url": "/c/the-mans-store-accessories-jewelry-cuff-links-cat000533",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40450753",
+                      "level2CategoryDisplayName": "Ties & Pocket Squares ",
+                      "url": "/c/the-mans-store-accessories-ties-pocket-squares-cat40450753",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat9310734",
+                      "level2CategoryDisplayName": "Sunglasses",
+                      "url": "/c/the-mans-store-accessories-sunglasses-cat9310734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat14030744",
+                      "level2CategoryDisplayName": "Scarves, Hats & Gloves",
+                      "url": "/c/the-mans-store-accessories-scarves-hats-gloves-cat14030744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat24710732",
+                      "level2CategoryDisplayName": "Gifts & Gadgets",
+                      "url": "/c/home-food-games-gadgets-gifts-gadgets-cat24710732",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat40980767",
+              "level1CategoryDisplayName": "NM Edits",
+              "url": "/c/the-mans-store-nm-edits-cat40980767",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat60570747",
+                      "level2CategoryDisplayName": "Trends ",
+                      "url": "/c/the-mans-store-new-now-trends-cat60570747",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55120731",
+                      "level2CategoryDisplayName": "Exclusives",
+                      "url": "/c/womens-clothing-exclusives-cat55120731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat43240817",
+                      "level2CategoryDisplayName": "InSite",
+                      "url": "/c/the-mans-store-nm-edits-insite-cat43240817",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60830805",
+              "level1CategoryDisplayName": "New & Now",
+              "url": "/c/the-mans-store-new-now-cat60830805",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat60480774",
+                      "level2CategoryDisplayName": "Fall 2016 ",
+                      "url": "/c/the-mans-store-new-now-fall-2016-cat60480774",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60570747",
+                      "level2CategoryDisplayName": "Trends ",
+                      "url": "/c/the-mans-store-new-now-trends-cat60570747",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT41270741",
+                      "level2CategoryDisplayName": "row cat",
+                      "url": "/c/the-mans-store-new-now-row-cat-T1CAT41270741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT41270738",
+                      "level2CategoryDisplayName": "Show Only in AE",
+                      "url": "/c/the-mans-store-new-now-show-only-in-ae-T1CAT41270738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT41270737",
+                      "level2CategoryDisplayName": "Show Only US",
+                      "url": "/c/the-mans-store-new-now-show-only-us-T1CAT41270737",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT41270734",
+                      "level2CategoryDisplayName": "Hide China and US",
+                      "url": "/c/the-mans-store-new-now-hide-china-and-us-T1CAT41270734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT42270731",
+                      "level2CategoryDisplayName": "Katie's Test Category",
+                      "url": "/c/test-silo-katies-test-category-imageavailable-contentsync-donottouch-T1CAT42920731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT42920731",
+                      "level2CategoryDisplayName": "imageAvailable -ContentSync- DONOTTOUCH",
+                      "url": "/c/test-silo-katies-test-category-imageavailable-contentsync-donottouch-T1CAT42920731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT39160731",
+                      "level2CategoryDisplayName": "GWP",
+                      "url": "/c/test-silo-testing-alt-cat-name-old-test-categories-gwp-T1CAT39160731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60360764",
+              "level1CategoryDisplayName": "Shop by Occasion",
+              "url": "/c/the-mans-store-shop-by-occasion-cat60360764",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat48770732",
+                      "level2CategoryDisplayName": "For a Formal Affair",
+                      "url": "/c/the-mans-store-shop-by-occasion-for-a-formal-affair-cat48770732",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat58300762",
+              "level1CategoryDisplayName": "Shop All Men's",
+              "url": "/c/the-mans-store-shop-all-mens-cat58300762",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat54990737",
+              "level1CategoryDisplayName": "Sale",
+              "url": "/c/the-mans-store-sale-cat54990737",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat60940762",
+              "level1CategoryDisplayName": "Ken's Picks Men's Picks",
+              "url": "/c/nm-kens-picks-mens-picks-cat60940762",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat000550",
+              "level1CategoryDisplayName": "Shoes",
+              "url": "/c/the-mans-store-shoes-cat000550",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT44200741",
+              "level1CategoryDisplayName": "Profile SEO",
+              "url": "/c/the-mans-store-profile-seo-T1CAT44200741",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "T1CAT45560796",
+              "level1CategoryDisplayName": "Subcategory DriveTo testing - Man's Store",
+              "url": "/c/the-mans-store-subcategory-driveto-testing-mans-store-T1CAT45560796",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "T1CAT45520738",
+                      "level2CategoryDisplayName": "Single Subcat - Subcat Deleted - Contextual Props Disabled",
+                      "url": "/c/test-silo-subcategory-drive-to-testing-single-subcat-subcat-deleted-contextual-props-disabled-T1CAT45520738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45520739",
+                      "level2CategoryDisplayName": "Single Subcat - Subcat Deleted - Contextual Props Enabled",
+                      "url": "/c/test-silo-subcategory-drive-to-testing-single-subcat-subcat-deleted-contextual-props-enabled-T1CAT45520739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45520740",
+                      "level2CategoryDisplayName": "Multiple Subcats - Subcat Deleted - Contextual Props Disabled",
+                      "url": "/c/test-silo-subcategory-drive-to-testing-multiple-subcats-subcat-deleted-contextual-props-disabled-T1CAT45520740",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45520741",
+                      "level2CategoryDisplayName": "Multiple Subcats - Subcat Deleted - Contextual Props Enabled",
+                      "url": "/c/test-silo-subcategory-drive-to-testing-multiple-subcats-subcat-deleted-contextual-props-enabled-T1CAT45520741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45520742",
+                      "level2CategoryDisplayName": "Multiple Subcats - Subcat Removed - Contextual Props Disabled",
+                      "url": "/c/test-silo-subcategory-drive-to-testing-multiple-subcats-subcat-removed-contextual-props-disabled-T1CAT45520742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45520743",
+                      "level2CategoryDisplayName": "Multiple Subcats - Subcat Removed - Contextual Props Enabled",
+                      "url": "/c/test-silo-subcategory-drive-to-testing-multiple-subcats-subcat-removed-contextual-props-enabled-T1CAT45520743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45520744",
+                      "level2CategoryDisplayName": "Multiple Subcats - No Subcats Removed - Contextual Props Disabled",
+                      "url": "/c/test-silo-subcategory-drive-to-testing-multiple-subcats-no-subcats-removed-contextual-props-disabled-subcat-2-T1CAT45520750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT45520745",
+                      "level2CategoryDisplayName": "Multiple Subcats - No Subcat Removed - Contextual Props Enabled",
+                      "url": "/c/test-silo-subcategory-drive-to-testing-multiple-subcats-no-subcat-removed-contextual-props-enabled-subcat-2-T1CAT45520747",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat5160748",
+      "siloDisplayName": "Kids",
+      "url": "/c/kids-cat5160748",
+      "attributes": {},
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "cat7680740",
+              "level1CategoryDisplayName": "All Designers",
+              "url": "/c/kids-all-designers-cat7680740",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat44690750",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "/c/kids-featured-designers-cat44690750",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat9710731",
+                      "level2CategoryDisplayName": "Bugaboo",
+                      "url": "/c/designers-bugaboo-cat9710731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat000227",
+                      "level2CategoryDisplayName": "Burberry",
+                      "url": "/c/designers-burberry-childrenswear-cat16730741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat7210731",
+                      "level2CategoryDisplayName": "Dolce & Gabbana",
+                      "url": "/c/designers-dolce-gabbana-kids-cat41440743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat15220761",
+                      "level2CategoryDisplayName": "Florence Eiseman",
+                      "url": "/c/designers-florence-eiseman-cat15220761",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat2880735",
+                      "level2CategoryDisplayName": "Gucci",
+                      "url": "/c/designers-gucci-kids-cat17760731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat57980731",
+                      "level2CategoryDisplayName": "Karl Lagerfeld",
+                      "url": "/c/designers-karl-lagerfeld-cat57980731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat24610731",
+                      "level2CategoryDisplayName": "kate spade new york ",
+                      "url": "/c/designers-kate-spade-new-york-kids-cat53500733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat49800738",
+                      "level2CategoryDisplayName": "Kenzo",
+                      "url": "/c/designers-kenzo-kids-cat53250794",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat2880733",
+                      "level2CategoryDisplayName": "Milly Minis",
+                      "url": "/c/designers-milly-kids-cat35640731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat11410739",
+                      "level2CategoryDisplayName": "Ralph Lauren",
+                      "url": "/c/designers-ralph-lauren-kids-cat9710745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat9750733",
+                      "level2CategoryDisplayName": "Stella McCartney",
+                      "url": "/c/designers-stella-mccartney-kids-cat41530732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat51850746",
+                      "level2CategoryDisplayName": "Stokke",
+                      "url": "/c/designers-stokke-cat51850746",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat18370731",
+                      "level2CategoryDisplayName": "Zoe ",
+                      "url": "/c/designers-zoe-cat18370731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat58510733",
+              "level1CategoryDisplayName": "All Kids",
+              "url": "/c/kids-all-kids-cat58510733",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat13820742",
+              "level1CategoryDisplayName": "Boys",
+              "url": "/c/kids-boys-cat13820742",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat51650733",
+                      "level2CategoryDisplayName": "Sizes 0-24 months",
+                      "url": "/c/kids-boys-sizes-0-24-months-cat51650733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10050733",
+                      "level2CategoryDisplayName": "Sizes 2-6",
+                      "url": "/c/kids-boys-sizes-2-6-cat10050733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat47330741",
+                      "level2CategoryDisplayName": "Sizes 7-16",
+                      "url": "/c/kids-boys-sizes-7-16-cat47330741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53250878",
+                      "level2CategoryDisplayName": "Shop by Category",
+                      "url": "/c/kids-boys-shop-by-category-cat53250878",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53250919",
+                      "level2CategoryDisplayName": "Shoes",
+                      "url": "/c/kids-boys-shoes-cat53250919",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53250896",
+                      "level2CategoryDisplayName": "Accessories",
+                      "url": "/c/kids-boys-accessories-cat53250896",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat53250917",
+              "level1CategoryDisplayName": "Shoes",
+              "url": "/c/kids-shoes-cat53250917",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat53250894",
+              "level1CategoryDisplayName": "Accessories",
+              "url": "/c/kids-accessories-cat53250894",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat53290747",
+              "level1CategoryDisplayName": "Baby",
+              "url": "/c/kids-baby-cat53290747",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat40380743",
+                      "level2CategoryDisplayName": "Strollers & Gear",
+                      "url": "/c/kids-baby-strollers-gear-cat40380743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55120752",
+                      "level2CategoryDisplayName": "Nursery & Decor",
+                      "url": "/c/kids-baby-nursery-decor-cat55120752",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat59270780",
+                      "level2CategoryDisplayName": "Blankets",
+                      "url": "/c/kids-baby-blankets-cat59270780",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40380742",
+                      "level2CategoryDisplayName": "Diaper Bags",
+                      "url": "/c/kids-baby-diaper-bags-cat40380742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT39320731",
+                      "level2CategoryDisplayName": "Shoes",
+                      "url": "/c/kids-baby-shoes-T1CAT39320731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT39320732",
+                      "level2CategoryDisplayName": "Apparel",
+                      "url": "/c/kids-baby-apparel-T1CAT39320732",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat57480751",
+              "level1CategoryDisplayName": "Toys",
+              "url": "/c/kids-toys-cat57480751",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat56760797",
+              "level1CategoryDisplayName": "Gifts",
+              "url": "/c/kids-gifts-cat56760797",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat40960813",
+              "level1CategoryDisplayName": "NM Edits",
+              "url": "/c/kids-nm-edits-cat40960813",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat55120731",
+                      "level2CategoryDisplayName": "Exclusives",
+                      "url": "/c/womens-clothing-exclusives-cat55120731",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60840742",
+              "level1CategoryDisplayName": "New & Now",
+              "url": "/c/kids-new-now-cat60840742",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat60550738",
+                      "level2CategoryDisplayName": "Back to School",
+                      "url": "/c/kids-new-now-back-to-school-cat60550738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat53870747",
+                      "level2CategoryDisplayName": "Swim Shop",
+                      "url": "/c/kids-new-now-swim-shop-cat53870747",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT43300751",
+                      "level2CategoryDisplayName": "Arun's Cat",
+                      "url": "/c/kids-new-now-aruns-cat-T1CAT43300751",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat54970741",
+              "level1CategoryDisplayName": "Sale",
+              "url": "/c/kids-sale-cat54970741",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat45420756",
+              "level1CategoryDisplayName": "Alt Monogram Shop",
+              "url": "/c/staging-sns-hien-alt-monogram-shop-cat45420756",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat000553",
+      "siloDisplayName": "Home & Food",
+      "url": "/c/home-food-cat000553",
+      "attributes": {
+        "promoPath": "/category/cat44710746/r_main_drawer_promo.html"
+      },
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "cat14090736",
+              "level1CategoryDisplayName": "All Designers",
+              "url": "/c/home-food-all-designers-cat14090736",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat51710756",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "/c/home-food-featured-designers-cat51710756",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat40520731",
+              "level1CategoryDisplayName": "Decor",
+              "url": "/c/home-food-decor-cat40520731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat40520746",
+                      "level2CategoryDisplayName": "Lighting",
+                      "url": "/c/home-food-decor-lighting-cat40520746",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40460731",
+                      "level2CategoryDisplayName": "Wall Art ",
+                      "url": "/c/home-food-decor-wall-art-cat40460731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40520732",
+                      "level2CategoryDisplayName": "Mirrors",
+                      "url": "/c/home-food-decor-mirrors-cat40520732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40790756",
+                      "level2CategoryDisplayName": "Curtains & Hardware",
+                      "url": "/c/home-food-decor-curtains-hardware-cat40790756",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40520739",
+                      "level2CategoryDisplayName": "Accents",
+                      "url": "/c/home-food-decor-accents-cat40520739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat16130901",
+                      "level2CategoryDisplayName": "Pillows & Throws",
+                      "url": "/c/home-food-decor-pillows-throws-cat16130901",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat16130958",
+                      "level2CategoryDisplayName": "Picture Frames",
+                      "url": "/c/staging-sns-hien-picture-frames-cat16130958",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat16130899",
+                      "level2CategoryDisplayName": "Faux Florals",
+                      "url": "/c/home-food-decor-faux-florals-cat16130899",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat10470808",
+                      "level2CategoryDisplayName": "Candles & Home Scents",
+                      "url": "/c/staging-sns-hien-candles-home-scents-cat10470808",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46870744",
+                      "level2CategoryDisplayName": "Crystal",
+                      "url": "/c/staging-sns-hien-crystal-cat46870744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40520749",
+                      "level2CategoryDisplayName": "Desk & Stationery",
+                      "url": "/c/home-food-decor-desk-stationery-cat40520749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55030753",
+                      "level2CategoryDisplayName": "Outdoor",
+                      "url": "/c/home-food-decor-outdoor-cat55030753",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat56120748",
+                      "level2CategoryDisplayName": "Pet Accessories",
+                      "url": "/c/home-food-decor-pet-accessories-cat56120748",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat47490756",
+              "level1CategoryDisplayName": "Bedding",
+              "url": "/c/home-food-bedding-cat47490756",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat52800733",
+                      "level2CategoryDisplayName": "Comforters",
+                      "url": "/c/home-food-bedding-comforters-cat52800733",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520817",
+                      "level2CategoryDisplayName": "Sheets",
+                      "url": "/c/home-food-bedding-sheets-cat46520817",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44850734",
+                      "level2CategoryDisplayName": "Quilts & Coverlets",
+                      "url": "/c/home-food-bedding-quilts-coverlets-cat44850734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat51710755",
+                      "level2CategoryDisplayName": "Blankets & Throws",
+                      "url": "/c/home-food-bedding-blankets-throws-cat51710755",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat52550731",
+                      "level2CategoryDisplayName": "Decorative Pillows",
+                      "url": "/c/home-food-bedding-decorative-pillows-cat52550731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44850738",
+                      "level2CategoryDisplayName": "Bedding Basics",
+                      "url": "/c/home-food-bedding-bedding-basics-cat44850738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "T1CAT41820747",
+                      "level2CategoryDisplayName": "Display As Groups Test Category 2",
+                      "url": "/c/home-food-display-as-groups-test-category-2-T1CAT41820747",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat40520740",
+              "level1CategoryDisplayName": "Bath & Towels",
+              "url": "/c/home-food-bath-towels-cat40520740",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat40790748",
+                      "level2CategoryDisplayName": "Towels & Bath Mats",
+                      "url": "/c/home-food-bath-towels-towels-bath-mats-cat40790748",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40520742",
+                      "level2CategoryDisplayName": "Bath Accessories ",
+                      "url": "/c/home-food-bath-towels-bath-accessories-cat40520742",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat47490757",
+              "level1CategoryDisplayName": "Furniture",
+              "url": "/c/home-food-furniture-cat47490757",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat40520743",
+              "level1CategoryDisplayName": "Rugs",
+              "url": "/c/home-food-rugs-cat40520743",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat40520748",
+              "level1CategoryDisplayName": "Luggage & Travel",
+              "url": "/c/home-food-luggage-travel-cat40520748",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat58880734",
+              "level1CategoryDisplayName": "Games & Gadgets",
+              "url": "/c/home-food-games-gadgets-cat58880734",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat49630740",
+              "level1CategoryDisplayName": "Holiday",
+              "url": "/c/staging-sns-hien-holiday-cat49630740",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat44850750",
+                      "level2CategoryDisplayName": "Holiday Decor",
+                      "url": "/c/staging-sns-hien-holiday-holiday-decor-cat44850750",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44640749",
+                      "level2CategoryDisplayName": "Stockings & Tree Skirts",
+                      "url": "/c/staging-sns-hien-holiday-stockings-tree-skirts-cat44640749",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60810798",
+                      "level2CategoryDisplayName": "Santas",
+                      "url": "/c/staging-sns-hien-holiday-santas-cat60810798",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44640744",
+                      "level2CategoryDisplayName": "Ornaments",
+                      "url": "/c/staging-sns-hien-holiday-ornaments-cat44640744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44640740",
+                      "level2CategoryDisplayName": "Wreaths & Garlands",
+                      "url": "/c/staging-sns-hien-holiday-wreaths-garlands-cat44640740",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44640739",
+                      "level2CategoryDisplayName": "Spiritual",
+                      "url": "/c/staging-sns-hien-holiday-spiritual-cat44640739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60810794",
+                      "level2CategoryDisplayName": "Outdoor",
+                      "url": "/c/staging-sns-hien-holiday-outdoor-cat60810794",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60840794",
+                      "level2CategoryDisplayName": "Holiday Collections",
+                      "url": "/c/staging-sns-hien-holiday-holiday-collections-cat60840794",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat40350757",
+              "level1CategoryDisplayName": "Gourmet Food",
+              "url": "/c/home-food-gourmet-food-cat40350757",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat40510812",
+              "level1CategoryDisplayName": "Dining & Entertaining",
+              "url": "/c/home-food-dining-entertaining-cat40510812",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat44700732",
+                      "level2CategoryDisplayName": "Dinnerware",
+                      "url": "/c/home-food-dining-entertaining-dinnerware-cat44700732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat44700736",
+                      "level2CategoryDisplayName": "Flatware",
+                      "url": "/c/home-food-dining-entertaining-flatware-cat44700736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40490743",
+                      "level2CategoryDisplayName": "Glassware & Stemware",
+                      "url": "/c/home-food-dining-entertaining-glassware-stemware-cat40490743",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40540758",
+                      "level2CategoryDisplayName": "Bar & Wine Accessories",
+                      "url": "/c/home-food-dining-entertaining-bar-wine-accessories-cat40540758",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40510826",
+                      "level2CategoryDisplayName": "Serveware",
+                      "url": "/c/home-food-dining-entertaining-serveware-cat40510826",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40510832",
+                      "level2CategoryDisplayName": "Table Linens",
+                      "url": "/c/home-food-dining-entertaining-table-linens-cat40510832",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat16130743",
+                      "level2CategoryDisplayName": "Kitchen Accessories",
+                      "url": "/c/home-food-dining-entertaining-kitchen-accessories-cat16130743",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat51170748",
+              "level1CategoryDisplayName": "NM Edits",
+              "url": "/c/home-food-nm-edits-cat51170748",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat60840792",
+              "level1CategoryDisplayName": "New & Now",
+              "url": "/c/home-food-new-now-cat60840792",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat59040731",
+              "level1CategoryDisplayName": "Shop All Home",
+              "url": "/c/home-food-shop-all-home-cat59040731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat55010768",
+              "level1CategoryDisplayName": "Sale",
+              "url": "/c/home-food-sale-cat55010768",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT41820747",
+              "level1CategoryDisplayName": "Display As Groups Test Category 2",
+              "url": "/c/home-food-display-as-groups-test-category-2-T1CAT41820747",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT41820749",
+              "level1CategoryDisplayName": "Display As Groups Test Category 1",
+              "url": "/c/test-silo-testing-alt-cat-name-display-as-groups-test-category-1-T1CAT41820749",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT41820746",
+              "level1CategoryDisplayName": "Display As Groups Test Category 3",
+              "url": "/c/test-silo-testing-alt-cat-name-display-as-groups-test-category-3-T1CAT41820746",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT43930756",
+              "level1CategoryDisplayName": "Mike's Manual Test Cat",
+              "url": "/c/test-silo-mikes-test-categories-mikes-manual-test-cat-T1CAT43930756",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat000672",
+      "siloDisplayName": "Gifts",
+      "url": "/c/gifts-cat000672",
+      "attributes": {
+        "promoPath": "/category/cat44710747/r_main_drawer_promo.html"
+      },
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "cat000680",
+              "level1CategoryDisplayName": "By Recipient",
+              "url": "/c/gifts-by-recipient-cat000680",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat000686",
+                      "level2CategoryDisplayName": "For Her",
+                      "url": "/c/gifts-by-recipient-for-her-cat000686",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat21230736",
+                      "level2CategoryDisplayName": "For Him",
+                      "url": "/c/gifts-by-recipient-for-him-cat21230736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat41290747",
+                      "level2CategoryDisplayName": "For Kids",
+                      "url": "/c/gifts-by-recipient-for-kids-cat41290747",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat000674",
+              "level1CategoryDisplayName": "By Price",
+              "url": "/c/gifts-by-price-cat000674",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat24520734",
+                      "level2CategoryDisplayName": "$100 and Under",
+                      "url": "/c/gifts-by-price-100-and-under-cat24520734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat21510737",
+                      "level2CategoryDisplayName": "$250 and Under",
+                      "url": "/c/gifts-by-price-250-and-under-cat21510737",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat21510738",
+                      "level2CategoryDisplayName": "$500 and Under",
+                      "url": "/c/gifts-by-price-500-and-under-cat21510738",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat9570736",
+                      "level2CategoryDisplayName": "Indulge!",
+                      "url": "/c/gifts-by-price-indulge-cat9570736",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat4110745",
+                      "level2CategoryDisplayName": "NM Gift Cards",
+                      "url": "/c/gifts-by-price-nm-gift-cards-cat4110745",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat60860752",
+              "level1CategoryDisplayName": "By Category",
+              "url": "/c/gifts-by-category-cat60860752",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat60060734",
+                      "level2CategoryDisplayName": "Gourmet Food",
+                      "url": "/c/gifts-by-category-gourmet-food-cat60060734",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat52140764",
+                      "level2CategoryDisplayName": "Stocking Stuffers",
+                      "url": "/c/gifts-by-category-stocking-stuffers-cat52140764",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60730767",
+              "level1CategoryDisplayName": "Giftnow",
+              "url": "/c/gifts-giftnow-cat60730767",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat7470733",
+              "level1CategoryDisplayName": "By Occasion",
+              "url": "/c/gifts-by-occasion-cat7470733",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat000723",
+                      "level2CategoryDisplayName": "Wedding",
+                      "url": "/c/gifts-by-occasion-wedding-cat000723",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat20610752",
+                      "level2CategoryDisplayName": "Hostess",
+                      "url": "/c/gifts-by-occasion-hostess-cat20610752",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat7630735",
+                      "level2CategoryDisplayName": "Anniversary",
+                      "url": "/c/gifts-by-occasion-anniversary-cat7630735",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat40820734",
+                      "level2CategoryDisplayName": "New Baby",
+                      "url": "/c/gifts-by-occasion-new-baby-cat40820734",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat60910760",
+              "level1CategoryDisplayName": "Christmas Book",
+              "url": "/c/gifts-christmas-book-cat60910760",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT42600732",
+              "level1CategoryDisplayName": "Gift Registry",
+              "url": "/c/gifts-gift-registry-T1CAT42600732",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cat980731",
+      "siloDisplayName": "Sale",
+      "url": "/c/stofro-cat980731",
+      "attributes": {},
+      "columns": [
+        {
+          "level1Categories": [
+            {
+              "id": "cat46630753",
+              "level1CategoryDisplayName": "All Designers",
+              "url": "/c/stofro-all-designers-cat46630753",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat46520838",
+              "level1CategoryDisplayName": "Featured Designers",
+              "url": "/c/stofro-featured-designers-cat46520838",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat60840739",
+                      "level2CategoryDisplayName": "Brunello Cucinelli",
+                      "url": "/c/stofro-featured-designers-brunello-cucinelli-cat60840739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat57760731",
+                      "level2CategoryDisplayName": "Caroline Rose",
+                      "url": "/c/stofro-featured-designers-caroline-rose-cat57760731",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58930740",
+                      "level2CategoryDisplayName": "Eileen Fisher",
+                      "url": "/c/stofro-featured-designers-eileen-fisher-cat58930740",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60450742",
+                      "level2CategoryDisplayName": "Gucci",
+                      "url": "/c/stofro-featured-designers-gucci-cat60450742",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60450770",
+                      "level2CategoryDisplayName": "Johnny Was",
+                      "url": "/c/stofro-featured-designers-johnny-was-cat60450770",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60430732",
+                      "level2CategoryDisplayName": "Lafayette 148 New York",
+                      "url": "/c/stofro-featured-designers-lafayette-148-new-york-cat60430732",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58330754",
+                      "level2CategoryDisplayName": "Misook",
+                      "url": "/c/stofro-featured-designers-misook-cat58330754",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60450765",
+                      "level2CategoryDisplayName": "Prada",
+                      "url": "/c/stofro-featured-designers-prada-cat60450765",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60600767",
+                      "level2CategoryDisplayName": "Vince",
+                      "url": "/c/stofro-featured-designers-vince-cat60600767",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat51850740",
+              "level1CategoryDisplayName": "Designer Collections",
+              "url": "/c/stofro-designer-collections-cat51850740",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat46520818",
+                      "level2CategoryDisplayName": "Premier Designer",
+                      "url": "/c/stofro-designer-collections-premier-designer-cat46520818",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58870744",
+                      "level2CategoryDisplayName": "CUSP/Contemporary",
+                      "url": "/c/stofro-designer-collections-cusp-contemporary-cat58870744",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat54560751",
+                      "level2CategoryDisplayName": "Modern Mix",
+                      "url": "/c/stofro-designer-collections-modern-mix-cat54560751",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55190739",
+                      "level2CategoryDisplayName": "Relaxed",
+                      "url": "/c/stofro-designer-collections-relaxed-cat55190739",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat46520736",
+              "level1CategoryDisplayName": "Women's Apparel",
+              "url": "/c/stofro-womens-apparel-cat46520736",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat46520808",
+                      "level2CategoryDisplayName": "Dresses",
+                      "url": "/c/stofro-womens-apparel-dresses-cat46520808",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55480739",
+                      "level2CategoryDisplayName": "Evening",
+                      "url": "/c/stofro-womens-apparel-evening-cat55480739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520839",
+                      "level2CategoryDisplayName": "Tops",
+                      "url": "/c/stofro-womens-apparel-tops-cat46520839",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60530771",
+                      "level2CategoryDisplayName": "Swimwear & Coverups",
+                      "url": "/c/stofro-womens-apparel-swimwear-coverups-cat60530771",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat57760748",
+                      "level2CategoryDisplayName": "Jackets & Vests",
+                      "url": "/c/stofro-womens-apparel-jackets-vests-cat57760748",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58870741",
+                      "level2CategoryDisplayName": "Coats",
+                      "url": "/c/stofro-womens-apparel-coats-cat58870741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520867",
+                      "level2CategoryDisplayName": "Pants & Jeans",
+                      "url": "/c/stofro-womens-apparel-pants-jeans-cat46520867",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520879",
+                      "level2CategoryDisplayName": "Skirts",
+                      "url": "/c/stofro-womens-apparel-skirts-cat46520879",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58870740",
+                      "level2CategoryDisplayName": "Jumpsuits & Rompers",
+                      "url": "/c/stofro-womens-apparel-jumpsuits-rompers-cat58870740",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520890",
+                      "level2CategoryDisplayName": "Lingerie & Sleepwear",
+                      "url": "/c/stofro-womens-apparel-lingerie-sleepwear-cat46520890",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat51010798",
+              "level1CategoryDisplayName": "Women's Apparel",
+              "url": "/c/stofro-womens-apparel-cat51010798",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat51010774",
+                      "level2CategoryDisplayName": "Dresses",
+                      "url": "/c/stofro-womens-apparel-dresses-cat51010774",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat55480739",
+                      "level2CategoryDisplayName": "Evening",
+                      "url": "/c/stofro-womens-apparel-evening-cat55480739",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520839",
+                      "level2CategoryDisplayName": "Tops",
+                      "url": "/c/stofro-womens-apparel-tops-cat46520839",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat60530771",
+                      "level2CategoryDisplayName": "Swimwear & Coverups",
+                      "url": "/c/stofro-womens-apparel-swimwear-coverups-cat60530771",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat57760748",
+                      "level2CategoryDisplayName": "Jackets & Vests",
+                      "url": "/c/stofro-womens-apparel-jackets-vests-cat57760748",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58870741",
+                      "level2CategoryDisplayName": "Coats",
+                      "url": "/c/stofro-womens-apparel-coats-cat58870741",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520867",
+                      "level2CategoryDisplayName": "Pants & Jeans",
+                      "url": "/c/stofro-womens-apparel-pants-jeans-cat46520867",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520879",
+                      "level2CategoryDisplayName": "Skirts",
+                      "url": "/c/stofro-womens-apparel-skirts-cat46520879",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat58870740",
+                      "level2CategoryDisplayName": "Jumpsuits & Rompers",
+                      "url": "/c/stofro-womens-apparel-jumpsuits-rompers-cat58870740",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520890",
+                      "level2CategoryDisplayName": "Lingerie & Sleepwear",
+                      "url": "/c/stofro-womens-apparel-lingerie-sleepwear-cat46520890",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat46520892",
+              "level1CategoryDisplayName": "Special Sizes",
+              "url": "/c/stofro-special-sizes-cat46520892",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat46520893",
+                      "level2CategoryDisplayName": "Plus Size",
+                      "url": "/c/stofro-special-sizes-plus-size-cat46520893",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520894",
+                      "level2CategoryDisplayName": "Petite",
+                      "url": "/c/stofro-special-sizes-petite-cat46520894",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level1Categories": [
+            {
+              "id": "cat46520731",
+              "level1CategoryDisplayName": "Shoes",
+              "url": "/c/stofro-shoes-cat46520731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat51010780",
+              "level1CategoryDisplayName": "Shoes",
+              "url": "/c/stofro-shoes-cat51010780",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat46520737",
+              "level1CategoryDisplayName": "Handbags",
+              "url": "/c/stofro-handbags-cat46520737",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat55840733",
+              "level1CategoryDisplayName": "Handbags",
+              "url": "/c/stofro-handbags-cat55840733",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat46520738",
+              "level1CategoryDisplayName": "Jewelry & Accessories",
+              "url": "/c/stofro-jewelry-accessories-cat46520738",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat46510751",
+              "level1CategoryDisplayName": "The Man's Store",
+              "url": "/c/stofro-the-mans-store-cat46510751",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat46510752",
+                      "level2CategoryDisplayName": "Apparel",
+                      "url": "/c/stofro-the-mans-store-apparel-cat46510752",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520795",
+                      "level2CategoryDisplayName": "Shoes",
+                      "url": "/c/stofro-the-mans-store-shoes-cat46520795",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46520804",
+                      "level2CategoryDisplayName": "Accessories",
+                      "url": "/c/stofro-the-mans-store-accessories-cat46520804",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cat46520741",
+              "level1CategoryDisplayName": "NM Kids",
+              "url": "/c/stofro-nm-kids-cat46520741",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat46520742",
+              "level1CategoryDisplayName": "Home",
+              "url": "/c/stofro-home-cat46520742",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat56750744",
+              "level1CategoryDisplayName": "All Sale",
+              "url": "/c/stofro-all-sale-cat56750744",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat58760731",
+              "level1CategoryDisplayName": "New Arrivals",
+              "url": "/c/stofro-new-arrivals-cat58760731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "cat46040734",
+              "level1CategoryDisplayName": "Online Clearance",
+              "url": "/c/stofro-online-clearance-cat46040734",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": [
+                    {
+                      "id": "cat46580776",
+                      "level2CategoryDisplayName": "Women's Apparel",
+                      "url": "/c/stofro-online-clearance-womens-apparel-designer-collections-relaxed-cat60290751",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46590745",
+                      "level2CategoryDisplayName": "Shoes",
+                      "url": "/c/stofro-online-clearance-shoes-cat46590745",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46590758",
+                      "level2CategoryDisplayName": "Handbags",
+                      "url": "/c/stofro-online-clearance-handbags-cat46590758",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46590759",
+                      "level2CategoryDisplayName": "Jewelry & Accessories",
+                      "url": "/c/stofro-online-clearance-jewelry-accessories-cat46590759",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46580832",
+                      "level2CategoryDisplayName": "The Man's Store",
+                      "url": "/c/stofro-online-clearance-the-mans-store-cat46580832",
+                      "attributes": {}
+                    },
+                    {
+                      "id": "cat46580775",
+                      "level2CategoryDisplayName": "NM Kids",
+                      "url": "/c/stofro-online-clearance-nm-kids-cat46580775",
+                      "attributes": {}
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "T1CAT40280731",
+              "level1CategoryDisplayName": "Category in Multiple Trees",
+              "url": "/c/test-silo-testing-alt-cat-name-old-test-categories-category-in-multiple-trees-T1CAT40280731",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT40280733",
+              "level1CategoryDisplayName": "Product in Multiple Trees",
+              "url": "/c/stofro-product-in-multiple-trees-T1CAT40280733",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            },
+            {
+              "id": "T1CAT44780732",
+              "level1CategoryDisplayName": "Noor's Fancy Categories",
+              "url": "/c/stofro-noors-fancy-categories-T1CAT44780732",
+              "attributes": {},
+              "columns": [
+                {
+                  "level2Categories": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

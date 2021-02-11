@@ -1,0 +1,111 @@
+{
+    "provider": {
+        "name": "store-service"
+    },
+    "consumer": {
+        "name": "plp-svc"
+    },
+    "interactions": [
+        {
+            "description": "for given free form address and radius does not have stores",
+            "request": {
+                "method": "GET",
+                "path": "/stores",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "query": {
+                    "brandCode": [
+                        "nm"
+                    ],
+                    "freeFormAddress": [
+                        "as"
+                    ],
+                    "mileRadius": [
+                        "2"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "storeNumbers": [
+
+                    ]
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "EmptyStoreResponse"
+                }
+            ]
+        },
+        {
+            "description": "for given free form address and radius it gives bad request ",
+            "request": {
+                "method": "GET",
+                "path": "/stores",
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            },
+            "response": {
+                "status": 400
+            },
+            "providerStates": [
+                {
+                    "name": "InvalidStoreResponse"
+                }
+            ]
+        },
+        {
+            "description": "for given free form address and radius",
+            "request": {
+                "method": "GET",
+                "path": "/stores",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "query": {
+                    "brandCode": [
+                        "nm"
+                    ],
+                    "freeFormAddress": [
+                        "cityAndStateOrZip"
+                    ],
+                    "mileRadius": [
+                        "123"
+                    ]
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "storeNumbers": [
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "ValidStoreResponse"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.10"
+        }
+    }
+}

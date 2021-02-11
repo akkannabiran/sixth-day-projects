@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  set_mappings:
+      image: 'logstash:5.6.12'
+      network_mode: 'host'
+      volumes:
+       - '../conf:/conf'
+      entrypoint: /bin/bash
+      command: >
+        -c "
+        curl --user elastic:changeme -XDELETE 'http://dev-search-v66.sixthdaycloudapps.net:9200/store_index?pretty' &&
+        curl --user elastic:changeme -XPUT 'http://dev-search-v66.sixthdaycloudapps.net:9200/store_index?pretty' --upload-file /conf/store_index_elasticsearch_mapping.json --retry 2;
+        curl --user elastic:changeme -XDELETE 'http://dev-search-v66.sixthdaycloudapps.net:9200/store_sku_inventory_index?pretty' &&
+        curl --user elastic:changeme -XPUT 'http://dev-search-v66.sixthdaycloudapps.net:9200/store_sku_inventory_index?pretty' --upload-file /conf/store_sku_inventory_elasticsearch_mapping.json --retry 2;
+        "
+
+  logstash:
+    image: 'logstash:5.6.12'
+    network_mode: 'host'
+    volumes:
+     - '../etl:/etl'
+    entrypoint: /bin/bash
+    environment:
+      - ES_HOSTS=dev-search-v66.sixthdaycloudapps.net:9200
+    command: >
+        -c "
+        ./etl/indexDataFilesIntoElasticsearch.sh
+        "
+    depends_on:
+     - set_mappings

@@ -1,0 +1,14 @@
+/build/
+/bin/
+/.apt_generated/
+/buildSrc/build/
+.gradle/
+.idea/
+*.iml
+out/
+etl/data/gen
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans

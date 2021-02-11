@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd">
+    <suppress>
+        <notes><![CDATA[file name: ehcache-2.10.4.jar/rest-management-private-classpath/META-INF/maven/org.eclipse.jetty/jetty-http/pom.xml]]></notes>
+        <gav regex="true">^org\.eclipse\.jetty:jetty-http:.*$</gav>
+        <cve>CVE-2017-9735</cve>
+        <cve>CVE-2017-7656</cve>
+        <cve>CVE-2017-7657</cve>
+        <cve>CVE-2017-7658</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: ehcache-2.10.4.jar/rest-management-private-classpath/META-INF/maven/org.eclipse.jetty/jetty-servlet/pom.xml]]></notes>
+        <gav regex="true">^org\.eclipse\.jetty:jetty-servlet:.*$</gav>
+        <cve>CVE-2017-9735</cve>
+        <cve>CVE-2017-7656</cve>
+        <cve>CVE-2017-7657</cve>
+        <cve>CVE-2017-7658</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: ehcache-2.10.4.jar/rest-management-private-classpath/META-INF/maven/org.eclipse.jetty/jetty-server/pom.xml]]></notes>
+        <gav regex="true">^org\.eclipse\.jetty:jetty-server:.*$</gav>
+        <cve>CVE-2017-9735</cve>
+        <cve>CVE-2017-7656</cve>
+        <cve>CVE-2017-7657</cve>
+        <cve>CVE-2017-7658</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: ehcache-2.10.4.jar/rest-management-private-classpath/META-INF/maven/org.eclipse.jetty/jetty-security/pom.xml]]></notes>
+        <gav regex="true">^org\.eclipse\.jetty:jetty-security:.*$</gav>
+        <cve>CVE-2017-9735</cve>
+        <cve>CVE-2017-7656</cve>
+        <cve>CVE-2017-7657</cve>
+        <cve>CVE-2017-7658</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: ehcache-2.10.4.jar/rest-management-private-classpath/META-INF/maven/org.eclipse.jetty/jetty-continuation/pom.xml]]></notes>
+        <gav regex="true">^org\.eclipse\.jetty:jetty-continuation:.*$</gav>
+        <cve>CVE-2017-9735</cve>
+        <cve>CVE-2017-7656</cve>
+        <cve>CVE-2017-7657</cve>
+        <cve>CVE-2017-7658</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: ehcache-2.10.4.jar/rest-management-private-classpath/META-INF/maven/org.eclipse.jetty/jetty-util/pom.xml]]></notes>
+        <gav regex="true">^org\.eclipse\.jetty:jetty-util:.*$</gav>
+        <cve>CVE-2017-9735</cve>
+        <cve>CVE-2017-7656</cve>
+        <cve>CVE-2017-7657</cve>
+        <cve>CVE-2017-7658</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: tomcat-annotations-api-8.5.23.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat:tomcat-annotations-api:.*$</gav>
+        <cve>CVE-2009-3548</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: tomcat-annotations-api-8.5.23.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat:tomcat-annotations-api:.*$</gav>
+        <cve>CVE-2002-0493</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: tomcat-annotations-api-8.5.23.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat:tomcat-annotations-api:.*$</gav>
+        <cve>CVE-2013-2185</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: tomcat-annotations-api-8.5.23.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat:tomcat-annotations-api:.*$</gav>
+        <cve>CVE-2016-5425</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: tomcat-annotations-api-8.5.23.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat:tomcat-annotations-api:.*$</gav>
+        <cve>CVE-2016-6325</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: guava-22.0.jar]]></notes>
+        <gav regex="true">^com\.google\.guava:guava:.*$</gav>
+        <cve>CVE-2018-10237</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-cloud-stream-binder-rabbit-1.2.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework\.cloud:spring-cloud-stream-binder-rabbit:.*$</gav>
+        <cve>CVE-2014-9494</cve>
+        <cve>CVE-2018-1279</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-cloud-stream-binder-rabbit-core-1.2.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework\.cloud:spring-cloud-stream-binder-rabbit-core:.*$</gav>
+        <cve>CVE-2014-9494</cve>
+        <cve>CVE-2018-1279</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cve>CVE-2013-4152</cve>
+        <cve>CVE-2013-6429</cve>
+        <cve>CVE-2013-7315</cve>
+        <cve>CVE-2014-0054</cve>
+        <cve>CVE-2014-1904</cve>
+        <cve>CVE-2016-9878</cve>
+        <cve>CVE-2018-1271</cve>
+        <cve>CVE-2018-1272</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: compiler-0.9.3.jar]]></notes>
+        <gav regex="true">^com\.github\.spullara\.mustache\.java:compiler:.*$</gav>
+        <cve>CVE-2015-8862</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: amqp-client-4.8.1.jar]]></notes>
+        <gav regex="true">^com\.rabbitmq:amqp-client:.*$</gav>
+        <cve>CVE-2018-1279</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: javax.el-api-3.0.0.jar]]></notes>
+        <gav regex="true">^javax\.el:javax.el-api:.*$</gav>
+        <cve>CVE-2013-2566</cve>
+        <cve>CVE-2015-2808</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: tomcat-annotations-api-8.5.31.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat:tomcat-annotations-api:.*$</gav>
+        <cve>CVE-2016-6325</cve>
+        <cve>CVE-2000-0672</cve>
+        <cve>CVE-2000-0760</cve>
+        <cve>CVE-2000-1210</cve>
+        <cve>CVE-2001-0590</cve>
+        <cve>CVE-2002-1148</cve>
+        <cve>CVE-2002-2006</cve>
+        <cve>CVE-2003-0042</cve>
+        <cve>CVE-2003-0043</cve>
+        <cve>CVE-2003-0044</cve>
+        <cve>CVE-2003-0045</cve>
+        <cve>CVE-2005-0808</cve>
+        <cve>CVE-2005-4838</cve>
+        <cve>CVE-2006-7196</cve>
+        <cve>CVE-2007-1358</cve>
+        <cve>CVE-2007-2449</cve>
+        <cve>CVE-2008-0128</cve>
+        <cve>CVE-2009-2696</cve>
+        <cve>CVE-2012-5568</cve>
+        <cve>CVE-2013-4286</cve>
+        <cve>CVE-2013-4322</cve>
+        <cve>CVE-2013-4444</cve>
+        <cve>CVE-2013-4590</cve>
+        <cve>CVE-2013-6357</cve>
+        <cve>CVE-2014-0075</cve>
+        <cve>CVE-2014-0096</cve>
+        <cve>CVE-2014-0099</cve>
+        <cve>CVE-2014-0119</cve>
+        <cve>CVE-2017-6056</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cve>CVE-2011-2730</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-databind-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2017-17485</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: ehcache-2.10.4.jar/rest-management-private-classpath/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2017-7525</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-dataformat-xml-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.dataformat:jackson-dataformat-xml:.*$</gav>
+        <cve>CVE-2017-17485</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-dataformat-xml-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.dataformat:jackson-dataformat-xml:.*$</gav>
+        <cve>CVE-2018-5968</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-databind-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2018-5968</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-databind-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2017-7525</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-databind-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2017-15095</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: ehcache-2.10.4.jar/rest-management-private-classpath/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2018-7489</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-databind-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2018-7489</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-dataformat-xml-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.dataformat:jackson-dataformat-xml:.*$</gav>
+        <cve>CVE-2018-7489</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-tuple-1.0.0.RELEASE.jar]]></notes>
+        <gav regex="true">^org\.springframework:spring-tuple:.*$</gav>
+        <cve>CVE-2018-1270</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: jackson-databind-2.8.11.jar]]></notes>
+        <cve>CVE-2018-14718</cve>
+        <cve>CVE-2018-1000873</cve>
+        <cve>CVE-2018-14719</cve>
+        <cve>CVE-2018-14720</cve>
+        <cve>CVE-2018-14721</cve>
+        <cve>CVE-2018-19360</cve>
+        <cve>CVE-2018-19361</cve>
+        <cve>CVE-2018-19362</cve>
+        <cve>CVE-2018-12022</cve>
+        <cve>CVE-2018-12023</cve>        
+    </suppress>
+    <suppress>
+        <notes><![CDATA[file name: spring-integration-ws.jar]]></notes>
+        <cve>CVE-2019-3772</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[
+	   file name: jackson-databind-2.8.11.jar
+	   ]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2018-14718</cve>
+        <cve>CVE-2018-14719</cve>
+        <cve>CVE-2018-14720</cve>
+        <cve>CVE-2018-14721</cve>
+        <cve>CVE-2018-19360</cve>
+        <cve>CVE-2018-19361</cve>
+        <cve>CVE-2018-19362</cve>
+    </suppress>
+    <suppress>
+	   <notes><![CDATA[file name: tomcat-embed-core-8.5.34.jar]]></notes>
+	   <gav regex="true">^org\.apache\.tomcat\.embed:tomcat-embed-core:.*$</gav>
+	   <cve>CVE-2019-0199</cve>
+	   <cve>CVE-2019-0232</cve>
+	</suppress>
+	<suppress>
+	   <notes><![CDATA[file name: tomcat-embed-websocket-8.5.34.jar]]></notes>
+	   <gav regex="true">^org\.apache\.tomcat\.embed:tomcat-embed-websocket:.*$</gav>
+	   <cve>CVE-2019-0199</cve>
+	   <cve>CVE-2019-0232</cve>
+	</suppress>
+    <suppress>
+        <notes><![CDATA[tomcat-annotations-api-8.5.34.jar]]></notes>
+        <cpe>cpe:/a:apache_software_foundation:tomcat:8.5.34</cpe>
+	   <cve>CVE-2019-0199</cve>
+	   <cve>CVE-2019-0232</cve>
+	</suppress>
+    <suppress>
+        <notes><![CDATA[
+	   file name: ehcache-2.10.4.jar
+	   ]]></notes>
+        <gav regex="true">^org\.eclipse\.jetty:jetty-.*:.*$</gav>
+        <cve>CVE-2019-10241</cve>
+        <cve>CVE-2019-10246</cve>
+    </suppress>	
+</suppressions>

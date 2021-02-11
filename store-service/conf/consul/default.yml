@@ -1,0 +1,76 @@
+sixthday-store-api:
+  got-www-api:
+    scheme: http
+    host: localhost
+    port: 8400
+    path: /
+    default-mile-radius: 100
+    result-limit: 99999
+  stub-got-www-api:
+    scheme: http
+    host: localhost
+    port: 8400
+    path: /stubs/
+    default-mile-radius: 100
+    result-limit: 99999
+  elastic-search-config:
+    cluster-name: elasticsearch
+    elastic-search-host: localhost
+    elastic-search-port: 9200
+    store-index-name: store_index
+    store-sku-inventory-index-name: store_sku_inventory_index
+    enable-transport-sniff: false
+    user-name: elastic
+    password: changeme
+
+featuretoggles:
+  toggles:
+    STUB_GOT_WWW: true
+
+hystrix:
+  metrics:
+    enabled: false
+  command:
+    got-www-api:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+      circuitBreaker:
+        requestVolumeThreshold: 5
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 2000
+      fallback:
+        enabled: false
+  threadpool:
+    got-www-api:
+      coreSize: 10
+      keepAliveTimeMinutes: 1
+      
+sixthday-store-sub:
+  queue-config:
+    queue-name: sixthday-store-data
+    store-sku-inventory-queue-name: sixthday-store-sku-inventory
+    host: localhost
+    port: 5672
+    connection-timeout: 30000
+    username: guest
+    password: guest
+    concurrent-consumers: 10
+    prefetch-count: 10
+  store-inventory-by-sku-queue-config:
+    queue-name: sixthday-product-sku-stores-inventory
+    concurrent-consumers: 10
+    prefetch-count: 10
+  products-foundation-mode: true
+management:
+  security:
+    enabled: false
+  health:
+    rabbit:
+      enabled: true
+
+endpoints:
+  health:
+    sensitive: false
+  enabled: true

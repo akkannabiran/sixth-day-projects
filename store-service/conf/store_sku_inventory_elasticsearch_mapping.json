@@ -1,0 +1,40 @@
+{
+  "settings": {
+    "number_of_shards" :   6,
+    "number_of_replicas" : 2
+  },
+   "mappings": {
+      "_doc": {
+         "properties": {
+            "skuId": {
+               "type": "text"
+            },
+            "storeNumber": {
+               "type": "text"
+            },
+            "storeId": {
+               "type": "text"
+            },
+            "locationNumber": {
+               "type": "text"
+            },
+            "inventoryLevelCode": {
+               "type": "text"
+            },
+            "quantity": {
+               "type": "integer"
+            },
+            "bopsQuantity": {
+            	"type": "integer"
+            },
+            "productIds":{
+            	"type": "text"
+            },
+            "msgTimestamp": {
+               "type": "date",
+               "format": "yyyy-MM-dd'T'HH:mm:ss||yyyy-MM-dd'T'HH:mm:ss.SSSZ||epoch_millis"
+            }
+         }
+      }
+   }
+}

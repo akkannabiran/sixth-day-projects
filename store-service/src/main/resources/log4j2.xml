@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT" immediateFlush="true">
+			<PatternLayout>
+				<MarkerPatternSelector defaultPattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %X %msg%n%throwable">
+					<PatternMatch key="ContentSyncLogMarker"
+						pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %notEmpty{MessageId=&quot;%X{messageId}&quot;, MessageType=&quot;%X{messageType}&quot;, ContextId=&quot;%X{contextId}&quot;, OriginTimestamp=&quot;%X{OriginTimestamp}&quot;, sixthdaySRC=&quot;%X{sixthdaySRC}&quot;, sixthdayDEST=&quot;%X{sixthdayDEST}&quot;, sixthdayRESOURCE=&quot;%X{sixthdayRESOURCE}&quot;,} %msg%n%throwable" />
+					<PatternMatch key="NoMDCLogMarker" pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %msg%n%throwable" />
+				</MarkerPatternSelector>
+			</PatternLayout>
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="org.springframework" level="ERROR" />
+		<Logger name="org.hibernate" level="ERROR" />
+		<Root level="INFO">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>

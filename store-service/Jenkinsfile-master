@@ -1,0 +1,250 @@
+def deploy_to_new_stack(env_name, isFastDeploy, buildNumber = env.BUILD_NUMBER) {
+  stage("Deploy to new stack: ${env_name}") {
+     build(job: "sixthday-service-deployment-new-infrastructure-${env_name}", parameters: [
+         [$class: 'StringParameterValue', name: 'image_tag', value: "${buildNumber}"],
+         [$class: 'StringParameterValue', name: 'environment', value: "${env_name}"],
+         [$class: 'StringParameterValue', name: 'service_name', value: 'stores'],
+         [$class: 'StringParameterValue', name: 'image_repo', value: 'store-service'],
+         [$class: 'BooleanParameterValue', name: 'fast_drain', value: isFastDeploy]
+      ])
+   }
+}
+final red = '#FF0000'
+final pdpChannel = "sixthday_pdp_checkout"
+final slackMsgPipelineLink = "<${env.JOB_URL}|plp-svc master pipeline>"
+final slackMsgConsoleLink = "<${env.BUILD_URL}console|Console Output>"
+
+node('build && procat') {
+    def ecr_repo_hostname = "168860074409.dkr.ecr.us-west-2.amazonaws.com"
+    def ecr_repo_name = "store-service"
+    def aws_repo_url = "${ecr_repo_hostname}/${ecr_repo_name}"
+    def prod_artifactory_url = 'http://jfrog.mysixthday.com'
+
+    def env_dev_name = "dev"
+    def env_dev_int_name = "dev-int"
+
+    def docker_image_name = "${aws_repo_url}:${BUILD_NUMBER}"
+    def docker_deploy_image_name = "${docker_image_name}-deploy"
+
+    step([$class: 'StashNotifier'])
+
+    try {
+        timestamps {
+            stage('Checkout') {
+                checkout scm
+                sh "./clean_old_docker_images clean_docker_output.txt"
+            }
+
+            stage('Run Unit Tests') {
+                sh "./gradlew clean build test jacocoTestReport jacocoTestCoverageVerification -PbuildInfo=true -Pbuild.job.name=${JOB_NAME} -Pbuild.job.number=${BUILD_NUMBER}"
+            }
+
+            stage('Run Service Tests') {
+                sh './gradlew serviceTest'
+            }
+
+            stage('Run Consumer Contract Tests and Publish Artifact') {
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'PACTBROKER_CREDENTIALS',
+                                    usernameVariable: 'PACTBROKER_USER', passwordVariable: 'PACTBROKER_PASSWORD']]) {
+                    sh './gradlew consumerContractTest publishPactsToBroker -PpactBrokerUserName=${PACTBROKER_USER} -PpactBrokerPassword=${PACTBROKER_PASSWORD}'
+                }
+            }
+
+            stage('Run Provider Contract Tests') {
+                withCredentials([[$class:'UsernamePasswordMultiBinding',credentialsId: 'PACTBROKER_CREDENTIALS',
+                                               usernameVariable: 'PACTBROKER_USER', passwordVariable: 'PACTBROKER_PASSWORD']]) {
+                    sh './gradlew providerContractTest -PpactBrokerUserName=${PACTBROKER_USER} -PpactBrokerPassword=${PACTBROKER_PASSWORD}'
+                }
+            }
+
+            archiveArtifacts 'build/libs/store-service-0.0.1-SNAPSHOT.jar'
+
+            withSonarQubeEnv('sixthday SonarQube Server') {
+                sh './gradlew sonarqube'
+            }
+
+            stage('OWASP Dependency Check') {
+                sh "./gradlew dependencyCheckAnalyze -PartifactoryUrl=${prod_artifactory_url} --refresh-dependencies --no-daemon"
+            }
+
+            stage('Build and Publish to ECR') {
+                sh "docker build -t ${docker_image_name} ."
+
+                sh "docker build -t ${docker_deploy_image_name} -f ./Dockerfile-deploy ."
+
+                tag_and_push_docker_image_to_ECR(aws_repo_url, docker_image_name, "${BUILD_NUMBER}")
+                tag_and_push_docker_image_to_ECR(aws_repo_url, docker_deploy_image_name, "${BUILD_NUMBER}-deploy")
+            }
+
+            lock("Stages-CreateAndDeployService_${env_dev_name}") {
+                try {
+                    deploy_to_new_stack(env_dev_name, true)
+
+                    stage('Index Elasticsearch') {
+                        EXIT_CODE = sh script: 'docker-compose -f ./etl/docker-push-data-to-dev.yml up', returnStatus: true
+                        if (EXIT_CODE > 0) {
+                            error('Failed to index data into DEV elasticsearch')
+                        }
+                    }
+
+                    stage('Run Integration Tests') {
+                        sh './gradlew -Dspring.profiles.active=dev,ci -Dspring.cloud.vault.token=$(aws s3 cp s3://nm-vault/nm/dev/access_token.txt -) integrationTest'
+                    }
+
+                } catch (error) {
+                    deploy_to_new_stack(env_dev_name, true, "bronze")
+                    throw (error)
+                }
+            }
+
+            stage('Tag Bronze') {
+                tag_and_push_docker_image_to_ECR(aws_repo_url, docker_image_name, "bronze")
+                tag_and_push_docker_image_to_ECR(aws_repo_url, docker_deploy_image_name, "bronze-deploy")
+            }
+
+            stage('Test Integration with Dev Int') {
+                sh "./gradlew dockerTestImage --imageName ${docker_image_name} --env dev-int --buildNumber ${BUILD_NUMBER} --envVersionName dev-int --vaultAccessTokenPath=s3://nm-vault/nm/dev-int/access_token.txt"
+            }
+
+            lock("Stages-CreateAndDeployService_${env_dev_int_name}") {
+                deploy_to_new_stack(env_dev_int_name, true)
+            }
+
+            stage('Tag Silver') {
+                tag_and_push_docker_image_to_ECR(aws_repo_url, docker_image_name, "silver")
+                tag_and_push_docker_image_to_ECR(aws_repo_url, docker_deploy_image_name, "silver-deploy")
+            }
+            update_jira_fix_version()
+            currentBuild.result = 'SUCCESS'
+        }
+    } catch (error) {
+        currentBuild.result = 'FAILED'
+        slackSend channel: "${pdpChannel}", color: "${red}", message: "Build ${env.BUILD_NUMBER} FAILED for ${slackMsgPipelineLink}.  (${slackMsgConsoleLink})"
+        throw error
+    } finally {
+        publish_test_reports()
+        step([$class: 'StashNotifier'])
+    }
+}
+
+def tag_and_push_docker_image_to_ECR(aws_repo_url, docker_image_name, tag_name) {
+    def docker_tag_name = "${aws_repo_url}:${tag_name}"
+    sh "docker tag ${docker_image_name} ${docker_tag_name}"
+
+    push_return_code = docker_push_current_image(docker_tag_name)
+    if (push_return_code != 0) {
+        login_cmd = sh(
+                script: 'aws ecr get-login --no-include-email',
+                returnStdout: true
+        ).trim()
+
+        sh "${login_cmd}"
+        push_return_code = docker_push_current_image(docker_tag_name)
+        if (push_return_code != 0) {
+            error("Failed to push docker image: ${docker_tag_name}")
+        }
+    }
+}
+
+def docker_push_current_image(docker_image_name) {
+    sh(
+            script: "docker push ${docker_image_name}",
+            returnStatus: true
+    )
+}
+
+def login_to_ecr() {
+    login_cmd = sh(
+            script: 'aws ecr get-login --no-include-email',
+            returnStdout: true
+    ).trim()
+
+    sh "${login_cmd}"
+}
+
+def update_jira_fix_version() {
+        sh "git log --format=oneline -n 1 | awk 'match(\$0, /[A-Z]+-[0-9]+/) { print substr(\$0, RSTART, RLENGTH) }' > COMMIT_MSG"
+        def git_commit = readFile('COMMIT_MSG').trim()
+        def fixVersion = getFixVersion()
+        withCredentials([[$class: 'UsernamePasswordMultiBinding',
+        credentialsId: 'JIRA_CREDENTIALS',
+        usernameVariable: 'NM_JIRA_USER',
+        passwordVariable: 'NM_JIRA_PWD']]) {
+                sh "curl -u $NM_JIRA_USER:$NM_JIRA_PWD -H \"Content-Type: application/json\" -X PUT https://jira.mysixthday.com/rest/api/2/issue/${git_commit} --data '{\"update\": {\"fixVersions\": [{\"set\": [{\"name\": \"${fixVersion}\"}]}]}}'"
+        }   
+}
+@NonCPS
+def getFixVersion() {
+    def dateFormat = new java.text.SimpleDateFormat("yy.M.W")
+    def date = new Date().with {
+        d -> d + (7 + Calendar.MONDAY - d[Calendar.DAY_OF_WEEK])%7
+    }
+    dateFormat.format(date)
+}
+
+def publish_test_reports() {
+    publishHTML([
+            allowMissing         : false,
+            alwaysLinkToLastBuild: true,
+            keepAll              : false,
+            reportDir            : 'build/reports/tests/test',
+            reportFiles          : 'index.html',
+            reportName           : 'Unit test report'
+    ])
+    publishHTML([
+            allowMissing         : false,
+            alwaysLinkToLastBuild: true,
+            keepAll              : false,
+            reportDir            : 'build/reports/tests/serviceTest',
+            reportFiles          : 'index.html',
+            reportName           : 'Service test report'
+    ])
+    publishHTML([
+            allowMissing         : false,
+            alwaysLinkToLastBuild: true,
+            keepAll              : false,
+            reportDir            : 'build/reports/tests/consumerContractTest',
+            reportFiles          : 'index.html',
+            reportName           : 'Consumer contract test report'
+    ])
+    publishHTML([
+            allowMissing         : false,
+            alwaysLinkToLastBuild: true,
+            keepAll              : false,
+            reportDir            : 'build/reports/tests/providerContractTest',
+            reportFiles          : 'index.html',
+            reportName           : 'Provider contract test report'
+    ])
+    publishHTML([
+            allowMissing         : false,
+            alwaysLinkToLastBuild: false,
+            keepAll              : false,
+            reportDir            : 'build/reports/jacoco/test/html',
+            reportFiles          : 'index.html',
+            reportName           : 'Code coverage report'
+    ])
+    publishHTML([
+            allowMissing         : true,
+            alwaysLinkToLastBuild: false,
+            keepAll              : true,
+            reportDir: 'build/reports/tests/integrationTest',
+            reportFiles: 'index.html',
+            reportName: 'Integration test report'
+    ])
+    publishHTML([
+            allowMissing         : false,
+            alwaysLinkToLastBuild: true,
+            keepAll              : false,
+            reportDir            : 'build/reports',
+            reportFiles          : 'dependency-check-report.html',
+            reportName           : 'Dependency check report'
+    ])
+    publishHTML([
+            allowMissing         : true,
+            alwaysLinkToLastBuild: true,
+            keepAll              : true,
+            reportDir            : '.',
+            reportFiles          : 'clean_docker_output.txt',
+            reportName           : 'Clean Old Docker Images Report'
+    ])
+}

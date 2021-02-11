@@ -1,0 +1,14 @@
+info:
+  jenkins:
+    job_name: "@jenkins.job.name@"
+    build_number: "@jenkins.build.number@"
+
+endpoints:
+  trace:
+    enabled: true
+    sensitive: false
+
+spring:
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Appenders>
+		<RollingRandomAccessFile name="StoreServiceFileLogger" fileName="/var/log/stores/store-service.ecs.${env:HOSTNAME}.log" filePattern="/var/log/stores/store-service.ecs.${env:HOSTNAME}.log.%d{yyyy-MM-dd-HH-mm-ss}"
+			immediateFlush="false">
+			<PatternLayout>
+				<MarkerPatternSelector defaultPattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %X %msg%n%throwable">
+					<PatternMatch key="ContentSyncLogMarker"
+						pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %notEmpty{MessageId=&quot;%X{messageId}&quot;, MessageType=&quot;%X{messageType}&quot;, ContextId=&quot;%X{contextId}&quot;, OriginTimestamp=&quot;%X{OriginTimestamp}&quot;, sixthdaySRC=&quot;%X{sixthdaySRC}&quot;, sixthdayDEST=&quot;%X{sixthdayDEST}&quot;, sixthdayRESOURCE=&quot;%X{sixthdayRESOURCE}&quot;,} %msg%n%throwable" />
+					<PatternMatch key="NoMDCLogMarker" pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %msg%n%throwable" />	
+				</MarkerPatternSelector>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="2" />
+		</RollingRandomAccessFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="org.springframework" level="ERROR" />
+		<Logger name="org.hibernate" level="ERROR" />
+		<Logger name="com.datastax" level="ERROR" />
+		<Logger name="io.netty" level="ERROR" />
+		<Logger name="com.sixthday" level="INFO" additivity="false">
+			<AppenderRef ref="StoreServiceFileLogger" />
+		</Logger>
+		<Root level="INFO">
+			<AppenderRef ref="StoreServiceFileLogger" />
+		</Root>
+
+		<Logger name="org.springframework.amqp" level="INFO" />
+	</Loggers>
+</Configuration>

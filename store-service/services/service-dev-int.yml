@@ -1,0 +1,21 @@
+---
+application_name: "store-service"
+application_uri: "/stores"
+application_port: "8080"
+product_team_name: "ProductCatalog"
+product_team_contact_email: "joey_khashab@sixthday.com"
+product_team_contact_cell: "111-111-1111"
+product_team_contact_hipchat: "jkhashab"
+resources:
+  cpu: 1024
+  memory: 2000
+  min_containers: 1
+  max_containers: 25
+  desired_count: 1
+  health_check:
+    path: '/info'
+docker:
+  repository: "store-service"
+  tag: "placeholder"
+  environment:
+    VAULT_ACCESS_TOKEN_PATH: "s3://nm-vault/nm/dev-int/access_token.txt"

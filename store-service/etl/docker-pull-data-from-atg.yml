@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  logstash:
+    image: 'logstash:5.0'
+    volumes:
+     - '../etl:/etl'
+    entrypoint: /bin/bash
+    environment:
+      - DB_CONNECTION_STRING=$DB_CONNECTION_STRING
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+    command: >
+        -c "
+        rm -rf etl/data/gen;
+        logstash -f /etl/logstash/logstash-store-sql-to-file.conf;
+        logstash -f /etl/logstash/logstash-events-sql-to-file.conf;
+        logstash -f /etl/logstash/logstash-storeSkuInventory-sql-to-file.conf;
+        "

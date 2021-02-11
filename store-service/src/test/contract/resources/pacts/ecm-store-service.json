@@ -1,0 +1,270 @@
+{
+  "provider": {
+    "name": "store-service"
+  },
+  "consumer": {
+    "name": "ECM"
+  },
+  "interactions": [
+    {
+      "providerState": "ValidStoreIdPass",
+      "description": "a request is made with valid store id",
+      "request": {
+        "method": "GET",
+        "path": "/stores",
+        "query": {
+          "storeId": [
+            "100/SL"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "body": [
+          {
+            "storeNumber": "100",
+            "name": "St. Louis",
+            "storeId": "100/SL",
+            "image": "/category/stores/100SL/images/r_main.jpg",
+            "addressLine1": "100 Plaza Frontenac",
+            "addressLine2": null,
+            "phoneNumber": "314-567-9811",
+            "storeHours": "Mon. 10:00AM - 8:00PM,Tue. 10:00AM - 8:00PM,Wed. 10:00AM - 8:00PM,Thu. 10:00AM - 8:00PM,Fri. 10:00AM - 8:00PM,Sat. 10:00AM - 7:00PM,Sun. 12:00PM - 6:00PM",
+            "events": [
+              {
+                "name": "Event name1",
+                "description": "description1",
+                "eventTimeDuration": "September 6 - 8, 10am to 5pm"
+              },
+              {
+                "name": "Event name2",
+                "description": "description2",
+                "eventTimeDuration": "September 6 - 8, 10am to 5pm"
+              }
+            ]
+          }
+        ],
+        "responseMatchingRules": {
+          "$.body.content": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "providerState": "ValidCoordinates",
+      "description": "a request is made with valid coordinates",
+      "request": {
+        "method": "GET",
+        "path": "/stores",
+        "query": {
+          "brandCode": [
+            "nm"
+          ],
+          "latitude": [
+            "32.7767"
+          ],
+          "longitude": [
+            "-96.7970"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "body": [
+          {
+            "storeNumber": "02",
+            "name": "Dallas - NorthPark",
+            "storeId": "02/NP",
+            "image": "/category/stores/02NP/images/r_main.jpg",
+            "addressLine1": "8687 North Central Expressway",
+            "addressLine2": "Suite 400",
+            "phoneNumber": "214-363-8311",
+            "storeHours": "Mon. 10:00AM - 9:00PM,Tue. 10:00AM - 9:00PM,Wed. 10:00AM - 9:00PM,Thu. 10:00AM - 9:00PM,Fri. 10:00AM - 9:00PM,Sat. 10:00AM - 8:00PM,Sun. 12:00PM - 6:00PM",
+            "events": [
+              {
+                "name": "abc",
+                "description": "abc",
+                "eventTimeDuration": "4 jun"
+              }
+            ]
+          },
+          {
+            "storeNumber": "03",
+            "name": "Fort Worth",
+            "storeId": "03/FW",
+            "image": "/category/stores/03FW/images/r_main.jpg",
+            "addressLine1": "2100 Green Oaks Road ",
+            "addressLine2": null,
+            "phoneNumber": "817-738-3581",
+            "storeHours": "Mon. 10:00AM - 7:00PM,Tue. 10:00AM - 7:00PM,Wed. 10:00AM - 7:00PM,Thu. 10:00AM - 7:00PM,Fri. 10:00AM - 7:00PM,Sat. 10:00AM - 7:00PM,Sun. 12:00PM - 5:00PM",
+            "events": [
+            ]
+          }
+        ]
+      },
+      "matchingRules": {
+        "$.body[0].storeNumber": {
+          "match": "type"
+        },
+        "$.body[0].name": {
+          "match": "type"
+        },
+        "$.body[0].storeId": {
+          "match": "type"
+        },
+        "$.body[0].image": {
+          "match": "type"
+        },
+        "$.body[0].addressLine1": {
+          "match": "type"
+        },
+        "$.body[0].addressLine2": {
+          "match": "type"
+        },
+        "$.body[0].phoneNumber": {
+          "match": "type"
+        },
+        "$.body[0].storeHours": {
+          "match": "type"
+        },
+        "$.body[0].events[0].name": {
+          "match": "type"
+        },
+        "$.body[0].events[0].description": {
+          "match": "type"
+        },
+        "$.body[0].events[0].eventTimeDuration": {
+          "match": "type"
+        },
+        "$.body[1].storeNumber": {
+          "match": "type"
+        },
+        "$.body[1].name": {
+          "match": "type"
+        },
+        "$.body[1].storeId": {
+          "match": "type"
+        },
+        "$.body[1].image": {
+          "match": "type"
+        },
+        "$.body[1].addressLine1": {
+          "match": "type"
+        },
+        "$.body[1].addressLine2": {
+          "match": "type"
+        },
+        "$.body[1].phoneNumber": {
+          "match": "type"
+        },
+        "$.body[1].storeHours": {
+          "match": "type"
+        }
+      }
+    },
+    {
+      "providerState": "InvalidCoordinates",
+      "description": "a request is made with invalid coordinates",
+      "request": {
+        "method": "GET",
+        "path": "/stores",
+        "query": {
+          "brandCode": [
+            "nm"
+          ],
+          "latitude": [
+            "01.1111"
+          ],
+          "longitude": [
+            "21.0000"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset=UTF-8"
+        },
+        "body": [
+        ]
+      },
+      "responseMatchingRules": {
+        "$.body.content": {
+          "match": "type"
+        }
+      }
+    },
+    {
+      "providerState": "unWantedRequestParamsForStoreId",
+      "description": "a request is made with unwanted params (lat long) for store search with storeId",
+      "request": {
+        "method": "GET",
+        "path": "/stores",
+        "query": {
+          "storeId": [
+            "100/SL"
+          ],
+          "latitude": [
+            "32.7767"
+          ],
+          "longitude": [
+            "-96.7970"
+          ]
+        }
+      },
+      "response": {
+        "status": 400
+      },
+      "responseMatchingRules": {
+        "$.body.content": {
+          "match": "type"
+        }
+      }
+    },
+    {
+      "providerState": "unWantedRequestParamsForCoordinates",
+      "description": "a request is made with unwanted params (freeFormAddress) for store search with latitude and longitude",
+      "request": {
+        "method": "GET",
+        "path": "/stores",
+        "query": {
+          "brandCode": [
+            "nm"
+          ],
+          "latitude": [
+            "32.7767"
+          ],
+          "longitude": [
+            "-96.7970"
+          ],
+          "freeFormAddress": [
+            "dallas"
+          ]
+        }
+      },
+      "response": {
+        "status": 400
+      },
+      "responseMatchingRules": {
+        "$.body.content": {
+          "match": "type"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pact-specification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "2.4.10"
+    }
+  }
+}

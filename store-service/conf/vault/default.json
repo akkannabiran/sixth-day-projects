@@ -1,0 +1,8 @@
+{
+  "elasticsearch.user": "elastic",
+  "elasticsearch.password": "changememe",
+  "elasticsearch6.user":"elastic",
+  "elasticsearch6.password": "changeme",
+  "rabbitmq.username": "guest",
+  "rabbitmq.password": "guest"
+}

@@ -1,0 +1,218 @@
+spring:
+  application:
+    name: store-service
+  cloud:
+    consul:
+      host: ${CONSUL_ADDR:consul-devweb.sixthdaycloudapps.net}
+      port: ${CONSUL_PORT:80}
+      config:
+        format: YAML
+        watch:
+          enabled: true
+          delay: 120000
+    vault:
+      authentication: TOKEN
+      host: ${VAULT_ADDR:localhost}
+      port: ${VAULT_PORT:8600}
+      token: ${VAULT_TOKEN:eafaa220-e9e5-f2f8-5372-901acaafffb5}
+      scheme: http
+    stream:
+      bindings:
+        output:
+          content-type: application/json;charset=UTF-8
+          destination: store.inventory.stream
+          group: sixthday
+          binder: publisher
+          producer:
+            required-groups:
+              - sixthday
+        storeInventoryBySKU:
+          content-type: application/json;charset=UTF-8
+          destination: store.inventory.by.sku.stream
+          group: sixthday
+          binder: publisher
+          producer:
+            required-groups:
+              - sixthday
+        storeInventoryBySKUFoundation:
+          content-type: application/json;charset=UTF-8
+          destination: store.inventory.by.sku.stream.foundation
+          group: sixthday
+          binder: publisher
+          producer:
+            required-groups:
+            - sixthday
+      binders:
+        publisher:
+          type: rabbit
+
+management:
+  health:
+    consul:
+      enabled: true
+
+sixthday-dynamodb-config:
+  read-capacity-units: 5
+  write-capacity-units: 5
+
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:    
+      host: consul
+      port: 8500
+    vault:
+      authentication: TOKEN
+      host: vault
+      port: 8200
+      token: eafaa220-e9e5-f2f8-5372-901acaafffb5
+      scheme: http
+
+sixthday-dynamodb-config:
+  access-key: AccessKey
+  secret-key: OpenToAll
+  region: us-west-2
+  endpoint: http://dynamodb:8000
+  table-name-prefix: docker_
+
+---
+spring:
+  profiles: local
+  cloud:
+    consul:    
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:9500}
+    vault:
+      host: ${VAULT_HOST:localhost}
+      port: ${VAULT_PORT:8600}
+
+sixthday-dynamodb-config:
+  access-key: AccessKey
+  secret-key: OpenToAll
+  region: us-west-2
+  endpoint: http://localhost:8000
+  table-name-prefix: docker_
+
+---
+spring:
+  profiles: dev
+  cloud:
+    vault:
+      host: ${VAULT_ADDR:vault.sixthdaycloudapps.net}
+      port: ${VAULT_PORT:80}
+      scheme: http
+logging:
+  config: "classpath:log4j2-ecs.xml"
+
+---
+spring:
+  profiles: dev-int
+  cloud:
+    vault:
+      fail-fast: true
+      host: ${VAULT_ADDR:vault.sixthdaycloudapps.net}
+      port: ${VAULT_PORT:80}
+      scheme: http
+logging:
+  config: "classpath:log4j2-ecs.xml"
+---
+spring:
+  profiles: bgdev
+  cloud:
+    consul:    
+      host: ${CONSUL_ADDR:consul-devweb.bgcloudapps.net}
+      port: ${CONSUL_PORT:80}
+    vault:
+      host: ${VAULT_ADDR:vault.bgcloudapps.net}
+      port: ${VAULT_PORT:80}
+logging:
+  config: "classpath:log4j2-ecs.xml"
+---
+spring:
+  profiles: bgdevint
+  cloud:
+    consul:    
+      host: ${CONSUL_ADDR:consul-devweb.bgcloudapps.net}
+      port: ${CONSUL_PORT:80}
+    vault:
+      fail-fast: true  
+      host: ${VAULT_ADDR:vault.bgcloudapps.net}
+      port: ${VAULT_PORT:80}
+logging:
+  config: "classpath:log4j2-ecs.xml"
+---
+spring:
+  profiles: bgprep
+  cloud:
+    consul:    
+      host: ${CONSUL_ADDR:consul-web-bg-east2-prep2.bergdorfgoodmancloud.net}
+      port: ${CONSUL_PORT:80}
+    vault:
+      fail-fast: true
+      host: ${VAULT_ADDR:vault-prep.bergdorfgoodmancloud.net}
+      port: ${VAULT_PORT:80}
+      scheme: http
+logging:
+  config: "classpath:log4j2-ecs.xml"
+
+---
+spring:
+  profiles: bgprod
+  cloud:
+    consul:    
+      host: ${CONSUL_ADDR:consul-web-bg-east2-prod.bergdorfgoodmancloud.net}
+      port: ${CONSUL_PORT:80}
+    vault:
+      fail-fast: true
+      host: ${VAULT_ADDR:vault-prod.bergdorfgoodmancloud.net}
+      port: ${VAULT_PORT:80}
+      scheme: http
+logging:
+  config: "classpath:log4j2-ecs.xml"
+
+---
+
+spring:
+  profiles: prep
+  cloud:
+    consul:
+      host: ${CONSUL_ADDR:consul-prepweb.sixthdaycloud.net}
+      port: ${CONSUL_PORT:80}
+    vault:
+      fail-fast: true
+      host: ${VAULT_ADDR:vault-prep2.sixthdaycloud.net}
+      port: ${VAULT_PORT:80}
+      scheme: http
+logging:
+  config: "classpath:log4j2-ecs.xml"
+
+---
+spring:
+  profiles: prod
+  cloud:
+    consul:
+      host: ${CONSUL_ADDR:consul-prod2web.sixthdaycloud.net}
+      port: ${CONSUL_PORT:80}
+    vault:
+      fail-fast: true
+      host: ${VAULT_ADDR:vault-prod2.sixthdaycloud.net}
+      port: ${VAULT_PORT:80}
+      scheme: http
+logging:
+  config: "classpath:log4j2-ecs.xml"
+
+---
+spring:
+  profiles: prod-useast2
+  cloud:
+    consul:
+      host: ${CONSUL_ADDR:useast2-prod-nm-consulweb.sixthdaycloud.net}
+      port: ${CONSUL_PORT:80}
+    vault:
+      fail-fast: true
+      host: ${VAULT_ADDR:useast2-prod-nm-vault.sixthdaycloud.net}
+      port: ${VAULT_PORT:80}
+      scheme: http
+logging:
+  config: "classpath:log4j2-ecs.xml"

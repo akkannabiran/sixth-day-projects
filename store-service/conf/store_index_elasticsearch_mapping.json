@@ -1,0 +1,66 @@
+{
+  "settings": {
+    "number_of_shards" :   6,
+    "number_of_replicas" : 2
+  },
+   "mappings": {
+      "_doc": {
+         "properties": {
+         	"id": {
+               "type": "text",
+               "index" : true
+            },
+            "storeNumber": {
+               "type": "text",
+               "index" : true
+            },
+            "storeName": {
+               "type": "text"
+            },
+            "addressLine1": {
+               "type": "text"
+            },
+            "addressLine2": {
+            	"type": "text"
+            },
+            "city": {
+               "type": "text"
+            },
+            "state": {
+               "type": "text"
+            },
+            "zipCode": {
+               "type": "text"
+            },
+            "phoneNumber": {
+               "type": "text",
+               "index" : true
+            },
+            "storeHours": {
+               "type": "text"
+            },
+            "storeDescription": {
+               "type": "text"
+            },
+            "eligibleForBOPS": {
+               "type": "boolean"
+            },
+            "displayable": {
+               "type": "boolean"
+            },
+            "events": {
+               "type": "nested",
+               "properties": {
+                  "eventId": { "type" : "text" },
+                  "eventName": { "type" : "text" },
+                  "eventTypeId": { "type" : "text" },
+                  "eventDescription": { "type" : "text" },
+                  "eventStartDate": { "type" : "date", "format" : "yyyy-MM-dd"},
+                  "eventEndDate": { "type" : "date", "format" : "yyyy-MM-dd"},
+                  "eventDuration": { "type" : "text" }
+            	}
+            }
+         }
+      }
+   }
+}

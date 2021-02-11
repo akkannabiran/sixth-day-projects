@@ -1,0 +1,40 @@
+#!/bin/sh
+
+PLATOPS_FILENAME=platops-2017.4.27.260-py3-none-any.whl
+DOWNLOAD_URL="jfrog.mysixthday.com/platform_engineering/Release_Candidates/$PLATOPS_FILENAME"
+DOWNLOAD_PATH="$HOME/.platops"
+PLATOPS_WHL_PATH="$DOWNLOAD_PATH/$PLATOPS_FILENAME"
+PLATOPS_WHL_DOWNLOAD_PATH="${PLATOPS_WHL_PATH}.download"
+
+# $WORKSPACE gets set by Jenkins. Need unique space when sharing slaves
+if [ ! -z $WORKSPACE ]; then INSTALL_DIR="$WORKSPACE/"; fi
+INSTALL_PATH="$INSTALLDIR.platops"
+
+function cleanup_and_exit {
+    TRAP_EXIT=$?
+    rm -f $PLATOPS_WHL_DOWNLOAD_PATH
+    exit $TRAP_EXIT
+}
+
+trap cleanup_and_exit 1
+
+rm -rf ${INSTALL_PATH}
+python3 -m virtualenv ${INSTALL_PATH}
+source ${INSTALL_PATH}/bin/activate
+
+if [ ! -s $PLATOPS_WHL_PATH ]
+then
+    echo "### Downloading platops from $DOWNLOAD_URL"
+    mkdir -p $DOWNLOAD_PATH
+    curl -# --fail -H "X-JFrog-Art-API: ${ARTIFACTORY_API_KEY}" $DOWNLOAD_URL > $PLATOPS_WHL_DOWNLOAD_PATH
+    mv $PLATOPS_WHL_DOWNLOAD_PATH $PLATOPS_WHL_PATH
+else
+    echo "### platops whl file already exists; skipping download"
+fi
+
+echo "### Installing platops..."
+pip install $PLATOPS_WHL_PATH
+
+echo "### Linking platops script..."
+rm -f ./platops
+ln -s ${INSTALL_PATH}/bin/platops ./platops

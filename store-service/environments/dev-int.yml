@@ -1,0 +1,51 @@
+environment_name: "dev-int"
+environment_profile: "dev"
+contact_email: "cognizantsixthdayteam@sixthday.com"
+stack_version: "24"
+
+# Defaults for the development environment.
+instance_type: "m4.large"
+key_name: "sixthdayDEVKEY"
+nginx_img_url: "168860074409.dkr.ecr.us-west-2.amazonaws.com/sixthday/nginx:0.8.6"
+notification_url: "https://mysixthday.hipchat.com/v2/room/3457794/notification?auth_token=W0A6ZTI4jMC0jAwcQRczQjRDHOGR2nX0trRXO7vC"
+ami:
+  Name: 'sixthday-pe'
+  Version: '0.3.0'
+cert_arn: "arn:aws:acm:us-west-2:168860074409:certificate/b3195e9b-a358-4cf2-8dba-83e9522dbabf"
+chef:
+  version: 0.4.10 #updated the version
+asg:
+  min: 1
+  max: 4
+  desired: 1
+mgt_vpc:
+  Name: "sixthday-Non-Prod-Mgt-VPC"
+account_id: 168860074409
+vpc:
+  Name: "sixthday-Dev-VPC"
+web_subnets:
+  - Name: "sixthday-Dev-VPC-WebTier-2A"
+  - Name: "sixthday-Dev-VPC-WebTier-2B"
+  - Name: "sixthday-Dev-VPC-WebTier-2C"
+private_subnets:
+  - Name: "sixthday-Dev-VPC-ApplicationAndDataTier-2A"
+  - Name: "sixthday-Dev-VPC-ApplicationAndDataTier-2B"
+  - Name: "sixthday-Dev-VPC-ApplicationAndDataTier-2C"
+public_subnets:
+  - Name: "sixthday-Dev-VPC-CustomerFacing-2A"
+  - Name: "sixthday-Dev-VPC-CustomerFacing-2B"
+  - Name: "sixthday-Dev-VPC-CustomerFacing-2C"
+consul:
+  hostname: consul-devweb.sixthdaycloudapps.net #prep web consule host
+  internal: internal-consul-de-consulel-1hjkizv4ejbd4-241787698.us-west-2.elb.amazonaws.com  #prep web consule internal URL
+domain: "sixthdaycloudapps.com"
+logging: "splunk-dev" #modified the logging from Splunk to splunk-prod.
+tags:
+  Owner_Name: 'Ops'
+  Contact_Email: 'someone@sixthday.com'
+  Product_Team: 'Platform Operations'
+  Expiration_Date: '2099/12/31'
+  Application_Type: 'ecs'
+  Description: 'ECS cluster'
+  Brand: 'NM'
+  Environment: 'devint'

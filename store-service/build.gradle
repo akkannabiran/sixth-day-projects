@@ -1,0 +1,396 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.16.RELEASE'
+        springCloudVersion = 'Dalston.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url "http://jcenter.bintray.com"
+        }
+        maven {
+            url 'https://dl.bintray.com/jmeter-gradle-plugin/jmeter'
+        }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2")
+        classpath("net.foragerr.jmeter:jmeter-gradle-plugin:latest.release")
+        classpath("org.owasp:dependency-check-gradle:3.1.2")
+        classpath("org.jfrog.buildinfo:build-info-extractor-gradle:latest.release")
+    }
+}
+
+plugins {
+    id "org.sonarqube" version "2.6.2"
+    id "com.gorylenko.gradle-git-properties" version "1.4.16"
+    id "au.com.dius.pact" version "3.5.12"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "Sixthday Online - Store services"
+        property "sonar.projectKey", "com.sixthday:store-service"
+    }
+}
+
+allprojects {
+    ext.baseVersion = "0.0.1"
+    ext.snapshotVersion = true
+    group = "com.sixthday"
+    version = "$baseVersion" + (snapshotVersion ? "-SNAPSHOT" : "")
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "https://artifacts.elastic.co/maven" }
+}
+
+ext.ecr_repo_name = "store-service"
+apply from: 'gradle/deploy.gradle'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
+apply plugin: "org.sonarqube"
+apply plugin: "jacoco"
+apply plugin: 'net.foragerr.jmeter'
+apply plugin: "org.owasp.dependencycheck"
+apply plugin: "com.jfrog.artifactory"
+
+mainClassName = 'com.sixthday.store.StoreLocatorServiceApplication'
+
+jar {
+    baseName = 'store-service'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+sourceSets {
+    test {
+        java.srcDirs = ['src/test/unit/java']
+        resources.srcDirs = ['src/test/unit/resources']
+    }
+
+    serviceTest {
+        java.srcDirs = ['src/test/service/java']
+        resources.srcDirs = ['src/test/service/resources']
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
+
+    integrationTest {
+        java.srcDirs = ['src/test/integration/java']
+        resources.srcDirs = ['src/test/integration/resources']
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
+
+    providerContractTest {
+        java.srcDirs = ['src/test/contract/provider/java']
+        resources.srcDirs = ['src/test/contract/provider/resources']
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
+
+    consumerContractTest {
+        java.srcDirs = ['src/test/contract/consumer/java']
+        resources.srcDirs = ['src/test/contract/consumer/resources']
+        compileClasspath += sourceSets.main.compileClasspath
+        compileClasspath += sourceSets.test.compileClasspath
+    }
+}
+
+configurations {
+    serviceTestCompile.extendsFrom testCompile
+    serviceTestRuntime.extendsFrom testRuntime
+
+    integrationTestCompile.extendsFrom testCompile
+    integrationTestRuntime.extendsFrom testRuntime
+
+    providerContractTestCompile.extendsFrom testCompile
+    providerContractTestRuntime.extendsFrom testRuntime
+
+    consumerContractTestCompile.extendsFrom testCompile
+    consumerContractTestRuntime.extendsFrom testRuntime
+
+    all*.exclude module: 'spring-boot-starter-logging'
+    all*.exclude module: 'logback-classic'
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-configuration-processor')
+    compile('org.springframework.cloud:spring-cloud-starter-consul-config')
+    compile("org.springframework.cloud:spring-cloud-starter-vault-config:1.0.0.RELEASE")
+    compile('org.springframework.boot:spring-boot-starter-cache')
+	compile('org.springframework.data:spring-data-jpa')
+
+    //slf4j
+    compile('org.slf4j:slf4j-api:1.7.25')
+    compile('org.apache.logging.log4j:log4j-slf4j-impl:2.8.2')
+    compile('org.apache.logging.log4j:log4j-core:2.8.2')
+    compile('org.apache.logging.log4j:log4j-api:2.8.2')
+    compile('org.apache.logging.log4j:log4j-jcl:2.8.2')
+    compile('com.lmax:disruptor:3.3.6')
+    compile('com.savoirtech.logging:slf4j-json-logger:2.0.2')
+
+    compile('org.apache.httpcomponents:httpclient:4.5.3')
+
+    compile('org.projectlombok:lombok:1.16.12')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.9.0')
+    compile('com.fasterxml.jackson.dataformat:jackson-dataformat-xml')
+    compile('org.jsoup:jsoup:1.10.3')
+
+    //ElasticSearch Dependencies
+    compile('org.elasticsearch:elasticsearch:6.6.0')
+    compile('org.elasticsearch.client:elasticsearch-rest-high-level-client:6.6.0')
+
+
+    //DynamoDB Dependencies
+    //compile("com.amazonaws:aws-java-sdk-dynamodb:1.11.34")
+    compile('com.github.derjust:spring-data-dynamodb:4.5.5')
+
+    //Store subscriber dependencies
+    compile("org.springframework.cloud:spring-cloud-starter-stream-rabbit")
+
+    //toggles
+    compile('com.sixthday:toggler:0.0.17-RELEASE')
+    //logger
+    compile('com.sixthday:logger:0.0.13-RELEASE')
+
+    //consul client
+    compile('com.orbitz.consul:consul-client:1.1.0')
+    compile('com.squareup.okhttp3:okhttp:3.9.0'){ force = true }
+    compile('com.google.guava:guava:22.0'){ force = true }
+    
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('com.jayway.restassured:rest-assured:2.9.+')
+    testCompile('br.com.six2six:fixture-factory:3.1.0')
+    testCompile('com.google.code.gson:gson:2.7')
+    testCompile('org.powermock:powermock-module-junit4:1.6.4')
+    testCompile('org.powermock:powermock-api-mockito:1.7.0')
+
+	testCompile('org.springframework.cloud:spring-cloud-stream-test-support')
+
+    //pact
+    testCompile('au.com.dius:pact-jvm-provider-junit_2.11:3.5.10')
+    testCompile('au.com.dius:pact-jvm-provider-spring_2.11:3.5.10')
+    testCompile('au.com.dius:pact-jvm-consumer-junit_2.11:3.5.10')
+    testCompile('au.com.dius:pact-jvm-provider-gradle_2.11:3.5.10')
+
+    //Mockserver
+    testCompile('org.mock-server:mockserver-netty:3.9.1')
+
+    //to set environment variables
+    testCompile ('com.github.stefanbirkner:system-rules:1.17.0')
+
+    //cloud
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+
+    //Cache
+    compile ('net.sf.ehcache:ehcache:2.10.4')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+dependencyCheck {
+    analyzers {
+        centralEnabled = false
+    }
+    failBuildOnCVSS = 7
+    suppressionFile = './owasp-suppressions.xml'
+}
+
+test {
+	systemProperty "Log4jContextSelector", "org.apache.logging.log4j.core.selector.BasicContextSelector"
+    jacoco {
+        append = false
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+        classDumpDir = file("$buildDir/jacoco/classpathdumps")
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['**/hooks/*', '**/config/*', '**/models/*', '**/documents/*', '**/*Application*', '**/events/*', '**/exceptions/*'])
+        })
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.40
+            }
+        }
+    }
+
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['**/config/*', '**/models/*', '**/documents/*', '**/*Application*', '**/events/*', '**/exceptions/*'])
+        })
+    }
+}
+
+task serviceTest(type: Test, description: 'Runs the service tests.', group: 'Verification') {
+    testClassesDir = sourceSets.serviceTest.output.classesDir
+    classpath = sourceSets.serviceTest.runtimeClasspath
+}
+
+task integrationTest(type: Test, description: 'Runs the integration tests.', group: 'Verification') {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+integrationTest {
+    systemProperties = System.properties
+}
+
+//Fetch the PACT_BROKER_ARTIFACTORY_URL from Jenkins job params if available. Else proceed with default.
+
+final PACT_BROKER_PROTOCOL= "https"
+final PACT_BROKER_ARTIFACTORY_URL = 'uswest2-dev-global-pact.sixthdaycloudapps.com'
+
+if(System.getenv('PACT_BROKER_ARTIFACTORY_URL') != null) {
+	PACT_BROKER_ARTIFACTORY_URL = System.getenv('PACT_BROKER_ARTIFACTORY_URL')
+}
+logger.quiet("PACT_BROKER_ARTIFACTORY_URL set to ${PACT_BROKER_ARTIFACTORY_URL}")
+
+task providerContractTest(type: Test, description: "Runs Provider Contract Tests", group: 'Verification') {
+    final username = project.hasProperty('pactBrokerUserName') ? project.pactBrokerUserName : ''
+    final password = project.hasProperty('pactBrokerPassword') ? project.pactBrokerPassword : ''
+    final defaultHttpsPort = "443"
+
+    systemProperty 'pactbroker.username', username
+    systemProperty 'pactbroker.password', password
+    systemProperty 'pactbroker.hostname', PACT_BROKER_ARTIFACTORY_URL
+    systemProperty 'pactbroker.protocol', PACT_BROKER_PROTOCOL
+    systemProperty 'pactbroker.port', defaultHttpsPort
+    testClassesDir = sourceSets.providerContractTest.output.classesDir
+    classpath += sourceSets.providerContractTest.compileClasspath
+    classpath += sourceSets.providerContractTest.runtimeClasspath
+}
+
+task consumerContractTest(type: Test, description: "Runs Consumer Contract Tests", group: 'Verification') {
+    systemProperty 'pact.rootDir', "$buildDir/pacts"
+
+    testClassesDir = sourceSets.consumerContractTest.output.classesDir
+    classpath += sourceSets.consumerContractTest.compileClasspath
+    classpath += sourceSets.consumerContractTest.runtimeClasspath
+}
+
+pact {
+    publish {
+        final username = project.hasProperty('pactBrokerUserName') ? project.pactBrokerUserName : ''
+        final password = project.hasProperty('pactBrokerPassword') ? project.pactBrokerPassword : ''
+        pactBrokerUrl = "$PACT_BROKER_PROTOCOL://$PACT_BROKER_ARTIFACTORY_URL"
+    }
+}
+
+task publishPactsToBroker {
+    doLast {
+        pact.publish.pactDirectory = "${buildDir}/pacts";
+        pactPublish.publishPacts();
+    }
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}
+
+bootRun {
+    args = ['--spring.profiles.active=local']
+    jvmArgs = ["-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=18200"]
+}
+
+def includeBuildInfo = findProperty('buildInfo') ?: false
+
+springBoot {
+    buildInfo {
+        if (includeBuildInfo) {
+            additionalProperties = [
+                    time: buildTime()
+            ]
+        }
+    }
+}
+
+gitProperties {
+    dateFormat = "yyyy-MM-dd  HH:mm:ss z"
+    dateFormatTimeZone = 'CST'
+}
+
+def buildTime() {
+    final dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z")
+    def localSystemTime = dateFormat.format(new java.util.Date())
+    def jenkinsBuildTime = System.getenv('BUILD_TIMESTAMP')
+    Date date = dateFormat.parse(jenkinsBuildTime ? jenkinsBuildTime : localSystemTime);
+    dateFormat.timeZone = TimeZone.getTimeZone('America/Chicago')
+    dateFormat.format(date)
+}
+
+def jobName = findProperty('build.job.name') ?: 'local'
+def jobNumber = findProperty('build.job.number') ?: 'local'
+
+processResources {
+    inputs.property('jobName', jobName)
+    inputs.property('jobNumber', jobNumber)
+
+    filter ReplaceTokens, tokens: [
+            'jenkins.job.name'    : jobName,
+            'jenkins.build.number': jobNumber
+    ]
+}
+
+artifactory {
+    contextUrl = project.hasProperty('artifactoryUrl') ? project.artifactoryUrl : 'http://jfrog.mysixthday.com'
+    resolve {
+        repository {
+            repoKey = 'libs-sixthday-dt-local'
+            username = project.hasProperty('artifactoryUser') ? project.artifactoryUser : 'micserv'
+            password = project.hasProperty('artifactoryPassword') ? project.artifactoryPassword : 'AP2FMsTK4gXCQx4TYzpmMAY6yGk'
+            maven = true
+        }
+    }
+}
+
+task dockerTestImage(type: TestDockerImage)
+task dockerValidateImage(type: ValidateDockerImage) 
+
+ext.verifyService = { baseUrl ->
+    def healthEndpoint="${baseUrl}/health"
+    def conn = new URL(healthEndpoint).openConnection()
+    def statusCode = conn.getResponseCode()
+    if(statusCode!=200)
+    {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getErrorStream()))
+        throw new Exception("Store service health check failed! Reason: "+reader.getText())
+    }
+    else {
+        logger.quiet("Health status is UP")
+    }
+}
+
+run { systemProperties = System.properties }

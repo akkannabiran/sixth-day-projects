@@ -1,0 +1,61 @@
+{
+	"docker_nm_store_inventory_by_sku": [
+		{
+			"PutRequest": {
+				"Item": {
+					"sku_id": {
+						"S": "Sku1"
+					},
+					"storeInventoryItems": {
+						"L": [
+							{
+								"M": {
+									"store_number": {
+										"S": "01"
+									},
+									"store_id": {
+										"S": "01/Location1"
+									},
+									"location_number": {
+										"S": "Location1"
+									},
+									"inventory_level": {
+										"S": "2"
+									},
+									"quantity": {
+										"N": "100"
+									},
+									"bops_quantity": {
+										"N": "50"
+									}
+								}
+							},
+							{
+								"M": {
+									"store_number": {
+										"S": "02"
+									},
+									"store_id": {
+										"S": "02/Location2"
+									},
+									"location_number": {
+										"S": "Location2"
+									},
+									"inventory_level": {
+										"S": "1"
+									},
+									"quantity": {
+										"N": "80"
+									},
+									"bops_quantity": {
+										"N": "30"
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}

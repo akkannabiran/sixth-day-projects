@@ -1,0 +1,85 @@
+def login_to_aws = {
+    login_command = sh(script: 'aws ecr get-login --no-include-email', returnStdout: true).trim()
+    sh(login_command)
+}
+
+node('build && procat') {
+    try {
+        stage('Checkout Git Repository') {
+            checkout scm
+        }
+        step([$class: 'StashNotifier'])
+        stage('Run Unit Tests') {
+            sh './gradlew clean build test jacocoTestReport jacocoTestCoverageVerification'
+        }
+        stage('Run Service Tests') {
+            sh './gradlew build serviceTest'
+        }
+        stage('Run and Verify provider contract Tests') {
+            withCredentials([[$class:'UsernamePasswordMultiBinding',credentialsId: 'PACTBROKER_CREDENTIALS',
+                               usernameVariable: 'PACTBROKER_USER', passwordVariable: 'PACTBROKER_PASSWORD']]) {
+                sh './gradlew providerContractTest -PpactBrokerUserName=${PACTBROKER_USER} -PpactBrokerPassword=${PACTBROKER_PASSWORD}'
+            }
+        }
+        stage('Run and Verify consumer contract Tests') {
+            withCredentials([[$class:'UsernamePasswordMultiBinding',credentialsId: 'PACTBROKER_CREDENTIALS',
+                               usernameVariable: 'PACTBROKER_USER', passwordVariable: 'PACTBROKER_PASSWORD']]) {
+                sh './gradlew consumerContractTest -PpactBrokerUserName=${PACTBROKER_USER} -PpactBrokerPassword=${PACTBROKER_PASSWORD}'
+            }
+        }
+        withSonarQubeEnv('sixthday SonarQube Server') {
+      		sh './gradlew sonarqube -Dsonar.projectName=sixthday-PDP-Service-PR -Dsonar.projectKey=com.sixthday:store-service-PR'
+    	}
+        stage('OWASP Dependency Check') {
+            sh './gradlew dependencyCheckAnalyze --refresh-dependencies'
+        }
+
+        currentBuild.result = 'SUCCESS'
+    } catch (error) {
+        currentBuild.result = 'FAILED'
+        throw error
+    } finally {
+    	publishHTML([
+    		allowMissing: false,
+    		alwaysLinkToLastBuild: true,
+    		keepAll: false,
+    		reportDir: 'build/reports/tests/test',
+    		reportFiles: 'index.html',
+    		reportName: 'Unit test report'
+    	])
+    	publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: false,
+            reportDir: 'build/reports/tests/serviceTest',
+            reportFiles: 'index.html',
+            reportName: 'Service test report'
+        ])
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: false,
+            reportDir: 'build/reports/tests/providerContractTest',
+            reportFiles: 'index.html',
+            reportName: 'Provider contract test report'
+        ])
+    	publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: false,
+            reportDir: 'build/reports/jacoco/test/html',
+            reportFiles: 'index.html',
+            reportName: 'Code coverage report'
+        ])
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: false,
+            reportDir: 'build/reports',
+            reportFiles: 'dependency-check-report.html',
+            reportName: 'Dependency check report'
+        ])
+    }
+
+    step([$class: 'StashNotifier'])
+}

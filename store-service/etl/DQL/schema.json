@@ -1,0 +1,19 @@
+{
+	"TableName": "docker_nm_store_inventory_by_sku",
+	"AttributeDefinitions": [
+		{
+			"AttributeName": "sku_id",
+			"AttributeType": "S"
+		}
+	],
+	"KeySchema": [
+		{
+			"KeyType": "HASH",
+			"AttributeName": "sku_id"
+		}
+	],
+	"ProvisionedThroughput": {
+		"WriteCapacityUnits": 5,
+		"ReadCapacityUnits": 5
+	}
+}

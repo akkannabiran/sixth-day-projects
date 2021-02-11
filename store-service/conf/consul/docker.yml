@@ -1,0 +1,24 @@
+sixthday-store-api:
+  got-www-api:
+    scheme: http
+    host: stub-service
+    port: 8080
+    path: /
+    default-mile-radius: 100
+    result-limit: 99999
+  stub-got-www-api:
+    scheme: http
+    host: stub-service
+    port: 8080
+    path: /stubs/
+    default-mile-radius: 100
+    result-limit: 99999
+  store-config:
+    provider-url: stub-service:8080
+  elastic-search-config:
+    elastic-search-host: elasticsearch
+    
+sixthday-store-sub:
+  queue-config:
+    host: rabbitmq
+    

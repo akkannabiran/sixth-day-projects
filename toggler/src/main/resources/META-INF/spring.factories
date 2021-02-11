@@ -1,0 +1,4 @@
+# Auto Configuration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.toggler.core.toggles.FeatureToggleConfig,\
+com.toggler.core.config.TogglerAutoConfiguration

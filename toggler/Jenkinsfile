@@ -1,0 +1,52 @@
+def isBranchBuild = env.IS_BRANCH_BUILD?.toBoolean()
+node('build && procat') {
+
+    def prodArtifactoryUrl = 'http://jfrog.mynmg.com'
+
+    step([$class: 'StashNotifier'])
+
+    try {
+        timestamps {
+            stage('Checkout') {
+                checkout scm
+            }
+
+            stage('Unit Test') {
+                sh './gradlew clean build test'
+            }
+
+            stage('Publish to dev artifactory') {
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'DEV_ARTIFACTORY_CREDENTIALS',
+                                  usernameVariable: 'ARTIFACTORY_USER', passwordVariable: 'ARTIFACTORY_PASSWORD']]) {
+                    sh "./gradlew artifactoryPublish -Pversion=${env.BUILD_NUMBER} -PartifactoryUser=${ARTIFACTORY_USER} -PartifactoryPassword=${ARTIFACTORY_PASSWORD}"
+                }
+            }
+			if (!isBranchBuild) {
+	            stage('Publish to prod artifactory') {
+	                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'PROD_ARTIFACTORY_CREDENTIALS',
+	                                  usernameVariable: 'ARTIFACTORY_USER', passwordVariable: 'ARTIFACTORY_PASSWORD']]) {
+	                    sh "./gradlew artifactoryPublish -PartifactoryUrl=${prodArtifactoryUrl} -Pversion=${env.BUILD_NUMBER} -PartifactoryUser=${ARTIFACTORY_USER} -PartifactoryPassword=${ARTIFACTORY_PASSWORD}"
+	                }
+	            }
+			}
+            currentBuild.result = 'SUCCESS'
+        }
+    } catch (ignore) {
+        currentBuild.result = 'FAILED'
+        hipchatSend(color: 'RED', notify: true, message: "FAILED: ${env.JOB_NAME} [#${env.BUILD_NUMBER}] (${env.BUILD_URL})", room: '3297299', credentialId: '3297299')
+    } finally {
+        publish_test_reports()
+    }
+    step([$class: 'StashNotifier'])
+}
+
+def publish_test_reports() {
+    publishHTML([
+            allowMissing         : true,
+            alwaysLinkToLastBuild: true,
+            keepAll              : false,
+            reportDir            : 'build/reports/tests/test',
+            reportFiles          : 'index.html',
+            reportName           : 'Unit test report'
+    ])
+}

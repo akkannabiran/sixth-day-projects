@@ -1,0 +1,14 @@
+navigation:
+  redis:
+    designer-index:
+      host: redis
+      port: 6379
+  elastic-search-config:
+    host: elasticsearch
+    port: 9200
+    host6: elasticsearch
+    port6: 9200
+  rabbitmq-config:
+    receiver:
+      category-event:
+        host: rabbitmq

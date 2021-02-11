@@ -1,0 +1,52 @@
+---
+environment_name: "prod"
+environment_profile: "prod" # overriding everything from this
+contact_email: "sixthday_oncall@sixthday.com"
+stack_version: "1"
+
+instance_type: "m4.xlarge"
+key_name: "sixthday-prd-deployment"
+nginx_img_url: "247080884579.dkr.ecr.us-west-2.amazonaws.com/sixthday/nginx:0.8.6"
+notification_url: "https://mysixthday.hipchat.com/v2/room/3457794/notification?auth_token=W0A6ZTI4jMC0jAwcQRczQjRDHOGR2nX0trRXO7vC"
+ami:
+  Name: 'sixthday-pe'
+  Version: '0.5.0'
+cert_arn: "arn:aws:acm:us-west-2:247080884579:certificate/696f4ba6-fceb-46b7-9e23-e546c7a73fc4"
+chef:
+  version: 0.4.31
+asg:
+  min: 1
+  max: 4
+  desired: 1
+mgt_vpc:
+  Name: "sixthday-PRODMGMT2-VPC"
+account_id: 247080884579
+vpc:
+  Name: "sixthday-PROD2-VPC"
+web_subnets:
+- Name: "sixthday-PROD2-VPC-WebTier-2A"
+- Name: "sixthday-PROD2-VPC-WebTier-2B"
+- Name: "sixthday-PROD2-VPC-WebTier-2C"
+private_subnets:
+- Name: "sixthday-PROD2-VPC-ApplicationAndDataTier-2A"
+- Name: "sixthday-PROD2-VPC-ApplicationAndDataTier-2B"
+- Name: "sixthday-PROD2-VPC-ApplicationAndDataTier-2C"
+public_subnets:
+- Name: "sixthday-PROD2-VPC-CustomerFacing-2A"
+- Name: "sixthday-PROD2-VPC-CustomerFacing-2B"
+- Name: "sixthday-PROD2-VPC-CustomerFacing-2C"
+consul:
+  hostname: consul-prod2web.sixthdaycloud.net
+  internal: internal-consul-pr-consulel-1uxiivfvhejdb-1759044524.us-west-2.elb.amazonaws.com
+domain: "sixthdaycloud.net"
+splunk-url: "https://splunk-forwarder.sixthdaycloud.net:8088"
+logging: "splunk-prod" #modified the logging from Splunk to splunk-prod.
+tags:
+  Owner_Name: 'Operations'
+  Contact_Email: 'sixthday_oncall@sixthday.com'
+  Product_Team: 'Platform Operation'
+  Expiration_Date: '2017/12/31'
+  Application_Type: 'ecs'
+  Description: 'ECS cluster'
+  Brand: 'NM'
+  Environment: 'prod'

@@ -1,0 +1,348 @@
+{
+  "docker_sixthday_designer_index": [
+    {
+      "PutRequest": {
+        "Item": {
+          "designer_id": {
+            "S": "Designer1"
+          },
+          "name": {
+            "S": "Designer1Name"
+          },
+          "designers_by_category": {
+            "L": [
+              {
+                "M": {
+                  "id": {
+                    "S": "Designer1ByCategory1Id"
+                  },
+                  "name": {
+                    "S": "Designer1ByCategory1Name"
+                  },
+                  "url": {
+                    "S": "Designer1ByCategory1Url"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "id": {
+                    "S": "Designer1ByCategory2Id"
+                  },
+                  "name": {
+                    "S": "Designer1ByCategory2Name"
+                  },
+                  "url": {
+                    "S": "Designer1ByCategory2Url"
+                  }
+                }
+              }
+            ]
+          },
+          "designers_by_index": {
+            "L": [
+              {
+                "M": {
+                  "name": {
+                    "S": "Designer1ByIndex1Name"
+                  },
+                  "categories": {
+                    "L": [
+                      {
+                        "M": {
+                          "id": {
+                            "S": "Designer1ByIndex1Category1Id"
+                          },
+                          "name": {
+                            "S": "Designer1ByIndex1Category1Name"
+                          },
+                          "url": {
+                            "S": "Designer1ByIndex1Category1Url"
+                          },
+                          "adornment_tag": {
+                            "S": "Designer1ByIndex1Category1AdornmentTag"
+                          },
+                          "excluded_countries" : {
+                            "L" : [
+                              {
+                                "S": "Designer1ByIndex1Category1ExcludedCountry1"
+                              },
+                              {
+                                "S": "Designer1ByIndex1Category1ExcludedCountry2"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "id": {
+                            "S": "Designer1ByIndex1Category2Id"
+                          },
+                          "name": {
+                            "S": "Designer1ByIndex1Category2Name"
+                          },
+                          "url": {
+                            "S": "Designer1ByIndex1Category2Url"
+                          },
+                          "adornment_tag": {
+                            "S": "Designer1ByIndex1Category2AdornmentTag"
+                          },
+                          "excluded_countries" : {
+                            "L" : [
+                              {
+                                "S": "Designer1ByIndex1Category2ExcludedCountry1"
+                              },
+                              {
+                                "S": "Designer1ByIndex1Category2ExcludedCountry2"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "M": {
+                  "name": {
+                    "S": "Designer1ByIndex2Name"
+                  },
+                  "categories": {
+                    "L": [
+                      {
+                        "M": {
+                          "id": {
+                            "S": "Designer1ByIndex2Category1Id"
+                          },
+                          "name": {
+                            "S": "Designer1ByIndex2Category1Name"
+                          },
+                          "url": {
+                            "S": "Designer1ByIndex2Category1Url"
+                          },
+                          "adornment_tag": {
+                            "S": "Designer1ByIndex2Category1AdornmentTag"
+                          },
+                          "excluded_countries" : {
+                            "L" : [
+                              {
+                                "S": "Designer1ByIndex2Category1ExcludedCountry1"
+                              },
+                              {
+                                "S": "Designer1ByIndex2Category1ExcludedCountry2"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "id": {
+                            "S": "Designer1ByIndex2Category2Id"
+                          },
+                          "name": {
+                            "S": "Designer1ByIndex2Category2Name"
+                          },
+                          "url": {
+                            "S": "Designer1ByIndex2Category2Url"
+                          },
+                          "adornment_tag": {
+                            "S": "Designer1ByIndex2Category2AdornmentTag"
+                          },
+                          "excluded_countries" : {
+                            "L" : [
+                              {
+                                "S": "Designer1ByIndex2Category2ExcludedCountry1"
+                              },
+                              {
+                                "S": "Designer1ByIndex2Category2ExcludedCountry2"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "designer_id": {
+            "S": "Designer2"
+          },
+          "name": {
+            "S": "Designer2Name"
+          },
+          "designers_by_category": {
+            "L": [
+              {
+                "M": {
+                  "id": {
+                    "S": "Designer2ByCategory1Id"
+                  },
+                  "name": {
+                    "S": "Designer2ByCategory1Name"
+                  },
+                  "url": {
+                    "S": "Designer2ByCategory1Url"
+                  }
+                }
+              },
+              {
+                "M": {
+                  "id": {
+                    "S": "Designer2ByCategory2Id"
+                  },
+                  "name": {
+                    "S": "Designer2ByCategory2Name"
+                  },
+                  "url": {
+                    "S": "Designer2ByCategory2Url"
+                  }
+                }
+              }
+            ]
+          },
+          "designers_by_index": {
+            "L": [
+              {
+                "M": {
+                  "name": {
+                    "S": "Designer2ByIndex1Name"
+                  },
+                  "categories": {
+                    "L": [
+                      {
+                        "M": {
+                          "id": {
+                            "S": "Designer2ByIndex1Category1Id"
+                          },
+                          "name": {
+                            "S": "Designer2ByIndex1Category1Name"
+                          },
+                          "url": {
+                            "S": "Designer2ByIndex1Category1Url"
+                          },
+                          "adornment_tag": {
+                            "S": "Designer2ByIndex1Category1AdornmentTag"
+                          },
+                          "excluded_countries" : {
+                            "L" : [
+                              {
+                                "S": "Designer2ByIndex1Category1ExcludedCountry1"
+                              },
+                              {
+                                "S": "Designer2ByIndex1Category1ExcludedCountry2"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "id": {
+                            "S": "Designer2ByIndex1Category2Id"
+                          },
+                          "name": {
+                            "S": "Designer2ByIndex1Category2Name"
+                          },
+                          "url": {
+                            "S": "Designer2ByIndex1Category2Url"
+                          },
+                          "adornment_tag": {
+                            "S": "Designer2ByIndex1Category2AdornmentTag"
+                          },
+                          "excluded_countries" : {
+                            "L" : [
+                              {
+                                "S": "Designer2ByIndex1Category2ExcludedCountry1"
+                              },
+                              {
+                                "S": "Designer2ByIndex1Category2ExcludedCountry2"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "M": {
+                  "name": {
+                    "S": "Designer2ByIndex2Name"
+                  },
+                  "categories": {
+                    "L": [
+                      {
+                        "M": {
+                          "id": {
+                            "S": "Designer2ByIndex2Category1Id"
+                          },
+                          "name": {
+                            "S": "Designer2ByIndex2Category1Name"
+                          },
+                          "url": {
+                            "S": "Designer2ByIndex2Category1Url"
+                          },
+                          "adornment_tag": {
+                            "S": "Designer2ByIndex2Category1AdornmentTag"
+                          },
+                          "excluded_countries" : {
+                            "L" : [
+                              {
+                                "S": "Designer2ByIndex2Category1ExcludedCountry1"
+                              },
+                              {
+                                "S": "Designer2ByIndex2Category1ExcludedCountry2"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "M": {
+                          "id": {
+                            "S": "Designer2ByIndex2Category2Id"
+                          },
+                          "name": {
+                            "S": "Designer2ByIndex2Category2Name"
+                          },
+                          "url": {
+                            "S": "Designer2ByIndex2Category2Url"
+                          },
+                          "adornment_tag": {
+                            "S": "Designer2ByIndex2Category2AdornmentTag"
+                          },
+                          "excluded_countries" : {
+                            "L" : [
+                              {
+                                "S": "Designer2ByIndex2Category2ExcludedCountry1"
+                              },
+                              {
+                                "S": "Designer2ByIndex2Category2ExcludedCountry2"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

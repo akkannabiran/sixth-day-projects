@@ -1,0 +1,19 @@
+{
+  "TableName": "docker_sixthday_designer_index",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "designer_id",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "KeyType": "HASH",
+      "AttributeName": "designer_id"
+    }
+  ],
+  "ProvisionedThroughput": {
+    "WriteCapacityUnits": 5,
+    "ReadCapacityUnits": 5
+  }
+}

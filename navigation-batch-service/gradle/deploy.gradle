@@ -1,0 +1,358 @@
+import groovy.json.JsonSlurper
+import org.gradle.api.internal.tasks.options.Option
+
+import java.nio.file.Files
+
+def defaultPlatopsVersion = '2017.6.8.392'
+
+def jobNumber = findProperty('build.job.number') ?: 'local'
+
+project.metaClass.execWithOutput { Closure block ->
+    def execOutputStream = new ByteArrayOutputStream()
+    def success = false
+    try {
+        exec {
+            block.delegate = delegate
+            block()
+            standardOutput = execOutputStream
+        }
+        success = true
+    } finally {
+        if (!success) {
+            logger.error(execOutputStream.toString())
+        }
+    }
+    return execOutputStream.toString().trim()
+}
+
+project.metaClass.execWithJsonOutput { Closure block ->
+    def output = execWithOutput(block)
+    return new JsonSlurper().parseText(output)
+}
+
+def ecr_repo_hostname = "168860074409.dkr.ecr.us-west-2.amazonaws.com"
+def environment_ecr_repo_hostname = findProperty('environment_ecr_repo_hostname')
+def environment_ecr_repo_name = findProperty('environment_ecr_repo_name')
+if (environment_ecr_repo_hostname) {
+    ecr_repo_hostname = environment_ecr_repo_hostname
+}
+if (environment_ecr_repo_name) {
+    ecr_repo_name = environment_ecr_repo_name;
+}
+logger.quiet "ecr repo name ${ecr_repo_name}"
+ext.aws_repo_url = "${ecr_repo_hostname}/${ecr_repo_name}"
+logger.quiet "aws repo ulr ${aws_repo_url}"
+def image_name = findProperty('image.name')
+def app_image_name = "${aws_repo_url}:${image_name}"
+def deploy_image_name = "${app_image_name}-deploy"
+
+task dockerBuildImage {
+    dependsOn 'assemble'
+
+    doLast {
+        def buildArgs = ["build", "-q", "."]
+        if (image_name) {
+            buildArgs.addAll("-t", app_image_name)
+        }
+        ext.imageID = project.execWithOutput {
+            executable = "docker"
+            args = buildArgs
+        }.replace('sha256:', '')
+        println "Docker image ${ext.imageID}"
+    }
+}
+
+ext.waitForService = { baseUrl, buildNumber, envName, totalWaitTimeSeconds ->
+    URL infoUrl = "${baseUrl}/info".toURL()
+    URL healthCheckUrl = "${baseUrl}/health".toURL()
+    logger.quiet "Waiting for ${infoUrl}"
+    retryForTotalTime(totalWaitTimeSeconds) {
+        checkService(infoUrl, buildNumber, envName)
+    }
+    retryForTotalTime(totalWaitTimeSeconds) {
+        checkServiceHealth(healthCheckUrl)
+    }
+}
+
+def retryForTotalTime(totalWaitSeconds, retryDelay = 5, action) {
+    def startTime = System.currentTimeSeconds()
+    def maxEndTime = startTime + totalWaitSeconds
+    def failure
+    while (System.currentTimeSeconds() < maxEndTime) {
+        Thread.sleep(retryDelay * 1000)
+        try {
+            return action()
+        } catch (Throwable t) {
+            logger.warn t.message
+            failure = t
+        }
+    }
+    throw failure
+}
+
+void checkServiceHealth(URL healthCheckUrl) {
+    logger.info "Getting info from ${healthCheckUrl}"
+    def healthCheckContent = healthCheckUrl.text
+    logger.debug "Received ${healthCheckContent}"
+    def response = new JsonSlurper().parseText(healthCheckContent)
+
+    if (response && response.status && response.status == "DOWN") {
+        throw new RuntimeException("ERROR: One or more dependencies are down on the " +
+                "health check page ${healthCheckUrl}. \n ${healthCheckContent}")
+    }
+    logger.quiet "Verified all dependencies are up on the health check page ${healthCheckUrl}"
+}
+
+void checkService(URL infoUrl, buildNumber, env) {
+    logger.info "Getting info from ${infoUrl}"
+    def infoText = infoUrl.text
+    logger.debug "Received ${infoText}"
+    def info = new JsonSlurper().parseText(infoText)
+    def envBuildNumber = info.jenkins.build_number
+    def envEnvironment = info.environment
+
+    if (buildNumber && buildNumber != envBuildNumber) {
+        throw new RuntimeException("Build number ${envBuildNumber} does not match expected build number of ${buildNumber}")
+    }
+    if (env && env != envEnvironment) {
+        throw new RuntimeException("Environment ${envEnvironment} does not match expected environment of ${env}")
+    }
+    logger.quiet "Verified ${buildNumber ? "build \"${buildNumber}\" with " : ''}profile \"${env}\" at ${infoUrl}"
+}
+
+task dockerTestLocalImage(type: TestDockerImage) {
+    dependsOn dockerBuildImage
+
+    gradle.taskGraph.afterTask { Task task, TaskState state ->
+        if (task == dockerBuildImage && !state.failure) {
+            if (!imageName) {
+                imageName = dockerBuildImage.ext.imageID
+            }
+            if (!buildNumber) {
+                buildNumber = jobNumber
+            }
+            if (!env) {
+                env = "dev"
+            }
+            if (!envVersionName) {
+                envVersionName = "dev"
+            }
+        }
+    }
+}
+
+task dockerValidateLocalImage(type: ValidateDockerImage) {
+    dependsOn dockerBuildImage
+
+    gradle.taskGraph.afterTask { Task task, TaskState state ->
+        if (task == dockerBuildImage && !state.failure) {
+            if (!imageName) {
+                imageName = dockerBuildImage.ext.imageID
+            }
+            if (!buildNumber) {
+                buildNumber = jobNumber
+            }
+            if (!env) {
+                env = "dev"
+            }
+            if (!envVersionName) {
+                envVersionName = "dev"
+            }
+        }
+    }
+}
+
+
+configurations {
+    platops
+}
+
+File platopsVirtualEnvPath = new File(buildDir, '.platops')
+File platopsBinPath = new File(platopsVirtualEnvPath, 'bin/platops')
+File platopsPath = file('./platops')
+
+task installPlatops {
+
+    inputs.files configurations.platops
+    outputs.files platopsVirtualEnvPath
+    outputs.files platopsPath
+
+    doLast {
+        platopsVirtualEnvPath.deleteDir()
+        platopsPath.delete()
+        execWithOutput {
+            executable 'python3'
+            args '-m', 'virtualenv', platopsVirtualEnvPath.absolutePath
+        }
+        def pipPath = "$platopsVirtualEnvPath/bin/pip"
+        execWithOutput {
+            executable pipPath
+            args 'install', configurations.platops.asPath
+        }
+        execWithOutput {
+            executable pipPath
+            args 'install', 'awscli==1.11.66'
+        }
+        Files.createSymbolicLink(platopsPath.toPath(), platopsBinPath.toPath())
+    }
+}
+
+gradle.taskGraph.whenReady {
+    if (it.hasTask(installPlatops)) {
+        def platopsVersion = findProperty('platopsVersion') ?: defaultPlatopsVersion
+
+        dependencies {
+            platops group: 'com.sixthday', name: 'platops', version: platopsVersion, classifier: 'py3-none-any', ext: 'whl'
+        }
+
+        repositories {
+            def platopsRepo = ivy {
+                name 'Artifactory - Platform Engineering - RCs'
+                url 'http://jfrog.mysixthday.com/platform_engineering/Release_Candidates'
+                layout('pattern') {
+                    artifact '/[module]-[revision](-[classifier])(.[ext])'
+                }
+                def repoUser = project.findProperty('platopsRepoUser') ?: System.env.ARTIFACTORY_API_USER
+                def repoKey = project.findProperty('platopsRepoKey') ?: System.env.ARTIFACTORY_API_KEY
+                credentials {
+                    username repoUser
+                    password repoKey
+                }
+            }
+
+            if (!platopsRepo.credentials.password) {
+                logger.warn("Artifactory API key not configured. Ensure ARTIFACTORY_API_KEY is set.")
+            }
+        }
+    }
+}
+
+class Deploy extends DefaultTask {
+
+    @Option(description = "The reference of the Docker image to deploy")
+    @Input
+    def imageRef
+
+    @Option(description = "The environment profile to which to deploy to")
+    @Input
+    def env
+
+    @Option(description = "Force-terminate the old task? (faster deployment, but will cause downtime)")
+    @Input
+    def fast = false
+
+    @Option(description = "Specific stack version to deploy to")
+    @Input
+    def stackVersion = ''
+
+    void setFast(value) {
+        if (value.equalsIgnoreCase('false')) {
+            fast = false
+        } else if (value.equalsIgnoreCase('true')) {
+            fast = true
+        } else {
+            throw new IllegalArgumentException("'${value}' is not a valid value for 'fast'")
+        }
+    }
+
+    @TaskAction
+    void deploy() {
+        def envFile = "environments/${env}.yml"
+
+        project.copy {
+            from envFile
+            into "${project.buildDir}/environments"
+        }
+
+        def copiedEnvFile = "${project.buildDir}/${envFile}"
+        if (stackVersion) {
+            new File(copiedEnvFile).withWriterAppend { writer ->
+                def newline = System.getProperty("line.separator")
+                writer.write(newline)
+                writer.write("stack_version: ${stackVersion}")
+                writer.write(newline)
+            }
+        }
+
+        println "Deploying to ${env}..."
+
+        project.exec {
+            executable "./platops"
+            args 'wait', env
+        }
+
+        def deployArgs = ["-v", "deploy", "-i", imageRef, "-e", copiedEnvFile, "-s", "services/service.yml"]
+        if (fast) {
+            deployArgs << '-f'
+        }
+        def deployReport = project.execWithJsonOutput {
+            executable "./platops"
+            args deployArgs
+        }
+        def url = deployReport.internal_app_url
+        def clusterName = deployReport.app_url.tokenize('.')[0]
+        def applicationName = deployReport.application_name
+
+        def servicesList = project.execWithJsonOutput {
+            executable 'aws'
+            args 'ecs', 'list-services', '--cluster', clusterName
+        }
+        def serviceArns = servicesList.serviceArns.findAll { it.contains("-${applicationName}-") }
+        if (serviceArns.size() > 1) {
+            throw new Exception("Too many services!")
+        }
+        def serviceName = serviceArns[0].tokenize('/')[1]
+
+        println "Waiting for deployment of ${serviceName} to finish..."
+        project.exec {
+            executable 'aws'
+            args 'ecs', 'wait', 'services-stable', '--cluster', clusterName, '--services', serviceName
+        }
+
+        def fiveMinutes = 5 * 60
+        project.waitForService("http://$url", null, env, fiveMinutes)
+    }
+}
+
+task deploy(type: Deploy) {
+    dependsOn installPlatops
+}
+
+task dockerTagAndPush {
+    doLast {
+        getProperty('image.name')
+
+        def tag_name = getProperty('tag.name')
+        def app_tag_name = "${aws_repo_url}:${tag_name}"
+        def deploy_tag_name = "${app_tag_name}-deploy"
+
+        exec {
+            executable "docker"
+            args 'tag', app_image_name, app_tag_name
+        }
+
+        exec {
+            executable "docker"
+            args "push", app_tag_name
+        }
+
+        exec {
+            executable "docker"
+            args 'tag', deploy_image_name, deploy_tag_name
+        }
+
+        exec {
+            executable "docker"
+            args "push", deploy_tag_name
+        }
+    }
+}
+
+task dockerBuildDeployment {
+    doLast {
+        exec {
+            executable 'docker'
+            args 'build', '--file', 'Dockerfile-deploy', '--tag', deploy_image_name, '.'
+        }
+    }
+}

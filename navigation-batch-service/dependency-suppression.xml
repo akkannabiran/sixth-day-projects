@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd">
+    <suppress>
+        <notes><![CDATA[x-pack-transport-5.2.2.jar]]></notes>
+        <gav regex="true">^org\.elasticsearch\.client:x-pack-transport:.*$</gav>
+        <cve>CVE-2017-8442</cve>
+        <cve>CVE-2017-8445</cve>
+        <cve>CVE-2017-8446</cve>
+        <cve>CVE-2017-8449</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[x-pack-api-5.2.2.jar]]></notes>
+        <gav regex="true">^org\.elasticsearch\.plugin:x-pack-api:.*$</gav>
+        <cve>CVE-2017-8442</cve>
+        <cve>CVE-2017-8445</cve>
+        <cve>CVE-2017-8446</cve>
+        <cve>CVE-2017-8449</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[jackson-databind-2.8.10.jar]]></notes>
+        <gav regex="true">^com\.fasterxml\.jackson\.core:jackson-databind:.*$</gav>
+        <cve>CVE-2017-17485</cve>
+        <cve>CVE-2018-5968</cve>
+        <cve>CVE-2018-7489</cve>
+        <cve>CVE-2018-14719</cve>
+        <cve>CVE-2018-14718</cve>
+        <cve>CVE-2018-19362</cve>
+        <cve>CVE-2018-19361</cve>
+        <cve>CVE-2018-19360</cve>
+        <cve>CVE-2018-14721</cve>
+        <cve>CVE-2018-14720</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[compiler-0.9.3.jar]]></notes>
+        <gav regex="true">^com\.github\.spullara\.mustache\.java:compiler:.*$</gav>
+        <cve>CVE-2015-8862</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[owasp-java-html-sanitizer-r239.jar]]></notes>
+        <gav regex="true">^com\.googlecode\.owasp-java-html-sanitizer:owasp-java-html-sanitizer:.*$</gav>
+        <cve>CVE-2011-4457</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[tomcat-annotations-api-8.5.27.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat:tomcat-annotations-api:.*$</gav>
+        <cve>CVE-2016-5425</cve>
+        <cve>CVE-2016-6325</cve>
+        <cve>CVE-2017-6056</cve>
+        <cve>CVE-2018-1304</cve>
+        <cve>CVE-2018-1305</cve>
+        <cve>CVE-2018-8014</cve>
+        <cve>CVE-2019-0232</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[tomcat-embed-websocket-8.5.27.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat\.embed:tomcat-embed-websocket:.*$</gav>
+        <cve>CVE-2018-1304</cve>
+        <cve>CVE-2018-1305</cve>
+        <cve>CVE-2018-8014</cve>
+        <cve>CVE-2019-0232</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[tomcat-annotations-api-8.5.27.jar]]></notes>
+        <gav regex="true">^org\.apache\.tomcat\.embed:tomcat-embed-core:.*$</gav>
+        <cve>CVE-2018-1304</cve>
+        <cve>CVE-2018-1305</cve>
+        <cve>CVE-2018-8014</cve>
+        <cve>CVE-2019-0232</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[slf4j-api-1.7.25.jar]]></notes>
+        <gav regex="true">^org\.slf4j:slf4j-api:.*$</gav>
+        <cve>CVE-2018-8088</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[jcl-over-slf4j-1.7.25.jar]]></notes>
+        <gav regex="true">^org\.slf4j:jcl-over-slf4j:.*$</gav>
+        <cve>CVE-2018-8088</cve>
+    </suppress>
+    <suppress>
+        <notes><![CDATA[
+        file name: spring-cloud-vault-config-1.0.0.RELEASE.jar
+        ]]>
+        </notes>
+        <gav regex="true">^org\.springframework\.cloud:spring-cloud-vault-config:.*$</gav>
+        <cve>CVE-2019-3772</cve>
+    </suppress>
+</suppressions>

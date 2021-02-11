@@ -1,0 +1,212 @@
+def isBranchBuild = env.IS_BRANCH_BUILD?.toBoolean()
+def pushImage = env.PUSH_IMAGE?.toBoolean()
+def skipSonar = env.SKIP_SONAR?.toBoolean()
+
+def shouldPublishPacts = !isBranchBuild
+def shouldRunSonar = !skipSonar
+def shouldDeploy = !isBranchBuild
+def shouldPushImage = pushImage || shouldDeploy
+def shouldPrefixArtifacts = isBranchBuild
+def shouldTagSilver = !isBranchBuild
+
+def add_image_prefix = { tag ->
+    if (shouldPrefixArtifacts) {
+        def job_prefix = 'navigation-batch-service-'
+        def name_prefix = env.JOB_NAME.replaceAll("^${job_prefix}", '')
+        return "${name_prefix}-${tag}"
+    }
+    return tag
+}
+
+def image_name = add_image_prefix(env.BUILD_NUMBER)
+
+def login_to_aws = {
+    login_command = sh(script: 'aws ecr get-login --no-include-email', returnStdout: true).trim()
+    sh(login_command)
+}
+
+def tag_and_push_docker_image_to_ECR = { tag_name ->
+    def tag_name_with_prefix = add_image_prefix(tag_name)
+    login_to_aws()
+    sh "./gradlew dockerTagAndPush -Pimage.name=${image_name} -Ptag.name=${tag_name_with_prefix}"
+}
+
+def deploy_and_test = { env_name, isFastDeploy ->
+    stage("Deploy to ${env_name}") {
+        build(job: "sixthday-service-deployment-new-infrastructure-${env_name}", parameters: [
+             [$class: 'StringParameterValue', name: 'image_tag', value: "${env.BUILD_NUMBER}"],
+             [$class: 'StringParameterValue', name: 'environment', value: "${env_name}"],
+             [$class: 'StringParameterValue', name: 'service_name', value: 'navigation-batch'],
+             [$class: 'StringParameterValue', name: 'image_repo', value: 'navigation-batch-service'],
+             [$class: 'StringParameterValue', name: 'desired_count', value: '1'],
+             [$class: 'StringParameterValue', name: 'cpu', value: '2048'],
+             [$class: 'StringParameterValue', name: 'memory', value: '2048'],
+             [$class: 'BooleanParameterValue', name: 'fast_drain', value: isFastDeploy]
+        ])
+    }
+}
+
+def update_jira_fix_version() {
+        sh "git log --format=oneline -n 1 | awk 'match(\$0, /[A-Z]+-[0-9]+/) { print substr(\$0, RSTART, RLENGTH) }' > COMMIT_MSG"
+        def git_commit = readFile('COMMIT_MSG').trim()
+        def fixVersion = getFixVersion()
+        withCredentials([[$class: 'UsernamePasswordMultiBinding',
+        credentialsId: 'JIRA_CREDENTIALS',
+        usernameVariable: 'NM_JIRA_USER',
+        passwordVariable: 'NM_JIRA_PWD']]) {
+                sh "curl -u $NM_JIRA_USER:$NM_JIRA_PWD -H \"Content-Type: application/json\" -X PUT https://jira.mysixthday.com/rest/api/2/issue/${git_commit} --data '{\"update\": {\"fixVersions\": [{\"set\": [{\"name\": \"${fixVersion}\"}]}]}}'"
+        }   
+}
+
+@NonCPS
+def getFixVersion() {
+    def dateFormat = new java.text.SimpleDateFormat("yy.M.W")
+    def date = new Date().with {
+        d -> d + (7 + Calendar.MONDAY - d[Calendar.DAY_OF_WEEK])%7
+    }
+    dateFormat.format(date)
+}
+
+node('stofro') {
+    def sonar_branch_properties = ' -Dsonar.projectName=navigation-batch-service-pr -Dsonar.projectKey=navigation-batch-service-pr'
+
+    step([$class: 'StashNotifier'])
+    try {
+        def job_timeout = 60
+        def timeout_unit = 'MINUTES'
+
+        timeout(time: job_timeout, unit: timeout_unit) {
+            currentBuild.result = 'SUCCESS'
+
+            timestamps {
+
+                stage('Checkout, Build, and Test App Artifact') {
+                    checkout scm
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'PACTBROKER_CREDENTIALS',\
+                                                                                  usernameVariable: 'PACTBROKER_USER', passwordVariable: 'PACTBROKER_PASSWORD']]) {
+
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'PACTBROKER_CREDENTIALS',
+                                                            usernameVariable: 'PACTBROKER_USER', passwordVariable: 'PACTBROKER_PASSWORD']]) {
+                                                sh './gradlew providerContractTest -PpactBrokerUserName=${PACTBROKER_USER} -PpactBrokerPassword=${PACTBROKER_PASSWORD}'
+                    }
+
+                    withSonarQubeEnv('sixthday SonarQube Server') {
+                        sh "./gradlew clean jacocoTestReport ${shouldPublishPacts ? 'publishPactFiles' : 'consumerContractTest'} ${shouldRunSonar ? 'sonarqube' : 'test'} dockerTestLocalImage \
+                            -PbuildInfo=true \
+                            -Pbuild.job.name=${JOB_NAME} \
+                            -Pbuild.job.number=${BUILD_NUMBER} \
+                            -Pimage.name=${image_name} \
+                            -PpactBrokerUserName=${PACTBROKER_USER} \
+                            -PpactBrokerPassword=${PACTBROKER_PASSWORD} \
+                            ${isBranchBuild ? sonar_branch_properties : ''}"                    }
+                    }
+                    //archiveArtifacts 'build/libs/navigation-batch-service-0.0.1-SNAPSHOT-app.jar'
+                }
+
+                 stage('Validate SonarQube QualityGate') {
+                                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'SONAR_HOST_AND_TOKEN',
+                                          usernameVariable: 'SONAR_HOST_URL', passwordVariable: 'SONAR_AUTH_TOKEN']]) {
+                                        sh "./read_sonar_qube_status.sh $SONAR_HOST_URL ${isBranchBuild ? 'navigation-batch-service-pr' : 'navigation-batch-service'}"
+                                    }
+
+                 }
+
+                stage('OWASP Dependency Check') {
+                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ARTIFACTORY_API_CREDENTIALS_READ_ONLY',
+                                      usernameVariable: 'ARTIFACTORY_API_USER', passwordVariable: 'ARTIFACTORY_API_KEY']]) {
+                        sh './gradlew dependencyCheckAnalyze'
+                    }
+                }
+
+                stage('Build Deployment Artifact') {
+                    sh "./gradlew dockerBuildDeployment -Pimage.name=${image_name}"
+                }
+
+                if (shouldPushImage) {
+                    stage('Tag "(build)" Docker image') {
+                        tag_and_push_docker_image_to_ECR(BUILD_NUMBER)
+                    }
+                }
+
+                if (shouldDeploy) {
+                    lock("Stages-CreateAndDeployService_dev") {
+                        deploy_and_test('dev', true)
+                    }
+
+                    stage('Tag "bronze" Docker image') {
+                        tag_and_push_docker_image_to_ECR('bronze')
+                        tag_and_push_docker_image_to_ECR("${BUILD_NUMBER}-bronze")
+                    }
+                }
+
+                stage('Integration test') {
+                    sh './gradlew -Dspring.profiles.active=dev -Dspring.cloud.vault.token=$(aws s3 cp s3://nm-vault/nm/dev/access_token.txt -) integrationTest'
+                }
+
+                stage('Test integration with dev-int') {
+                    sh "./gradlew dockerTestImage --imageTag ${image_name} --env dev-int --envVersionName dev-int --buildNumber ${BUILD_NUMBER}"
+                }
+
+                if(shouldDeploy) {
+                    deploy_and_test('dev-int', false)
+                }
+
+                if(shouldTagSilver) {
+                    stage('Tag "silver" Docker image') {
+                        tag_and_push_docker_image_to_ECR('silver')
+                    }
+                }
+            }
+        }
+        update_jira_fix_version()
+    } catch (error) {
+        currentBuild.result = 'FAILED'
+        if (!isBranchBuild) {
+            hipchatSend(color: 'RED', notify: true, message: "FAILED: ${env.JOB_NAME} [#${env.BUILD_NUMBER}] (${env.BUILD_URL})", room: '3362669', credentialId: '3362669')
+        }
+
+        throw error
+    } finally {
+        publishHTML([
+                allowMissing         : true,
+                alwaysLinkToLastBuild: true,
+                keepAll              : true,
+                reportDir            : 'build/reports/tests/test/',
+                reportFiles          : 'index.html',
+                reportName           : 'Unit Test Report'
+        ])
+        publishHTML([
+                allowMissing         : true,
+                alwaysLinkToLastBuild: true,
+                keepAll              : true,
+                reportDir            : 'build/reports/tests/consumerContractTest',
+                reportFiles          : 'index.html',
+                reportName           : 'Consumer Contract test report'
+        ])
+        publishHTML([
+                allowMissing         : true,
+                alwaysLinkToLastBuild: true,
+                keepAll              : true,
+                reportDir            : 'build/reports/jacoco/test/html',
+                reportFiles          : 'index.html',
+                reportName           : 'Code coverage report'
+        ])
+        publishHTML([
+                allowMissing         : true,
+                alwaysLinkToLastBuild: true,
+                keepAll              : true,
+                reportDir            : 'build/reports/tests/integrationTest/',
+                reportFiles          : 'index.html',
+                reportName           : 'Integration Test Report'
+        ])
+        publishHTML([
+                allowMissing         : true,
+                alwaysLinkToLastBuild: true,
+                keepAll              : true,
+                reportDir            : 'build/reports',
+                reportFiles          : 'dependency-check-report.html',
+                reportName           : 'Dependency check report'
+        ])
+        step([$class: 'StashNotifier'])
+    }
+}

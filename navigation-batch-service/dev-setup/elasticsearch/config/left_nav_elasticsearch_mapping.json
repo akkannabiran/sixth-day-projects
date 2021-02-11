@@ -1,0 +1,71 @@
+{
+  "settings": {
+    "number_of_shards": 6,
+    "number_of_replicas": 2
+  },
+  "mappings": {
+    "_doc": {
+      "dynamic": false,
+      "properties": {
+        "id": {
+          "type": "keyword"
+        },
+        "name": {
+          "type": "keyword"
+        },
+        "categoryId": {
+          "type": "keyword"
+        },
+        "referenceIds": {
+          "type": "text"
+        },
+        "driveToPath": {
+          "type": "keyword"
+        },
+        "leftNav": {
+          "type": "nested",
+          "properties": {
+            "id": {
+              "type": "keyword"
+            },
+            "name": {
+              "type": "keyword"
+            },
+            "url": {
+              "type": "keyword"
+            },
+            "level": {
+              "type": "integer"
+            },
+            "path": {
+              "type": "text"
+            },
+            "redText": {
+              "type": "boolean"
+            },
+            "selected": {
+              "type": "boolean"
+            }
+          }
+        },
+        "boutiqueLeftNav": {
+          "type": "nested",
+          "properties": {
+            "id": {
+              "type": "keyword"
+            },
+            "name": {
+              "type": "keyword"
+            },
+            "url": {
+              "type": "keyword"
+            }
+          }
+        },
+        "refreshablePath": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}

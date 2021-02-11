@@ -1,0 +1,92 @@
+navigation:
+  storage:
+    s3:
+      enabled: true
+      bucketName: navigation-bucket
+      clientRegion: us-west-2
+  redis:
+    designer-index:
+      host: localhost
+      port: 6379
+      use-ssl: false
+      use-cluster: false
+      enable-periodic-refresh: true
+      refresh-period: 60
+      validate-cluster-node-membership: false
+      enableRedis: false
+    left-nav:
+      host: localhost
+      port: 6379
+      use-ssl: false
+      use-cluster: false
+      enable-periodic-refresh: true
+      refresh-period: 60
+      validate-cluster-node-membership: false
+      enableRedis: false
+  elastic-search-config:
+    cluster-name: elasticsearch
+    enable-transport-sniff: false
+    host: localhost
+    port: 9200
+    host6: localhost
+    port6: 9200
+    category-index:
+      name: category_index
+      document-type: category
+      document-type6: _doc
+    left-nav-index:
+      name: leftnav_index
+      document-type: leftnav
+      document-type6: _doc
+  rabbitmq-config:
+    receiver:
+      category-event:
+        queue-name: navigation-service.category
+        host: localhost
+        port: 5672
+        connection-timeout: 30000
+        concurrent-consumers: 10
+        prefetch-count: 10
+  integration:
+    category-type:
+      marketing: cat8900735
+      live: cat000000
+      stage: cat400731
+    mobile:
+      url: https://devint.sixthday.com/navigation?countryCode={country_code}
+      cron: 0 0/15 * * * *
+      userAgent: Mobile Navigation Agent
+      connectTimeOut: 5000
+      readTimeOut: 10000
+    desktop:
+      url: https://devint.sixthday.com/desktop-navigation/silos?countryCode={country_code}
+      cron: 0 0/15 * * * *
+      userAgent: Desktop Navigation Agent
+      connectTimeOut: 5000
+      readTimeOut: 10000
+    countryCodes: US, AD, AE, AG, AI, AL, AM, AO, AT, AU, AW, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BM, BN, BO, BQ, BR, BS, BT, BW, BY, BZ, CA, CC, CD, CF, CG, CH, CI, CK, CL, CM, CN, CO, CR, CV, CW, CX, CY, CZ, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, ER, ES, ET, FI, FJ, FK, FM, FO, FR, GA, GB, GD, GE, GF, GG, GH, GI, GL, GM, GN, GP, GQ, GR, GT, GW, GY, HK, HN, HR, HT, HU, ID, IE, IL, IM, IN, IS, IT, JE, JM, JO, JP, KE, KG, KH, KI, KM, KN, KR, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, MA, MC, MD, ME, MG, MH, MK, ML, MM, MN, MO, MQ, MR, MS, MT, MU, MV, MW, MX, MY, MZ, NA, NC, NE, NG, NI, NL, NO, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, PM, PT, PW, PY, QA, RE, RO, RS, RU, RW, SA, SB, SC, SE, SG, SI, SK, SL, SM, SN, SO, SR, ST, SV, SX, SZ, TC, TD, TG, TH, TJ, TL, TN, TO, TR, TT, TV, TW, TZ, UA, UG, UY, UZ, VA, VC, VG, VN, VU, WF, WS, YE, YT, ZA, ZM, ZW
+    content-service-config:
+      host: dev-int.sixthdaycloudapps.com
+      port: 80
+      scheme: http
+      service-url: /contentservice/fragments/silos/drawers
+      enabled: true
+  left-nav-batch-config:
+    build-on-event-receiver: true
+    build-on-startup: false
+    number-of-documents: 1000
+    scroll-timeout: 30000
+    write-batch-size: 10
+    tlv-to-include-reference-ids-path-to-rebuild: 5
+    max-leftnav-tobe-rebuild: 10000
+  left-nav-config:
+    left-nav-refreshable-path: /category/{refreshableCatId}/r_navaux.html
+  category-id-config:
+    designer-category-id: cat000730
+    designer-by-category: designerByCategory
+management:
+  security:
+    enabled: false
+featuretoggles:
+  toggles:
+    USE_DYNAMODB_FOR_DESIGNER_INDEX: true

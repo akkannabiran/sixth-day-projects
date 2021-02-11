@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="NavigationServiceLogger" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <MarkerPatternSelector
+                        defaultPattern="Timestamp=&quot;%d{yyyy-MM-dd HH:mm:ss.SSSZ}&quot;, ThreadName=&quot;%t&quot;, LogLevel=&quot;%p&quot;,%notEmpty{ Environment=&quot;$${env:ENV_NAME}&quot;,}%notEmpty{ Hostname=&quot;$${env:HOSTNAME}&quot;,}%notEmpty{ Message=&quot;%message&quot;,}%notEmpty{ MessageId=&quot;%X{MessageId}&quot;,}%notEmpty{ EventType=&quot;%X{event_type}&quot;,}%notEmpty{ Operation=&quot;%X{operation}&quot;,}%notEmpty{ MessageType=&quot;%X{messageType}&quot;,}%notEmpty{ State=&quot;%X{state}&quot;,}%notEmpty{ Status=&quot;%X{Status}&quot;,}%notEmpty{ TraceId=&quot;%X{TraceId}&quot;,}%notEmpty{ JSESSIONID=&quot;%X{JSESSIONID}&quot;,}%notEmpty{ DYN_USER_ID=&quot;%X{DYN_USER_ID}&quot;,}%notEmpty{ TLTSID=&quot;%X{TLTSID}&quot;,}%notEmpty{ ErrorMessage=&quot;%throwable{short.message}&quot;,}%notEmpty{ ErrorStackTrace=&quot;%throwable&quot;,}%notEmpty{ ContextId=&quot;%X{ContextId}&quot;,}%notEmpty{ DurationInMs=&quot;%X{duration}&quot;,} LoggerName=&quot;%logger&quot;%n">
+                    <PatternMatch key="NoMDCLogMarker"
+                                  pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %msg%n%throwable"/>
+                    <PatternMatch key="ContentSyncLogMarker"
+                                  pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %notEmpty{MessageId=&quot;%X{CS.messageId}&quot;, MessageType=&quot;%X{CS.messageType}&quot;, ContextId=&quot;%X{CS.contextId}&quot;, OriginTimestamp=&quot;%X{CS.originTimestamp}&quot;, sixthdaySRC=&quot;%X{CS.sixthdaySRC}&quot;, sixthdayDEST=&quot;%X{CS.sixthdayDEST}&quot;, sixthdayRESOURCE=&quot;%X{CS.sixthdayRESOURCE}&quot;,} %msg%n%throwable"/>
+                </MarkerPatternSelector>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.sixthday" level="INFO"/>
+        <Logger name="org.springframework" level="ERROR"/>
+        <Root level="INFO">
+            <AppenderRef ref="NavigationServiceLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>

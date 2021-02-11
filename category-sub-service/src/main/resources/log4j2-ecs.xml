@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <RollingRandomAccessFile name="CategoryTemplatePageServiceFileLogger"
+                                 fileName="/var/log/ctp-svc/ctp-svc.ecs.${env:HOSTNAME}.log"
+                                 filePattern="/var/log/ctp-svc/ctp-svc.ecs.${env:HOSTNAME}.log.%d{yyyy-MM-dd-HH-mm-ss}"
+                                 immediateFlush="false">
+            <PatternLayout pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %-5p [%c] (%t) %X %msg%n%throwable"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="2"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework" level="ERROR"/>
+        <Logger name="org.hibernate" level="ERROR"/>
+        <Logger name="com.datastax" level="ERROR"/>
+        <Logger name="io.netty" level="ERROR"/>
+        <Logger name="com.sixthday" level="INFO" additivity="false">
+            <AppenderRef ref="CategoryTemplatePageServiceFileLogger"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="CategoryTemplatePageServiceFileLogger"/>
+        </Root>
+        <Logger name="org.springframework.amqp" level="INFO"/>
+    </Loggers>
+</Configuration>

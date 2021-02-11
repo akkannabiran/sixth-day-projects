@@ -1,0 +1,65 @@
+server:
+  servlet:
+    context-path: /category-sub-service
+spring:
+  application:
+    name: category-sub-service
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:9500}
+      config:
+      scheme: http
+
+info:
+  jenkins:
+    job_name: "@jenkins.job.name@"
+    build_number: "@jenkins.build.number@"
+
+---
+spring:
+  profiles: docker
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:consul}
+      port: ${CONSUL_PORT:8500}
+
+---
+spring:
+  profiles: dev
+  cloud:
+    consul:
+      host: ${CONSUL_ADDR:consul-devweb.sixthdaycloudapps.net}
+      port: ${CONSUL_PORT:80}
+logging:
+  config: "classpath:log4j2-ecs.xml"
+
+---
+spring:
+  profiles: dev-int
+  cloud:
+    consul:
+      host: ${CONSUL_ADDR:consul-devweb.sixthdaycloudapps.net}
+      port: ${CONSUL_PORT:80}
+logging:
+  config: "classpath:log4j2-ecs.xml"
+
+---
+spring:
+  profiles: prep
+  cloud:
+    consul:
+      host: ${CONSUL_ADDR:consul-prepweb.sixthdaycloud.net}
+      port: ${CONSUL_PORT:80}
+logging:
+  config: "classpath:log4j2-ecs.xml"
+
+---
+spring:
+  profiles: prod
+  cloud:
+    consul:
+      host: ${CONSUL_ADDR:consul-prod2web.sixthdaycloud.net}
+      port: ${CONSUL_PORT:80}
+logging:
+  config: "classpath:log4j2-ecs.xml"

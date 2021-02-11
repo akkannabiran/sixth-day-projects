@@ -273,7 +273,7 @@ pact {
 }
 
 artifactory {
-    contextUrl = project.hasProperty('artifactoryUrl') ? project.artifactoryUrl : 'http://jfrog.mynmg.com'
+    contextUrl = project.hasProperty('artifactoryUrl') ? project.artifactoryUrl : 'http://jfrog.sixthday.com'
     resolve {
         repository {
             repoKey = 'libs-sixthday-dt-local'

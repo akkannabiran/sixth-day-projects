@@ -12,7 +12,7 @@
 3.  Clone the application from stash, run:
 
     ```
-    git clone https://stash.mynmg.com/scm/faw/category-service.git
+    git clone https://stash.sixthday.com/scm/faw/category-service.git
     ```
 4.  Create an elastic search data directory and export it as an environment variable
     `mkdir ~/data/elasticsearch`
@@ -35,7 +35,7 @@
 
     > **TIP:**
     * Add the export statements to your profile (.bashrc for example) so that you don't have to export each time.
-    * For ecom_inq password refer [this APPMAN wiki page.](https://wiki.mynmg.com/display/APPMAN/Password+for+ecom_inq+account)
+    * For ecom_inq password refer [this APPMAN wiki page.](https://wiki.sixthday.com/display/APPMAN/Password+for+ecom_inq+account)
 
 ### Running the application
 

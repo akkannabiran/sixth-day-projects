@@ -19,7 +19,7 @@ node('build && ctp') {
     def ecr_repo_hostname = "168860074409.dkr.ecr.us-west-2.amazonaws.com"
     def ecr_repo_name = "category-service"
     def aws_repo_url = "${ecr_repo_hostname}/${ecr_repo_name}"
-    def prod_artifactory_url = 'http://jfrog.mynmg.com'
+    def prod_artifactory_url = 'http://jfrog.sixthday.com'
 
     def env_dev_name = "dev"
 
@@ -184,7 +184,7 @@ def update_jira_fix_version() {
 	credentialsId: 'JIRA_CREDENTIALS', 
 	usernameVariable: 'NM_JIRA_USER', 
 	passwordVariable: 'NM_JIRA_PWD']]) { 
-		sh "curl -u $NM_JIRA_USER:$NM_JIRA_PWD -H \"Content-Type: application/json\" -X PUT https://jira.mynmg.com/rest/api/2/issue/${git_commit} --data '{\"update\": {\"fixVersions\": [{\"set\": [{\"name\": \"${fixVersion}\"}]}]}}'" 
+		sh "curl -u $NM_JIRA_USER:$NM_JIRA_PWD -H \"Content-Type: application/json\" -X PUT https://jira.sixthday.com/rest/api/2/issue/${git_commit} --data '{\"update\": {\"fixVersions\": [{\"set\": [{\"name\": \"${fixVersion}\"}]}]}}'"
 	}    
 }
 @NonCPS
